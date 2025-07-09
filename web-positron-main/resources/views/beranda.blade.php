@@ -10,16 +10,53 @@
         <h1>SELAMAT DATANG MAHASISWA BARU<br>DEPARTEMEN TEKNIK ELEKTRO DAN INFORMATIKA</h1>
         <div class="cta-box">
             <p>APAKAH KALIAN SIAP MENYAMBUT POSITRON 2025!?</p>
-            <button onclick="location.href='#home'">SIAP!</button>
+                <button onclick="location.href='#home'">SIAP!</button>
         </div>
     </div>
 </section>
 
 
     <!-- Tentang POSITRON - Fullscreen Modern Accordion -->
-    <section id="home" class="deskripsi">
-        <div class="sambutan">
-            <div id="isiDeskripsi" class="accordion-content mx-auto" style="max-width: 700px;">
+    <section id="home" class="deskripsi" style="background: url('/images/bg-2.png') no-repeat center center; ">
+    <div class="logo">
+        <div id="isiDeskripsi" class="accordion-content mx-auto text-center" style="max-width: 700px;">
+        <h2 class="mt-4">TENTANG POSITRON</h2>
+        <p>Deskripsi singkat mengenai POSITRON bisa ditambahkan di sini.</p>
+        </div>
+        <div class="logo-positron">
+        <img src="{{ asset('images/logo-positron.png') }}" alt="Logo POSITRON" style="width: 300px; position: center; margin-right: 27px; margin-bottom: 40px; margin-left: 256px;">
+        <h2 class="logo-text">POSITRON 2025</h2>
+        </div>
+    </div>
+    </section>
+
+    <section id="sambutan" class="section-locker" style="background: url('/images/locker-3.png') no-repeat center center; width: auto;">
+    <div class="locker-overlay">
+        <div class="locker-title">
+        <h2>SAMBUTAN</h2>
+        </div>
+        <img src="{{ asset('images/logo-positron-rodokburem.png') }}" alt="Locker Sambutan" class="locker-bg">
+    </div>
+    </section>
+
+    <!-- Countdown FORUM MABA - Fullscreen Modern -->
+    <section class="countdown-section d-flex align-items-center justify-content-center text-white text-center">
+        <div class="container">
+            <h3 class="mb-3 fw-bold display-5">Countdown FORUM MABA</h3>
+            <p class="mb-5 lead">Menuju pembukaan Forum Maba POSITRON 2025!</p>
+            <div id="countdown" class="d-flex flex-wrap justify-content-center gap-4 fs-3 fw-semibold">
+                <div class="countdown-item">
+                    <span id="days">0</span><br>Hari
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">0</span><br>Jam
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">0</span><br>Menit
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">0</span><br>Detik
+                </div>
             </div>
         </div>
     </section>
@@ -27,28 +64,65 @@
 <!-- CSS Hero Section -->
 
 <style>
+    
 
-.hero-section,
-.sambutan {
-    margin: 0;
-    padding: 0;
-    border: none;
-    line-height: 1;
-    position: relative;
-    overflow: hidden;
-}
-.sambutan {
-    background: url('/images/bg-2.png') no-repeat center center;
+.section-locker {
+    background: url('/images/locker-3.png') no-repeat center center;
     background-size: cover;
-    height: 50vh;
+    width: 100%;
+    height: 100vh; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.locker-overlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.logo-img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.locker-title h2 {
+    font-family: 'Atlanta College', sans-serif;
+    font-size: 100px;
+    color:rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: -280px;
+    margin-right: 1000px;
+   
+}
+
+.locker-bg {
+    bottom: 10000px;
+}
+
+.logo-text {
+    font-family: 'Atlanta College', sans-serif;
+    font-size: 128px;
+    color:rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: -20px;
+}
+
+.logo {
+    background-size: cover;
     background-position: center;
-    padding: 60px 20px;
+    padding: 200px ;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 1;
+    width: 100%;
+    
 }
 
 .hero-section {
@@ -216,11 +290,11 @@
             <h3 class="text-center mb-5">Program Studi di Departemen Teknik Elektro dan Informatika</h3>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 @foreach ([
-            'S1 Pendidikan Teknik Informatika' => 'bi-journal-code',
-            'S1 Teknik Informatika' => 'bi-laptop',
-            'S1 Teknik Elektro' => 'bi-lightning-charge',
-            'S1 Pendidikan Teknik Elektro' => 'bi-plug',
-        ] as $nama => $icon)
+                            'S1 Pendidikan Teknik Informatika' => 'bi-journal-code',
+                            'S1 Teknik Informatika' => 'bi-laptop',
+                            'S1 Teknik Elektro' => 'bi-lightning-charge',
+                            'S1 Pendidikan Teknik Elektro' => 'bi-plug',
+                        ] as $nama => $icon)
                     <div class="col">
                         <div class="flip-card">
                             <div class="flip-card-inner">
@@ -303,29 +377,6 @@
             margin: 0;
         }
     </style>
-
-
-    <!-- Countdown FORUM MABA - Fullscreen Modern -->
-    <section class="countdown-section d-flex align-items-center justify-content-center text-white text-center">
-        <div class="container">
-            <h3 class="mb-3 fw-bold display-5">Countdown FORUM MABA</h3>
-            <p class="mb-5 lead">Menuju pembukaan Forum Maba POSITRON 2025!</p>
-            <div id="countdown" class="d-flex flex-wrap justify-content-center gap-4 fs-3 fw-semibold">
-                <div class="countdown-item">
-                    <span id="days">0</span><br>Hari
-                </div>
-                <div class="countdown-item">
-                    <span id="hours">0</span><br>Jam
-                </div>
-                <div class="countdown-item">
-                    <span id="minutes">0</span><br>Menit
-                </div>
-                <div class="countdown-item">
-                    <span id="seconds">0</span><br>Detik
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- CSS Styling COUNTDOWN -->
     <style>
@@ -741,7 +792,7 @@
     </script>
 
 
-    {{-- CUNTDOWN --}}
+    {{-- COUNTDOWN --}}
     <script>
         // Atur tanggal target FORUM MABA: 27 Agustus 2025 pukul 08:00
         const countDownDate = new Date("Aug 27, 2025 08:00:00").getTime();

@@ -16,3 +16,9 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Atlanta College';
+    src: url('../font/AtlantaCollege.ttf') format('truetype');
+}
+
+
