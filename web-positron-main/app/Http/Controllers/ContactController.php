@@ -10,10 +10,10 @@ class ContactController extends Controller
     {
         // Data dummy untuk CP Prodi
         $cpProdi = [
-            ['nama' => 'Ana', 'prodi' => 'Teknik Elektro', 'wa' => '6281234567890'],
-            ['nama' => 'Budi', 'prodi' => 'Teknik Informatika', 'wa' => '6281234567891'],
-            ['nama' => 'Citra', 'prodi' => 'Pendidikan TIK', 'wa' => '6281234567892'],
-            ['nama' => 'Dimas', 'prodi' => 'Sistem Informasi', 'wa' => '6281234567893'],
+            ['nama' => 'Afra', 'prodi' => 'Teknik Informatika', 'wa' => '6281234567890'],
+            ['nama' => 'Nini', 'prodi' => 'Pendidikan Teknik Informatika', 'wa' => '6281234567891'],
+            ['nama' => 'Adit', 'prodi' => 'Teknik Elektro', 'wa' => '6281234567892'],
+            ['nama' => 'Fither', 'prodi' => 'Pendidikan Teknik Elektro', 'wa' => '6281234567893'],
         ];
 
         // Data dummy untuk 40 Kakak Mentor
