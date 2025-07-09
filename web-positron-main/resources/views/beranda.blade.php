@@ -84,12 +84,13 @@
 }
 
 .hero-section h1 {
-    font-size: 22px;
+    font-size: 32px;
     font-weight: 700;
     text-transform: uppercase;
     margin: 20px 0;
-    color: white;
+    color: #fff !important;
     line-height: 1.5;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4), 0 0 0 #fff;
 }
 
 .cta-box {
