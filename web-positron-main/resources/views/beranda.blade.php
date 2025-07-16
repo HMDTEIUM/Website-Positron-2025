@@ -30,17 +30,57 @@
     </div>
     </section>
 
-    <section id="sambutan" class="section-locker" style="background: url('/images/locker-3.png') no-repeat center center; width: auto;">
+<section id="sambutan" class="section-locker" style="background: url('/images/long-locker.png') no-repeat center center; background-size: cover; width: auto; min-height: 100vh;">
     <div class="locker-overlay">
+        <!-- Judul -->
         <div class="locker-title">
-        <h2>SAMBUTAN</h2>
+            <h2>SAMBUTAN</h2>
         </div>
+
+        <!-- Logo blur di belakang -->
         <img src="{{ asset('images/logo-positron-rodokburem.png') }}" alt="Locker Sambutan" class="locker-bg">
+
+<!-- COMING SOON Section -->
+<div class="container text-white py-5" style="margin-top: 140px;">
+    <h2 class="locker-subtitle">COMING SOON</h2>
+
+    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+       <div class="carousel-inner">
+            @foreach ([
+                'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            ] as $i => $link)
+                <div class="carousel-item {{ $i === 0 ? 'active' : '' }}">
+                <div class="d-flex justify-content-center">
+                    <div class="video-wrapper">
+                    <iframe
+                        src="{{ $link }}"
+                        title="Video {{ $i + 1 }}"
+                        frameborder="0"
+                        allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                    </iframe>
+                    </div>
+                </div>
+                </div>
+            @endforeach
+            </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
     </div>
-    </section>
+</div>
+</section>
+
+
+
 
     <!-- Countdown FORUM MABA - Fullscreen Modern -->
-    <section class="countdown-section d-flex align-items-center justify-content-center text-white text-center">
+    <section id="countdowntimer" class="countdown-section d-flex align-items-center justify-content-center text-white text-center" style="background: url('/images/bg-3.png') no-repeat center center; background-size: cover; min-height: 100vh;">
         <div class="container">
             <h3 class="mb-3 fw-bold display-5">Countdown FORUM MABA</h3>
             <p class="mb-5 lead">Menuju pembukaan Forum Maba POSITRON 2025!</p>
@@ -61,16 +101,13 @@
         </div>
     </section>
 
-<!-- CSS Hero Section -->
+<!-- CSS Locker Section -->
 
 <style>
-    
 
 .section-locker {
-    background: url('/images/locker-3.png') no-repeat center center;
     background-size: cover;
-    width: 100%;
-    height: 100vh; 
+    height: 190vh; 
     position: relative;
     display: flex;
     align-items: center;
@@ -94,13 +131,16 @@
     font-size: 100px;
     color:rgb(255, 255, 255);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin-top: -280px;
-    margin-right: 1000px;
+    margin-top: -180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
    
 }
 
 .locker-bg {
-    bottom: 10000px;
+    position: relative;
+    top: 60px;
 }
 
 .logo-text {
@@ -124,6 +164,83 @@
     width: 100%;
     
 }
+
+.locker-subtitle {
+    font-family: 'Atlanta College', sans-serif;
+    font-size: 64px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 50px;
+}
+</style>
+
+<!-- CSS Coming Soon Section -->
+<style>
+.video-container {
+    width: 1200px;
+    padding: 0 20px;
+    max-width: 100%; // container width
+    margin: 0 auto;
+}
+
+.video-wrapper {
+  width: 1200px;
+  max-width: 1200px; /* Video will not exceed this width */
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.carousel-inner {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-item {
+  width: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    filter: drop-shadow(0 0 6px #000);
+}
+.locker-subtitle {
+    font-family: 'Atlanta College', sans-serif;
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: -50px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .locker-title h2 {
+        font-size: 64px;
+        margin-top: -100px;
+    }
+
+    .locker-subtitle {
+        font-size: 40px;
+    }
+}
+</style>
+
+
+    <!-- CSS Hero Section -->
+<style>
+
 
 .hero-section {
     background: url('/images/bg-1.png') no-repeat center center;
@@ -214,6 +331,42 @@
     }
 }
     </style>
+
+    <!-- CSS Styling COUNTDOWN -->
+    <style>
+        .countdown-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+        }
+
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 12px;
+            min-width: 120px;
+            backdrop-filter: blur(8px);
+        }
+
+        .countdown-item span {
+            font-size: 2.5rem;
+            display: block;
+        }
+
+        @media (max-width: 576px) {
+            .countdown-item {
+                padding: 15px 20px;
+                min-width: 80px;
+            }
+
+            .countdown-item span {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
 
     <!-- CSS Accordion & Hover -->
     <style>
@@ -375,42 +528,6 @@
         .flip-card p {
             font-size: 14px;
             margin: 0;
-        }
-    </style>
-
-    <!-- CSS Styling COUNTDOWN -->
-    <style>
-        .countdown-section {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #0d6efd, #6610f2);
-            /* ganti dengan gambar/video jika perlu */
-            background-size: cover;
-            background-position: center;
-            padding: 60px 20px;
-        }
-
-        .countdown-item {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 20px 30px;
-            border-radius: 12px;
-            min-width: 120px;
-            backdrop-filter: blur(8px);
-        }
-
-        .countdown-item span {
-            font-size: 2.5rem;
-            display: block;
-        }
-
-        @media (max-width: 576px) {
-            .countdown-item {
-                padding: 15px 20px;
-                min-width: 80px;
-            }
-
-            .countdown-item span {
-                font-size: 2rem;
-            }
         }
     </style>
 
