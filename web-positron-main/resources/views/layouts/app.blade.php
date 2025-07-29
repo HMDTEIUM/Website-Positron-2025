@@ -47,7 +47,7 @@
       width: 100%;
       z-index: 1030;
       transition: all 0.4s ease;
-      background: url('/images/navbar-1.png') no-repeat center center;
+      background: url('{{ asset('images/navbar-1.png') }}') no-repeat center center;
       background-size: cover;
       color: white;
       border: none;
@@ -87,7 +87,7 @@
       }
 
       #mainNavbar.transparent-desktop {
-        background: url('/images/navbar-1.png') no-repeat center center;
+        background: url('{{ asset('images/navbar-1.png') }}') no-repeat center center;
         background-size: cover;
         backdrop-filter: blur(0px);
       }
