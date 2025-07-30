@@ -83,8 +83,15 @@
         <div class="countdown-overlay"></div>
         <div class="container">
             <div class="countdown-content">
-                <h3 class="countdown-title">Countdown FORUM MABA</h3>
-                <p class="countdown-subtitle">Menuju pembukaan Forum Maba POSITRON 2025!</p>
+                <div class="countdown-intro">
+                    <img src="{{ asset('images/logo-positron.png') }}" alt="Logo POSITRON" class="countdown-logo">
+                    <h3 class="countdown-title">Countdown FORUM MABA</h3>
+                    <p class="countdown-subtitle">Menuju pembukaan Forum Mahasiswa Baru POSITRON 2025!</p>
+                    <p class="countdown-description">
+                        Forum Maba adalah acara orientasi pertama yang akan memperkenalkan kalian dengan lingkungan 
+                        Departemen Teknik Elektro dan Informatika. Bersiaplah untuk petualangan baru!
+                    </p>
+                </div>
                 <div id="countdown" class="countdown-display">
                     <div class="countdown-item">
                         <span id="days" class="countdown-number">0</span>
@@ -101,6 +108,16 @@
                     <div class="countdown-item">
                         <span id="seconds" class="countdown-number">0</span>
                         <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+                <div class="countdown-info">
+                    <div class="countdown-event-details">
+                        <h4>Detail Acara Forum Maba:</h4>
+                        <ul>
+                            <li><strong>Tanggal:</strong> 27-28 Agustus 2025</li>
+                            <li><strong>Waktu:</strong> 08:00 WIB</li>
+                            <li><strong>Tempat:</strong> Departemen Teknik Elektro dan Informatika</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -141,13 +158,33 @@
     <section class="calendar-section">
         <div class="calendar-overlay"></div>
         <div class="container">
-            <h3 class="section-title">Calendar POSITRON 2025</h3>
+            <div class="calendar-header">
+                <img src="{{ asset('images/logo-positron-rodokburem.png') }}" alt="Logo POSITRON" class="calendar-logo">
+                <h3 class="section-title">Calendar POSITRON 2025</h3>
+                <p class="calendar-description">
+                    Jadwal lengkap kegiatan Program Orientasi Siswa Baru Teknik Elektro dan Informatika. 
+                    Klik pada tanggal yang memiliki acara untuk melihat detail lebih lanjut.
+                </p>
+            </div>
             <div class="calendar-controls">
                 <button class="btn btn-outline-primary calendar-nav" id="prevMonth">&lt;</button>
                 <h5 id="monthYearDisplay" class="month-display"></h5>
                 <button class="btn btn-outline-primary calendar-nav" id="nextMonth">&gt;</button>
             </div>
             <div class="calendar-grid" id="calendarGrid"></div>
+            <div class="calendar-legend">
+                <h4>Keterangan:</h4>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-color event"></div>
+                        <span>Hari dengan acara POSITRON</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color today"></div>
+                        <span>Hari ini</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -429,10 +466,10 @@
 
         /* Countdown Section */
         .countdown-section {
-            background: linear-gradient(135deg, #0d6efd, #6610f2),
-                        url('/images/bg-3.png') no-repeat center center;
+            background: linear-gradient(rgba(13, 110, 253, 0.8), rgba(102, 16, 242, 0.8)),
+                        url('{{ asset('images/countdown-bg.png') }}') no-repeat center center;
             background-size: cover;
-            background-blend-mode: overlay;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -453,6 +490,124 @@
             z-index: 2;
             text-align: center;
             padding: 4rem 0;
+        }
+
+        .countdown-intro {
+            margin-bottom: 3rem;
+        }
+
+        .countdown-logo {
+            width: clamp(80px, 15vw, 120px);
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+        }
+
+        .countdown-description {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin: 1.5rem auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .countdown-info {
+            margin-top: 3rem;
+        }
+
+        .countdown-event-details {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .countdown-event-details h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .countdown-event-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .countdown-event-details li {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .calendar-logo {
+            width: clamp(60px, 10vw, 100px);
+            height: auto;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+        }
+
+        .calendar-description {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin: 1rem auto 2rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .calendar-legend {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .calendar-legend h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .legend-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .legend-color.event {
+            background: linear-gradient(135deg, #1d4f98, #0d6efd);
+        }
+
+        .legend-color.today {
+            background: rgba(255, 193, 7, 0.3);
+            border-color: #ffc107;
+        }
+
+        .legend-item span {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
         }
 
         .countdown-title {
@@ -591,7 +746,7 @@
         /* Calendar Section */
         .calendar-section {
             background: linear-gradient(rgba(10, 62, 109, 0.9), rgba(10, 62, 109, 0.9)), 
-                        url('/images/bg-1.png') no-repeat center center;
+                        url('{{ asset('images/bg-1.png') }}') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             padding: 5rem 0;
@@ -779,7 +934,8 @@
             }
 
             .about-section,
-            .calendar-section {
+            .calendar-section,
+            .countdown-section {
                 background-attachment: scroll;
             }
 
@@ -794,6 +950,11 @@
             .countdown-item {
                 min-width: 70px;
                 padding: 1rem 0.5rem;
+            }
+
+            .countdown-event-details {
+                padding: 1.5rem;
+                margin: 0 1rem;
             }
 
             .calendar-grid {
@@ -824,6 +985,15 @@
 
             .calendar-controls {
                 gap: 1rem;
+            }
+
+            .legend-items {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .calendar-header {
+                margin-bottom: 2rem;
             }
         }
 
