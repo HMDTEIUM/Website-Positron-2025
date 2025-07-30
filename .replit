@@ -13,20 +13,11 @@ author = 19599294
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd web-positron-main && npm run dev"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
 args = "cd web-positron-main && php artisan serve --host=0.0.0.0 --port=5000"
 
 [[ports]]
 localPort = 5000
-externalPort = 80
-
-[[ports]]
-localPort = 5173
-externalPort = 5173
-exposeLocalhost = true
+externalPort = 5000
 
 [[ports]]
 localPort = 8000
