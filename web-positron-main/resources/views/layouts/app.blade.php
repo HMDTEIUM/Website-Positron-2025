@@ -38,7 +38,6 @@
       position: relative;
       scroll-behavior: smooth;
       min-height: 100vh;
-      padding-bottom: 100px;
     }
 
     #mainNavbar {
@@ -172,7 +171,6 @@
 
     footer {
       background-color: #061f3e;
-      position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
@@ -180,6 +178,7 @@
       padding: 20px 10px;
       z-index: 10;
       transition: bottom 0.4s ease;
+      text-align: center;
     }
 
     main {
@@ -221,8 +220,8 @@
     @yield('content')
   </main>
 
-  <footer class="text-center">
-    <div class="container">
+  <footer>
+    <div>
       <p class="mb-1">© {{ date('Y') }} POSITRON 2025</p>
       <small>Departemen Teknik Elektro dan Informatika - Universitas Negeri Malang</small>
     </div>
@@ -262,10 +261,10 @@
 
         if (scrollTop > lastScrollTop) {
           navbar.style.top = "-90px";
-          footer.style.bottom = "-90px";
+          // footer.style.bottom = "-90px";
         } else {
           navbar.style.top = "0";
-          footer.style.bottom = "0";
+          // footer.style.bottom = "0";
         }
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
