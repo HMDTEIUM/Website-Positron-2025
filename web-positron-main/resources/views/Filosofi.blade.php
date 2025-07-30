@@ -4,154 +4,195 @@
 @section('content')
 <style>
     .filosofi-section {
-        background: linear-gradient(135deg, #0a3e6d, #1e5a8b);
+        background: linear-gradient(135deg, #0a3e6d, #1e5a8b, #0f4c75);
         min-height: 100vh;
         padding: 80px 0;
         overflow-x: hidden;
+        position: relative;
+    }
+
+    .filosofi-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        pointer-events: none;
     }
 
     .filosofi-container {
-        max-width: 1200px;
+        max-width: 1400px;
         margin: 0 auto;
         padding: 0 20px;
+        position: relative;
+        z-index: 1;
     }
 
     .section-title {
         text-align: center;
         color: white;
-        font-size: clamp(2rem, 5vw, 3rem);
+        font-size: clamp(2.5rem, 6vw, 4rem);
         font-weight: 700;
         margin-bottom: 1rem;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
         animation: slideInFromRight 1s ease-out;
+        background: linear-gradient(135deg, #fff, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     .section-subtitle {
         text-align: center;
         color: rgba(255, 255, 255, 0.9);
-        font-size: clamp(1rem, 2.5vw, 1.25rem);
-        margin-bottom: 3rem;
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
+        margin-bottom: 4rem;
         animation: slideInFromRight 1s ease-out 0.2s both;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
     }
 
     .logo-section {
         text-align: center;
-        margin-bottom: 4rem;
+        margin-bottom: 5rem;
         animation: slideInFromRight 1s ease-out 0.4s both;
     }
 
     .logo-section img {
-        max-height: 250px;
+        max-height: 280px;
         width: auto;
-        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
-        animation: pulse 2s infinite;
+        filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
+        animation: pulse 3s infinite;
     }
 
     .carousel-container {
         position: relative;
-        margin-bottom: 4rem;
-        max-width: 800px;
+        margin-bottom: 5rem;
+        max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
     }
 
     .carousel-wrapper {
         overflow: hidden;
-        border-radius: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 215, 0, 0.3);
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        min-height: 350px;
     }
 
     .carousel-track {
         display: flex;
-        transition: transform 0.5s ease-in-out;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         width: 400%;
     }
 
     .filosofi-item {
         display: flex;
         align-items: center;
-        gap: 2rem;
-        padding: 2rem;
+        gap: 3rem;
+        padding: 3rem;
         width: 25%;
         flex-shrink: 0;
         opacity: 1;
         transform: none;
         animation: none;
+        min-height: 300px;
     }
 
     .carousel-nav {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(255, 215, 0, 0.2);
-        border: 2px solid #ffd700;
+        background: rgba(255, 215, 0, 0.15);
+        border: 2px solid rgba(255, 215, 0, 0.8);
         color: #ffd700;
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         z-index: 10;
-        transition: all 0.3s ease;
-        font-size: 1.2rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 
+            0 8px 25px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
     .carousel-nav:hover {
-        background: rgba(255, 215, 0, 0.4);
+        background: rgba(255, 215, 0, 0.25);
+        border-color: #ffd700;
         transform: translateY(-50%) scale(1.1);
+        box-shadow: 
+            0 12px 35px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(255, 215, 0, 0.3);
     }
 
     .carousel-nav.prev {
-        left: -25px;
+        left: -35px;
     }
 
     .carousel-nav.next {
-        right: -25px;
+        right: -35px;
     }
 
     .carousel-indicators {
         display: flex;
         justify-content: center;
-        gap: 10px;
-        margin-top: 2rem;
+        gap: 15px;
+        margin-top: 3rem;
     }
 
     .indicator {
-        width: 12px;
-        height: 12px;
+        width: 14px;
+        height: 14px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.3);
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid transparent;
     }
 
     .indicator.active {
         background: #ffd700;
-        transform: scale(1.2);
+        transform: scale(1.3);
+        border-color: rgba(255, 215, 0, 0.5);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
     }
 
-    .indicator:hover {
+    .indicator:hover:not(.active) {
         background: rgba(255, 215, 0, 0.7);
+        transform: scale(1.1);
     }
 
     .filosofi-image {
-        flex: 0 0 150px;
-        width: 150px;
-        height: 150px;
-        border-radius: 15px;
+        flex: 0 0 180px;
+        width: 180px;
+        height: 180px;
+        border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        box-shadow: 
+            0 12px 35px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(255, 215, 0, 0.2);
+        border: 3px solid rgba(255, 215, 0, 0.3);
     }
 
     .filosofi-image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.3s ease;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .filosofi-item:hover .filosofi-image img {
@@ -164,88 +205,112 @@
 
     .filosofi-content h5 {
         color: #ffd700;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         font-weight: 600;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 1rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     }
 
     .filosofi-content p {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1rem;
-        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.1rem;
+        line-height: 1.7;
         margin: 0;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     }
 
     .color-section {
-        margin-top: 4rem;
+        margin-top: 5rem;
         animation: slideInFromRight 1s ease-out 1.4s both;
     }
 
     .color-title {
         text-align: center;
         color: white;
-        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-size: clamp(2rem, 5vw, 2.5rem);
         font-weight: 600;
-        margin-bottom: 2rem;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        margin-bottom: 3rem;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+        background: linear-gradient(135deg, #fff, #ffd700);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
     }
 
     .color-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
     }
 
     .color-item {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(15px);
-        border-radius: 20px;
-        padding: 2rem;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 3rem;
         text-align: center;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 2px solid rgba(255, 215, 0, 0.3);
         opacity: 0;
         transform: translateX(100px);
         animation: slideInFromRight 1s ease-out forwards;
+        box-shadow: 
+            0 15px 35px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .color-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 
+            0 25px 45px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(255, 215, 0, 0.2);
     }
 
     .color-item:nth-child(1) { animation-delay: 1.6s; }
     .color-item:nth-child(2) { animation-delay: 1.8s; }
 
     .color-circle {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
-        margin: 0 auto 1.5rem;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        margin: 0 auto 2rem;
+        box-shadow: 
+            0 12px 30px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(255, 255, 255, 0.1);
+        border: 3px solid rgba(255, 255, 255, 0.2);
     }
 
     .color-item h5 {
         color: #ffd700;
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     }
 
     .color-item p {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 0.95rem;
-        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 1rem;
+        line-height: 1.7;
         margin: 0;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     }
 
     .icon-wrapper {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         background: rgba(255, 215, 0, 0.2);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #ffd700;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+        border: 2px solid rgba(255, 215, 0, 0.5);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     @keyframes slideInFromRight {
@@ -273,17 +338,19 @@
         .filosofi-item {
             flex-direction: column;
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
+            gap: 2rem;
         }
 
         .filosofi-image {
             flex: none;
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
         }
 
         .filosofi-content h5 {
             justify-content: center;
+            font-size: 1.5rem;
         }
 
         .color-grid {
@@ -291,17 +358,21 @@
         }
 
         .carousel-nav {
-            width: 40px;
-            height: 40px;
-            font-size: 1rem;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
         }
 
         .carousel-nav.prev {
-            left: -20px;
+            left: -25px;
         }
 
         .carousel-nav.next {
-            right: -20px;
+            right: -25px;
+        }
+
+        .carousel-wrapper {
+            min-height: 400px;
         }
     }
 
@@ -311,26 +382,34 @@
         }
 
         .filosofi-item {
-            padding: 1rem;
+            padding: 1.5rem;
         }
 
         .filosofi-image {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
         }
 
         .carousel-nav.prev {
-            left: -15px;
+            left: -20px;
         }
 
         .carousel-nav.next {
-            right: -15px;
+            right: -20px;
         }
 
         .carousel-nav {
-            width: 35px;
-            height: 35px;
-            font-size: 0.9rem;
+            width: 45px;
+            height: 45px;
+            font-size: 16px;
+        }
+
+        .filosofi-content h5 {
+            font-size: 1.3rem;
+        }
+
+        .filosofi-content p {
+            font-size: 1rem;
         }
     }
 </style>
@@ -489,36 +568,42 @@ function currentSlide(slideIndex) {
 // Auto-slide functionality (optional)
 setInterval(() => {
     slideCarousel(1);
-}, 5000);
+}, 8000);
 
 // Touch/swipe support for mobile
 let startX = 0;
 let isDragging = false;
 
-document.querySelector('.carousel-wrapper').addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-});
-
-document.querySelector('.carousel-wrapper').addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-});
-
-document.querySelector('.carousel-wrapper').addEventListener('touchend', (e) => {
-    if (!isDragging) return;
+document.addEventListener('DOMContentLoaded', function() {
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
     
-    const endX = e.changedTouches[0].clientX;
-    const diffX = startX - endX;
-    
-    if (Math.abs(diffX) > 50) {
-        if (diffX > 0) {
-            slideCarousel(1); // Slide right
-        } else {
-            slideCarousel(-1); // Slide left
-        }
+    if (carouselWrapper) {
+        carouselWrapper.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        carouselWrapper.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+        });
+
+        carouselWrapper.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+            
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    slideCarousel(1); // Slide right
+                } else {
+                    slideCarousel(-1); // Slide left
+                }
+            }
+            
+            isDragging = false;
+        });
     }
-    
-    isDragging = false;
 });
 </script>
