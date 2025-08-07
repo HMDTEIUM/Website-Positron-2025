@@ -46,8 +46,7 @@
       width: 100%;
       z-index: 1030;
       transition: all 0.4s ease;
-      background: url('{{ asset('images/navbar-1.png') }}') no-repeat center center;
-      background-size: cover;
+      background-color: #ffffff;
       color: white;
       border: none;
       font-family: 'ScribbleMarker', sans-serif;
@@ -84,12 +83,6 @@
       .navbar-toggler {
         display: none !important;
       }
-
-      #mainNavbar.transparent-desktop {
-        background: url('{{ asset('images/navbar-1.png') }}') no-repeat center center;
-        background-size: cover;
-        backdrop-filter: blur(0px);
-      }
     }
 
     #mainNavbar.scrolled,
@@ -113,7 +106,7 @@
       bottom: 0;
       width: 0%;
       height: 2px;
-      background-color: #0d6efd;
+      background-color: #000000ff;
       transition: width 0.3s ease-in-out;
     }
 
@@ -207,7 +200,7 @@
         <ul class="navbar-nav gap-2">
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/Filosofi">Filosofi</a></li>
-          <li class="nav-item"><a class="nav-link text-dark px-3" href="/group">Timeline</a></li>
+          <li class="nav-item"><a class="nav-link text-dark px-3" href="/timeline">Timeline</a></li>
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/kontak">Guide</a></li>
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/group">Group</a></li>
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/kontak">Contact</a></li>
