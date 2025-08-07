@@ -806,7 +806,7 @@
         }
 
         .day-cell {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 1);
             border-radius: 12px;
             padding: 1rem;
             text-align: center;
@@ -821,25 +821,38 @@
             cursor: default;
         }
 
+        .day-cell.today {
+            border: 3px solid #ffc107;
+            background: #093258ff;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .day-cell .today-label {
+            position: absolute;
+            bottom: 30px;
+            right: 48px;
+            font-size: 1.2rem;
+            color: #ffffffff;
+            background-color: #093258ff;
+            border-radius: 3px;
+            font-weight: normal;
+        }
+
+        
         .day-cell:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-            background: rgba(255, 255, 255, 1);
-        }
-
-        .day-cell.today {
-            border: 2px solid #ffc107;
-            background: rgba(255, 193, 7, 0.1);
         }
 
         .day-cell.event {
-            background: linear-gradient(135deg, #1d4f98, #0d6efd);
+            background: linear-gradient(135deg, #1d4f98, #093258ff);
             color: white;
             cursor: pointer;
         }
 
         .day-cell.event:hover {
-            background: linear-gradient(135deg, #0d6efd, #1d4f98);
+            background: linear-gradient(135deg, #144fa7ff, #1d4f98);
         }
 
         .day-number {
@@ -870,6 +883,12 @@
 
         .modal-title {
             font-weight: 600;
+        }
+
+        .modal-body {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 2rem;
         }
 
         .btn-close {
@@ -1103,95 +1122,101 @@
 
                 // Add days
                 for (let d = 1; d <= daysInMonth; d++) {
-                    const dateObj = new Date(year, month, d);
-                    const dateStr = dateObj.toISOString().split("T")[0];
-                    const cell = document.createElement("div");
-                    cell.className = "day-cell";
+                const dateObj = new Date(year, month, d);
+                const dateStr = dateObj.toISOString().split("T")[0];
+                const cell = document.createElement("div");
+                cell.className = "day-cell";
 
-                    const today = new Date();
-                    if (
-                        dateObj.getFullYear() === today.getFullYear() &&
-                        dateObj.getMonth() === today.getMonth() &&
-                        dateObj.getDate() === today.getDate()
-                    ) {
-                        cell.classList.add("today");
-                    }
+                const today = new Date();
+                if (
+                    dateObj.getFullYear() === today.getFullYear() &&
+                    dateObj.getMonth() === today.getMonth() &&
+                    dateObj.getDate() === today.getDate()
+                ) {
+                    cell.classList.add("today");
 
+                    const todayLabel = document.createElement("div");
+                    todayLabel.className = "day-number today-label";
+                    todayLabel.innerText = "Today";
+                    cell.appendChild(todayLabel);
+                } else {
                     const dayNumber = document.createElement("div");
                     dayNumber.className = "day-number";
                     dayNumber.innerText = d;
                     cell.appendChild(dayNumber);
-
-                    // Check for events
-                    let matchedEvent = null;
-                    for (const [startKey, ev] of Object.entries(eventDates)) {
-                        const start = new Date(startKey);
-                        const end = new Date(ev.endDate);
-                        if (dateObj >= start && dateObj <= end) {
-                            matchedEvent = startKey;
-                            break;
-                        }
-                    }
-
-                    if (matchedEvent) {
-                        const ev = eventDates[matchedEvent];
-                        cell.classList.add("event");
-
-                        const eventLabel = document.createElement("div");
-                        eventLabel.className = "event-title";
-                        eventLabel.innerText = ev.title;
-                        cell.appendChild(eventLabel);
-
-                        cell.addEventListener("click", function() {
-                            document.getElementById('modalEventTitle').innerText = ev.title;
-                            
-                            const startDate = new Date(matchedEvent);
-                            const endDate = new Date(ev.endDate);
-                            const formattedDate = startDate.toLocaleDateString('id-ID', {
-                                    day: 'numeric',
-                                    month: 'long'
-                                }) +
-                                (startDate.getTime() !== endDate.getTime() ?
-                                    '–' + endDate.toLocaleDateString('id-ID', {
-                                        day: 'numeric',
-                                        month: 'long',
-                                        year: 'numeric'
-                                    }) :
-                                    ` ${startDate.getFullYear()}`);
-
-                            document.getElementById('modalEventDate').innerText = formattedDate;
-                            document.getElementById('modalEventDesc').innerText = ev.description;
-
-                            document.getElementById('addToCalendarBtn').onclick = () => {
-                                const blob = new Blob([generateICS(ev.title, ev.description,
-                                    matchedEvent, ev.endDate)], {
-                                    type: 'text/calendar'
-                                });
-                                const link = document.createElement('a');
-                                link.href = URL.createObjectURL(blob);
-                                link.download = `${ev.title.replace(/\s+/g, "_")}_POSITRON.ics`;
-                                link.click();
-                            };
-
-                            new bootstrap.Modal(document.getElementById('eventModal')).show();
-                        });
-                    }
-
-                    grid.appendChild(cell);
                 }
+
+                // Cek event
+                let matchedEventData = null;
+                for (const [startKey, ev] of Object.entries(eventDates)) {
+                    const start = new Date(startKey);
+                    const end = new Date(ev.endDate);
+                    if (dateObj >= start && dateObj <= end) {
+                        matchedEventData = { startKey, ...ev };
+                        break;
+                    }
+                }
+
+
+            if (matchedEventData) {
+                cell.classList.add("event");
+
+                const eventLabel = document.createElement("div");
+                eventLabel.className = "event-title";
+                eventLabel.innerText = matchedEventData.title;
+                cell.appendChild(eventLabel);
+
+                cell.addEventListener("click", function () {
+                    document.getElementById('modalEventTitle').innerText = matchedEventData.title;
+
+                    const startDate = new Date(matchedEventData.startKey);
+                    const endDate = new Date(matchedEventData.endDate);
+                    const formattedDate = startDate.toLocaleDateString('id-ID', {
+                        day: 'numeric',
+                        month: 'long'
+                    }) +
+                    (startDate.getTime() !== endDate.getTime()
+                        ? '–' + endDate.toLocaleDateString('id-ID', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                        })
+                        : ` ${startDate.getFullYear()}`);
+
+                    document.getElementById('modalEventDate').innerText = formattedDate;
+                    document.getElementById('modalEventDesc').innerText = matchedEventData.description;
+
+                    document.getElementById('addToCalendarBtn').onclick = () => {
+                        const blob = new Blob([generateICS(matchedEventData.title, matchedEventData.description, matchedEventData.startKey, matchedEventData.endDate)], {
+                            type: 'text/calendar'
+                        });
+                        const link = document.createElement('a');
+                        link.href = URL.createObjectURL(blob);
+                        link.download = `${matchedEventData.title.replace(/\s+/g, "_")}_POSITRON.ics`;
+                        link.click();
+                    };
+
+                    new bootstrap.Modal(document.getElementById('eventModal')).show();
+                });
             }
 
+
+
+                grid.appendChild(cell);
+            }
+        }
+            // Generate ICS file content
             function generateICS(title, description, start, end) {
                 const format = date => new Date(date).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
                 return `BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-SUMMARY:${title}
-DESCRIPTION:${description}
-DTSTART:${format(start)}
-DTEND:${format(new Date(new Date(end).getTime() + 60 * 60 * 1000))}
-END:VEVENT
-END:VCALENDAR`;
+                        VERSION:2.0
+                        BEGIN:VEVENT
+                        SUMMARY:${title}
+                        DESCRIPTION:${description}
+                        DTSTART:${format(start)}
+                        DTEND:${format(new Date(new Date(end).getTime() + 60 * 60 * 1000))}
+                        END:VEVENT
+                        END:VCALENDAR`;
             }
 
             prevBtn.addEventListener("click", () => {

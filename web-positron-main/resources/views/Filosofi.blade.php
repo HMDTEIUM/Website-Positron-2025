@@ -48,9 +48,9 @@
     }
 
     .filosofi-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        display: inline-grid;
+        grid-template-columns: 2fr;
+        gap: 7rem;
         margin-bottom: 4rem;
     }
 
@@ -244,7 +244,7 @@
 <section class="filosofi-section">
     <div class="filosofi-container">
         <h2 class="section-title">Tentang POSITRON 2025</h2>
-        <p class="section-subtitle">Ini adalah halaman tentang untuk kegiatan ospek Departemen Teknik Elektro dan Informatika Universitas Negeri Malang.</p>
+        <p class="section-subtitle">Ini adalah halaman tentang Filosofi Logo Positron Departemen Teknik Elektro dan Informatika Universitas Negeri Malang.</p>
 
         <div class="logo-section">
             <img src="{{ asset('images/logo-positron.png') }}" alt="Logo POSITRON 2025">
@@ -255,7 +255,7 @@
         <div class="filosofi-grid">
             <div class="filosofi-item">
                 <div class="filosofi-image">
-                    <img src="{{ asset('attached_assets/Perisai_1753874718749.png') }}" alt="Perisai Shield">
+                    <img src="{{ asset('images/Perisai.png') }}" alt="Perisai Shield">
                 </div>
                 <div class="filosofi-content">
                     <h5>
@@ -270,7 +270,7 @@
 
             <div class="filosofi-item">
                 <div class="filosofi-image">
-                    <img src="{{ asset('attached_assets/Petir_1753874718749.png') }}" alt="Petir Lightning">
+                    <img src="{{ asset('images/Petir.png') }}" alt="Petir Lightning">
                 </div>
                 <div class="filosofi-content">
                     <h5>
@@ -285,7 +285,7 @@
 
             <div class="filosofi-item">
                 <div class="filosofi-image">
-                    <img src="{{ asset('attached_assets/Empat_Lingkaran_1753874718748.png') }}" alt="Empat Lingkaran">
+                    <img src="{{ asset('images/Empat_Lingkaran.png') }}" alt="Empat Lingkaran">
                 </div>
                 <div class="filosofi-content">
                     <h5>
@@ -300,7 +300,7 @@
 
             <div class="filosofi-item">
                 <div class="filosofi-image">
-                    <img src="{{ asset('attached_assets/Logo_Tipografi_1753874718749.png') }}" alt="Tipografi POSITRON">
+                    <img src="{{ asset('images/Logo_Tipografi.png') }}" alt="Tipografi POSITRON">
                 </div>
                 <div class="filosofi-content">
                     <h5>
