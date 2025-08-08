@@ -1,5 +1,6 @@
 
 @extends('layouts.app')
+@include('partials.calendar')
 
 @section('content')
     <!-- Top Hero Section -->
