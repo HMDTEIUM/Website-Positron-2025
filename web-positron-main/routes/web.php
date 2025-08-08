@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Contracts\View\View;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\TimelineController;
+// use App\Http\Controllers\TimelineController; // Tidak diperlukan jika tidak pakai controller
 
 // Beranda
 Route::get('/', function () {
@@ -15,27 +16,16 @@ Route::get('/Filosofi', function () {
     return view('Filosofi');
 })->name('Filosofi');
 
-// Kontak
+// Kontak (tanpa controller)
 Route::get('/kontak', function () {
     return view('kontak');
 })->name('kontak');
 
-<<<<<<< HEAD
-Route::get('/Timeline', function () {
-    return redirect('/?scrollTo=calendar-section');
-});
-
- 
-
-=======
-Route::get('/timeline', function () {
+// Timeline — Menampilkan Blade langsung
+Route::get('/timeline', function (): View {
     return view('timeline');
 })->name('timeline');
->>>>>>> 8a8b5280049d12922721aa2817434d38055e7e0f
 
 // Group
 Route::get('/group', [GroupController::class, 'index'])->name('group'); // halaman form pencarian
 Route::get('/group/search', [GroupController::class, 'search'])->name('group.search'); // halaman hasil pencarian
-Route::get('/kontak', [ContactController::class, 'index'])->name('contact');
-Route::get('/timeline', [GroupController::class, 'index'])->name('timeline');
-
