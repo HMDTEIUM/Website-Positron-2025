@@ -243,8 +243,8 @@
 
 <section class="filosofi-section">
     <div class="filosofi-container">
-        <h2 class="section-title">Tentang POSITRON 2025</h2>
-        <p class="section-subtitle">Ini adalah halaman tentang Filosofi Logo Positron Departemen Teknik Elektro dan Informatika Universitas Negeri Malang.</p>
+        <h2 class="section-title">POSITRON 2025</h2>
+        <p class="section-subtitle">Filosofi Logo Positron Departemen Teknik Elektro dan Informatika Universitas Negeri Malang.</p>
 
         <div class="logo-section">
             <img src="{{ asset('images/logo-positron.png') }}" alt="Logo POSITRON 2025">

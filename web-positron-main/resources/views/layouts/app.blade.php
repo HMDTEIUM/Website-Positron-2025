@@ -207,7 +207,7 @@
         <ul class="navbar-nav gap-2">
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/Filosofi">Filosofi</a></li>
-          <li class="nav-item"><a class="nav-link text-dark px-3" href="/group">Timeline</a></li>
+          <li class="nav-item"><a class="nav-link text-dark px-3" href="/Timeline">Timeline</a></li>
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/kontak">Guide</a></li>
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/group">Group</a></li>
           <li class="nav-item"><a class="nav-link text-dark px-3" href="/kontak">Contact</a></li>
@@ -270,7 +270,9 @@
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
       }
     });
+
   </script>
+
 </body>
 
 </html>

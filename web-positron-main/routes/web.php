@@ -19,6 +19,13 @@ Route::get('/kontak', function () {
     return view('kontak');
 })->name('kontak');
 
+Route::get('/Timeline', function () {
+    return redirect('/?scrollTo=calendar-section');
+});
+
+ 
+
+
 // Group
 Route::get('/group', [GroupController::class, 'index'])->name('group'); // halaman form pencarian
 Route::get('/group/search', [GroupController::class, 'search'])->name('group.search'); // halaman hasil pencarian

@@ -391,7 +391,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0);
         }
 
         .sambutan-content {
@@ -464,16 +464,16 @@
             width: 5%;
         }
 
-        /* Countdown Section */
         .countdown-section {
-            background: linear-gradient(rgba(13, 110, 253, 0.8), rgba(102, 16, 242, 0.8)),
-                        url('{{ asset('images/countdown-bg.png') }}') no-repeat center center;
+            background: url('/images/countdown-bg.png') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
+            padding: 5rem 1rem;
         }
 
         .countdown-overlay {
@@ -482,47 +482,116 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(13, 110, 253, 0.2);
+            background: rgba(21, 93, 149, 0.65);
+            z-index: 1;
         }
 
         .countdown-content {
             position: relative;
             z-index: 2;
             text-align: center;
-            padding: 4rem 0;
+            color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .countdown-logo {
+            width: 120px;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+        }
+
+        .countdown-title {
+            font-family: 'Atlanta College', sans-serif;
+            font-size: 3rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .countdown-subtitle {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffeb3b;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-inline: auto;
+        }
+
+        .countdown-display {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            width: 90px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .countdown-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 0.25rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .countdown-event-details {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 15px;
+            padding: 1.5rem 2rem;
+            max-width: 450px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: white;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .countdown-event-details strong {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #fff;
         }
 
         .countdown-intro {
             margin-bottom: 3rem;
         }
 
-        .countdown-logo {
-            width: clamp(80px, 15vw, 120px);
-            height: auto;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
-        }
-
-        .countdown-description {
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            color: rgba(255, 255, 255, 0.85);
-            margin: 1.5rem auto;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-
         .countdown-info {
             margin-top: 3rem;
-        }
-
-        .countdown-event-details {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 500px;
-            margin: 0 auto;
         }
 
         .countdown-event-details h4 {
@@ -610,54 +679,13 @@
             font-size: 0.9rem;
         }
 
-        .countdown-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: bold;
-            color: white;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .countdown-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 3rem;
-        }
 
         .countdown-display {
             display: flex;
             justify-content: center;
-            gap: clamp(1rem, 3vw, 2rem);
+            gap: 1.5rem;
             flex-wrap: wrap;
-        }
-
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: clamp(1rem, 3vw, 2rem);
-            min-width: clamp(80px, 15vw, 120px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .countdown-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .countdown-number {
-            display: block;
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: bold;
-            color: white;
-            line-height: 1;
-        }
-
-        .countdown-label {
-            font-size: clamp(0.8rem, 2vw, 1rem);
-            color: rgba(255, 255, 255, 0.8);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 2rem;
         }
 
         /* Program Studi Section */
@@ -712,7 +740,7 @@
         }
 
         .flip-card-front {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
             border: 2px solid #e9ecef;
         }
 
@@ -953,8 +981,7 @@
             }
 
             .about-section,
-            .calendar-section,
-            .countdown-section {
+            .calendar-section{
                 background-attachment: scroll;
             }
 
@@ -1058,8 +1085,7 @@
         /* Print styles */
         @media print {
             .hero-section,
-            .sambutan-section,
-            .countdown-section {
+            .sambutan-section{
                 background: white !important;
                 color: black !important;
             }
@@ -1078,6 +1104,7 @@
                 "2025-08-27": {
                     title: "FORUM MABA",
                     description: "Forum Mahasiswa Baru POSITRON 2025.",
+                    startDate: "2025-08-27",
                     endDate: "2025-08-28"
                 },
                 "2025-09-30": {
@@ -1148,11 +1175,11 @@
 
                 // Cek event
                 let matchedEventData = null;
-                for (const [startKey, ev] of Object.entries(eventDates)) {
-                    const start = new Date(startKey);
+                for (const [startDate, ev] of Object.entries(eventDates)) {
+                    const start = new Date(startDate);
                     const end = new Date(ev.endDate);
                     if (dateObj >= start && dateObj <= end) {
-                        matchedEventData = { startKey, ...ev };
+                        matchedEventData = { startDate, ...ev };
                         break;
                     }
                 }
@@ -1169,7 +1196,7 @@
                 cell.addEventListener("click", function () {
                     document.getElementById('modalEventTitle').innerText = matchedEventData.title;
 
-                    const startDate = new Date(matchedEventData.startKey);
+                    const startDate = new Date(matchedEventData.startDate);
                     const endDate = new Date(matchedEventData.endDate);
                     const formattedDate = startDate.toLocaleDateString('id-ID', {
                         day: 'numeric',
@@ -1187,7 +1214,7 @@
                     document.getElementById('modalEventDesc').innerText = matchedEventData.description;
 
                     document.getElementById('addToCalendarBtn').onclick = () => {
-                        const blob = new Blob([generateICS(matchedEventData.title, matchedEventData.description, matchedEventData.startKey, matchedEventData.endDate)], {
+                        const blob = new Blob([generateICS(matchedEventData.title, matchedEventData.description, matchedEventData.startDate, matchedEventData.endDate)], {
                             type: 'text/calendar'
                         });
                         const link = document.createElement('a');
@@ -1286,5 +1313,7 @@
                 observer.observe(el);
             });
         });
+
+        
     </script>
 @endsection
