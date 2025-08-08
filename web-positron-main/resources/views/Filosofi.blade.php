@@ -85,13 +85,12 @@
     .filosofi-image img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
         transition: transform 0.3s ease;
     }
 
-    .filosofi-item:hover .filosofi-image img {
+    /* .filosofi-item:hover .filosofi-image img {
         transform: scale(1.1);
-    }
+    } */
 
     .filosofi-content {
         flex: 1;
@@ -300,7 +299,7 @@
 
             <div class="filosofi-item">
                 <div class="filosofi-image">
-                    <img src="{{ asset('images/Logo_Tipografi.png') }}" alt="Tipografi POSITRON">
+                    <img src="{{ asset('images/Text-logo.png') }}" alt="Tipografi POSITRON">
                 </div>
                 <div class="filosofi-content">
                     <h5>

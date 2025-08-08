@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="py-5 bg-light min-vh-100">
+    <section class="contact-section py-5 bg-light min-vh-100">
         <div class="container">
             <h2 class="text-center fw-bold mb-4 animate__animated animate__fadeInDown">Kontak Mentor POSITRON 2025</h2>
-            <p class="text-center text-muted mb-5 animate__animated animate__fadeIn animate__delay-1s">
+            <p class="fw-semibold text-center text-muted mb-5 animate__animated animate__fadeIn animate__delay-1s">
                 Silakan hubungi CP Prodi atau Kakak Mentor kelompokmu untuk bergabung ke grup POSITRON.
             </p>
 
             <!-- CP Prodi -->
             <div class="mb-5">
-                <h4 class="fw-semibold mb-3 text-primary border-bottom pb-2">📌 Contact Person per Program Studi</h4>
+                <h4 class="fw-semibold mb-3 border-bottom pb-2">📌 Contact Person per Program Studi</h4>
                 <div class="row g-4">
                     @foreach ($cpProdi as $cp)
                         <div class="col-sm-6 col-md-4 col-lg-3 animate__animated animate__fadeInUp">
@@ -29,7 +29,7 @@
 
             <!-- Kakak Mentor Tabel -->
             <div class="mb-5">
-                <h4 class="fw-semibold mb-3 text-primary border-bottom pb-2">👥 Daftar Kakak Mentor per Kelompok</h4>
+                <h4 class="fw-semibold mb-3 border-bottom pb-2">👥 Daftar Kakak Mentor per Kelompok</h4>
 
                 <!-- Filter -->
                 <div class="row mb-3">
@@ -67,6 +67,15 @@
                 </div>
             </div>
         @endsection
+        <style>
+            .contact-section {
+            background: linear-gradient(135deg, #0a3e6d, #1e5a8b);
+            min-height: 100vh;
+            padding: 80px 0;
+            overflow-x: hidden;
+            }
+
+        </style>
         @section('scripts')
         <script>
             $(document).ready(function () {
