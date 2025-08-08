@@ -40,15 +40,15 @@
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .section-title {
-        font-family: 'Atlanta College', sans-serif;
-        font-size: clamp(2rem, 5vw, 4rem);
-        color: white;
-        text-align: center;
-        margin-bottom: 2rem;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-        animation: fadeInUp 1s ease-out;
+            font-family: 'Atlanta College', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1s ease-out;
         }
 
         .calendar-logo {
@@ -65,6 +65,13 @@
             margin: 1rem auto 2rem;
             max-width: 600px;
             line-height: 1.6;
+        }
+
+        .legend-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .calendar-legend {
@@ -98,6 +105,12 @@
             background: rgba(0, 0, 0, 0.3);
         }
 
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .calendar-section .container {
             position: relative;
             z-index: 2;
@@ -110,6 +123,22 @@
             gap: 2rem;
             margin-bottom: 3rem;
             flex-wrap: wrap;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .legend-color.event {
+            background: linear-gradient(135deg, #1d4f98, #0d6efd);
+        }
+
+        .legend-color.today {
+            background: rgba(255, 193, 7, 0.3);
+            border-color: #ffc107;
         }
 
         .calendar-nav {
@@ -166,7 +195,7 @@
         .day-cell .today-label {
             position: absolute;
             bottom: 30px;
-            right: 48px;
+            right: 55px;
             font-size: 1.2rem;
             color: #ffffffff;
             background-color: #093258ff;
