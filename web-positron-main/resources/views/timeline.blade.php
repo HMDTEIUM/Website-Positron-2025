@@ -2,55 +2,53 @@
  @section('content')
  
  <!-- Countdown Section -->
-    <section id="countdowntimer" class="countdown-section">
-        <div class="countdown-overlay"></div>
+    <section class="calendar-section">
+        <div class="calendar-overlay"></div>
         <div class="container">
-            <div class="countdown-content">
-                <div class="countdown-intro">
-                    <img src="{{ asset('images/logo-positron.png') }}" alt="Logo POSITRON" class="countdown-logo">
-                    <h3 class="countdown-title">Countdown FORUM MABA</h3>
-                    <p class="countdown-subtitle">Menuju pembukaan Forum Mahasiswa Baru POSITRON 2025!</p>
-                    <p class="countdown-description">
-                        Forum Maba adalah acara orientasi pertama yang akan memperkenalkan kalian dengan lingkungan 
-                        Departemen Teknik Elektro dan Informatika. Bersiaplah untuk petualangan baru!
-                    </p>
-                </div>
-                <div id="countdown" class="countdown-display">
-                    <div class="countdown-item">
-                        <span id="days" class="countdown-number">0</span>
-                        <span class="countdown-label">Hari</span>
+            <div class="calendar-header">
+                <img src="{{ asset('images/logo-positron-rodokburem.png') }}" alt="Logo POSITRON" class="calendar-logo">
+                <h3 class="section-title">Calendar POSITRON 2025</h3>
+                <p class="calendar-description">
+                    Jadwal lengkap kegiatan Program Orientasi Siswa Baru Teknik Elektro dan Informatika. 
+                    Klik pada tanggal yang memiliki acara untuk melihat detail lebih lanjut.
+                </p>
+            </div>
+            <div class="calendar-controls">
+                <button class="btn btn-outline-primary calendar-nav" id="prevMonth">&lt;</button>
+                <h5 id="monthYearDisplay" class="month-display"></h5>
+                <button class="btn btn-outline-primary calendar-nav" id="nextMonth">&gt;</button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+            <div class="calendar-legend">
+                <h4>Keterangan:</h4>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <div class="legend-color event"></div>
+                        <span>Hari dengan acara POSITRON</span>
                     </div>
-                    <div class="countdown-item">
-                        <span id="hours" class="countdown-number">0</span>
-                        <span class="countdown-label">Jam</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="minutes" class="countdown-number">0</span>
-                        <span class="countdown-label">Menit</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span id="seconds" class="countdown-number">0</span>
-                        <span class="countdown-label">Detik</span>
-                    </div>
-                </div>
-                <div class="countdown-info">
-                    <div class="countdown-event-details">
-                        <h4>Detail Acara Forum Maba:</h4>
-                        <ul>
-                            <li><strong>Tanggal:</strong> 27-28 Agustus 2025</li>
-                            <li><strong>Waktu:</strong> 08:00 WIB</li>
-                            <li><strong>Tempat:</strong> Departemen Teknik Elektro dan Informatika</li>
-                        </ul>
+                    <div class="legend-item">
+                        <div class="legend-color today"></div>
+                        <span>Hari ini</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<style>
-.calendar-header {
+    <style>
+        .calendar-header {
             text-align: center;
             margin-bottom: 3rem;
+        }
+        
+        .section-title {
+        font-family: 'Atlanta College', sans-serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        color: white;
+        text-align: center;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        animation: fadeInUp 1s ease-out;
         }
 
         .calendar-logo {
@@ -403,7 +401,7 @@
                 display: none;
             }
         }
-</style>
+    </style>
 
 <!-- JavaScript for Calendar and Countdown -->
     <script>
