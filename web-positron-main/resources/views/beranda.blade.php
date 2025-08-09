@@ -88,7 +88,6 @@
                 <div class="countdown-intro">
                     <img src="{{ asset('images/logo-positron.png') }}" alt="Logo POSITRON" class="countdown-logo">
                     <h3 class="countdown-title">Countdown FORUM MABA</h3>
-                    <p class="countdown-subtitle">Menuju pembukaan Forum Mahasiswa Baru POSITRON 2025!</p>
                     <p class="countdown-description">
                         Forum Maba adalah acara orientasi pertama yang akan memperkenalkan kalian dengan lingkungan 
                         Departemen Teknik Elektro dan Informatika. Bersiaplah untuk petualangan baru!
@@ -269,14 +268,15 @@
         }
 
         .logo-bar img {
-            height: clamp(50px, 8vw, 80px);
+            height: clamp(50px, 5vw, 80px);
+            z-index: 5;
             filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.5));
             animation: bounceIn 1.5s ease-out;
         }
 
         .hero-title {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 700;
+            font-family: 'Atlanta College', sans-serif;
+            font-size: clamp(2rem, 4vw, 4.5rem);
             text-transform: uppercase;
             color: white;
             margin: 2rem 0;
@@ -296,9 +296,10 @@
         }
 
         .cta-box p {
-            font-size: clamp(1rem, 3vw, 1.25rem);
-            font-weight: 600;
+            font-family: 'Atlanta College', sans-serif;
+            font-size: clamp(2rem, 2vw, 1.0rem);
             margin-bottom: 1.5rem;
+            line-height: 1.5;
             color: white;
         }
 
@@ -350,7 +351,8 @@
         }
 
         .section-description {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-family: 'Atlanta College', sans-serif;
+            font-size: clamp(2.5rem, 2.5vw, 1.25rem);
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 3rem;
         }
@@ -509,15 +511,6 @@
             font-size: 3rem;
             color: #ffffff;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .countdown-subtitle {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #ffeb3b;
-            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
         }
 
         .countdown-description {
