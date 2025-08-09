@@ -51,6 +51,7 @@
                                 'https://www.youtube.com/embed/dQw4w9WgXcQ',
                                 'https://www.youtube.com/embed/dQw4w9WgXcQ',
                                 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                                'https://www.youtube.com/embed/dQw4w9WgXcQ',
                             ] as $i => $link)
                                 <div class="carousel-item {{ $i === 0 ? 'active' : '' }}">
                                     <div class="video-container">

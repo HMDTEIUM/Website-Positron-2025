@@ -49,11 +49,15 @@
       background-color: #ffffff;
       color: white;
       border: none;
-      font-family: 'ScribbleMarker', sans-serif;
+      font-family: sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.0rem, 1vw, 1.5rem)
     }
 
     #mainNavbar .navbar-nav .nav-link {
-      font-family: 'ScribbleMarker', sans-serif;
+      font-family: sans-serif;  
+      font-weight: 800;
+      font-size: clamp(1.0rem, 1vw, 1.5rem)
     }
 
     #mainNavbar .navbar-collapse {
