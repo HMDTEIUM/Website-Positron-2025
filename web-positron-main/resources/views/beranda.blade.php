@@ -769,7 +769,7 @@
         /* Calendar Section */
         .calendar-section {
             background: linear-gradient(rgba(10, 62, 109, 0.9), rgba(10, 62, 109, 0.9)), 
-                        url('{{ asset('images/bg-1.png') }}') no-repeat center center;
+                        url('/images/bg-1.png') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             padding: 5rem 0;

@@ -21,7 +21,7 @@
 
     @font-face {
       font-family: 'ScribbleMarker';
-      src: url('{{ asset('fonts/ScribbleMarker.otf') }}') format('opentype');
+      src: url("{{ asset("fonts/ScribbleMarker.otf") }}") format('opentype') local('ScribbleMarker');
       font-weight: normal;
       font-style: normal;
     }
