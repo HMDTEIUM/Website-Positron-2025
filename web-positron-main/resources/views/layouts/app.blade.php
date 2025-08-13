@@ -32,7 +32,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: rgb(12, 81, 145);
+      background-color: rgba(255, 255, 255, 1);
       color: white;
       overflow-x: hidden;
       position: relative;
@@ -176,10 +176,6 @@
       z-index: 10;
       transition: bottom 0.4s ease;
       text-align: center;
-    }
-
-    main {
-      padding-top: 60px;
     }
 
     @media (max-width: 991.98px) {

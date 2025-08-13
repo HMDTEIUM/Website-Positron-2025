@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@include('partials.calendar')
+@include('partials.calendar') {{-- Assuming this partial includes necessary calendar scripts/styles --}}
 
 @section('content')
     <!-- Top Hero Section -->
@@ -154,65 +154,104 @@
         </div>
     </section>
 
-    <!-- New Section from test2[1].php -->
-    <section class="positron-locker-section">
-        <div class="container">
-            <div class="section left-section" id="leftSection">
-                <div class="left-content">
-                    <div class="logo fade-in">
-                        <img src="{{ asset('Logo Positron.png') }}" alt="Logo">
-                    </div>
-                    <p class="description fade-in">
-                        POSITRON 2025 hadir sebagai wadah orientasi mahasiswa baru Departemen Teknik Elektro dan Informatika
-                        Universitas Negeri Malang. Tahun ini, POSITRON mengusung tema <strong>"Empowering Brighter
-                            Futures"</strong> berarti menyalakan obor harapan di dalam diri setiap mahasiswa agar mampu
-                        melangkah menuju masa depan yang mereka bentuk sendiri—bukan sekadar mengikuti jalur yang ditentukan
-                        orang lain.
-                        <br><br>
-                        Kampus menjadi ruang untuk menempa integritas, memperluas wawasan, dan menyusun arah hidup dengan
-                        kesadaran. Sedangkan <strong>"Beyond the Bell"</strong> mengingatkan bahwa pembelajaran sejati tak
-                        berhenti di dalam kelas. Pendidikan tidak berakhir saat tugas dikumpulkan atau ujian selesai. Justru
-                        setelah itu, kita akan diuji dalam bentuk lain—ujian karakter, kejujuran, keberanian, dan nilai-nilai
-                        kemanusiaan.
-                        <br><br>
-                        Melalui POSITRON 2025, kami mengundang seluruh mahasiswa baru untuk tidak hanya menjadi bagian dari
-                        komunitas akademik, tetapi juga menjadi agen perubahan yang membawa dampak positif bagi lingkungan
-                        sekitar. Dengan semangat kolaborasi dan inovasi, mari kita wujudkan masa depan yang lebih cerah dan
-                        bermakna.
-                        <br><br>
-                        Bergabunglah dengan kami dalam perjalanan menuju transformasi diri dan pencapaian prestasi yang
-                        membanggakan. Bersama-sama, kita akan membangun fondasi yang kuat untuk masa depan yang penuh dengan
-                        peluang dan kesuksesan.
-                    </p>
+    <!-- Locker Section -->
+    <section class="locker-section positron-locker-section">
+    <div class="container">
+        <div class="section left-section" id="leftSection">
+            <div class="left-content">
+                <div class="logo fade-in">
+                    <img src="{{ asset('images/Logo Positron.png') }}" alt="Logo">
                 </div>
-            </div>
-
-            <div class="resize-handle" id="resizeHandle"></div>
-
-            <div class="right-section" id="rightSection">
-                <div class="locker-grid">
-                    <div class="locker-door" style="background-image: url('{{ asset('Loker 2.png') }}');" onclick="openLoker('POSITRON 2025', 'Program utama pembuka acara POSITRON 2025.', 'positron')"></div>
-                    <div class="locker-door" style="background-image: url('{{ asset('Loker 2.png') }}');" onclick="openLoker('Forum Maba', 'Forum komunikasi dan orientasi untuk mahasiswa baru.', 'maba')"></div>
-                    <div class="locker-door" style="background-image: url('{{ asset('Loker 2.png') }}');" onclick="openLoker('LDK', 'Latihan Dasar Kepemimpinan untuk membentuk karakter.', 'ldk')"></div>
-                    <div class="locker-door" style="background-image: url('{{ asset('Loker 2.png') }}');" onclick="openLoker('IOH', 'Ice Breaking & Orientasi Himpunan.', 'ioh')"></div>
-                    <div class="locker-door" style="background-image: url('{{ asset('Loker 2.png') }}');" onclick="openLoker('NAKO 9.0', 'Narasumber Kolaboratif, versi 9.', 'nako')"></div>
-                    <div class="locker-door" style="background-image: url('{{ asset('Loker 2.png') }}');" onclick="openLoker('Dewan Komunal', 'Diskusi dan musyawarah terbuka.', 'dewan')"></div>
-                    <div class="locker-door" style="background-image: url('{{ asset('Loker 2.png') }}');" onclick="openLoker('Segmen', 'Acara-acara kecil selama POSITRON.', 'segmen')"></div>
-                    <div class="locker-door" style="background-image: url('{{ asset('Loker 2.png') }}');" onclick="openLoker('Guide', 'Panduan acara POSITRON 2025.', 'guide')"></div>
-                    <div class="locker-door" style="background-image: url('{{ asset('Loker 2.png') }}');" onclick="openLoker('Soon', 'Segera hadir!', 'soon')"></div>
+                <p class="description fade-in" id="dynamic-description">
+                    Silakan pilih salah satu menu di kanan untuk melihat detail informasi.
+                </p>
+                <div id="manualbook-button" style="display: none; margin-top: 20px; text-align: center;">
+                    <a href="#" id="manualbook-link" class="download-btn" target="_blank">Download Manualbook</a>
                 </div>
             </div>
         </div>
 
-        <div class="popup-overlay" id="popup">
-            <div class="popup">
-                <span class="close-btn" onclick="closePopup()">&times;</span>
-                <h2 id="popup-title">Judul Program</h2>
-                <p id="popup-desc">Deskripsi Program</p>
-                <a href="#" id="popup-download" class="download-btn" target="_blank">Download Manualbook</a>
+        <div class="resize-handle" id="resizeHandle"></div>
+
+        <div class="right-section" id="rightSection">
+            <div class="locker-grid">
+
+                <!-- POSITRON 2025 -->
+                <div class="locker-door"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
+                     data-title="POSITRON 2025"
+                     data-description="POSITRON 2025 hadir sebagai wadah orientasi mahasiswa baru Departemen Teknik Elektro dan Informatika Universitas Negeri Malang. Tahun ini, POSITRON mengusung tema <strong>&quot;Empowering Brighter Futures&quot;</strong> berarti menyalakan obor harapan di dalam diri setiap mahasiswa agar mampu melangkah menuju masa depan yang mereka bentuk sendiri—bukan sekadar mengikuti jalur yang ditentukan orang lain. <br><br> Kampus menjadi ruang untuk menempa integritas, memperluas wawasan, dan menyusun arah hidup dengan kesadaran. Sedangkan <strong>&quot;Beyond the Bell&quot;</strong> mengingatkan bahwa pembelajaran sejati tak berhenti di dalam kelas. Pendidikan tidak berakhir saat tugas dikumpulkan atau ujian selesai. Justru setelah itu, kita akan diuji dalam bentuk lain—ujian karakter, kejujuran, keberanian, dan nilai-nilai kemanusiaan. <br><br> Bergabunglah dengan kami dalam perjalanan menuju transformasi diri dan pencapaian prestasi yang membanggakan."
+                     data-manualbook="{{ asset('manualbook/positron.pdf') }}">
+                </div>
+
+                <!-- Forum Maba -->
+                <div class="locker-door"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
+                     data-title="Forum Maba"
+                     data-description="Forum komunikasi dan orientasi untuk mahasiswa baru. Acara ini dirancang untuk memperkenalkan Anda pada lingkungan kampus, sistem perkuliahan, dan kehidupan berorganisasi di Departemen Teknik Elektro dan Informatika. <br><br> Anda akan bertemu dengan dosen, senior, dan teman-teman seangkatan yang akan bersama-sama menjalani perjalanan akademik selama beberapa tahun ke depan. Forum ini juga memberikan informasi penting tentang kurikulum, aturan akademik, dan berbagai aktivitas menarik yang bisa Anda ikuti."
+                     data-manualbook="{{ asset('manualbook/forum_maba.pdf') }}">
+                </div>
+
+                <!-- LDK -->
+                <div class="locker-door"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
+                     data-title="LDK"
+                     data-description="Latihan Dasar Kepemimpinan (LDK) merupakan program yang dirancang untuk membentuk karakter kepemimpinan dan kedisiplinan mahasiswa baru. Melalui serangkaian kegiatan outdoor dan indoor, Anda akan belajar tentang teamwork, problem solving, dan manajemen diri. <br><br> LDK mengajarkan nilai-nilai seperti tanggung jawab, integritas, dan kerja sama tim. Kegiatan ini menjadi fondasi penting bagi aktivitas Anda di kampus, termasuk dalam berorganisasi dan mengikuti berbagai kegiatan kemahasiswaan."
+                     data-manualbook="{{ asset('manualbook/ldk.pdf') }}">
+                </div>
+
+                <!-- IOH -->
+                <div class="locker-door"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
+                     data-title="IOH"
+                     data-description="Ice Breaking &amp; Orientasi Himpunan (IOH) adalah kegiatan yang dirancang untuk memperkenalkan mahasiswa baru pada himpunan program studi masing-masing. Anda akan belajar tentang struktur organisasi, program kerja, dan kegiatan yang diselenggarakan oleh himpunan. <br><br> IOH juga menjadi ajang untuk menjalin pertemanan dengan senior dan teman seangkatan dalam lingkungan program studi yang lebih khusus. Kegiatan ini membantu Anda beradaptasi dengan lingkungan akademik yang lebih spesifik sesuai minat dan bidang studi yang dipilih."
+                     data-manualbook="{{ asset('manualbook/ioh.pdf') }}">
+                </div>
+
+                <!-- NAKO 9.0 -->
+                <div class="locker-door"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
+                     data-title="NAKO 9.0"
+                     data-description="Narasumber Kolaboratif (NAKO) versi 9.0 menghadirkan berbagai pembicara inspiratif dari alumni dan praktisi di bidang teknik elektro dan informatika. Anda akan mendapatkan wawasan tentang perkembangan industri, peluang karir, dan tips sukses dari mereka yang telah berpengalaman. <br><br> Kegiatan ini memberikan gambaran nyata tentang penerapan ilmu yang dipelajari di dunia kerja. NAKO juga menjadi wadah untuk membangun jaringan dengan alumni dan profesional di bidang Anda."
+                     data-manualbook="{{ asset('manualbook/nako.pdf') }}">
+                </div>
+
+                <!-- Dewan Komunal -->
+                <div class="locker-door"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
+                     data-title="Dewan Komunal"
+                     data-description="Dewan Komunal adalah forum diskusi terbuka yang membahas berbagai isu terkait kehidupan kampus dan pengembangan diri mahasiswa. Kegiatan ini memberikan kesempatan untuk menyampaikan aspirasi dan berpartisipasi dalam pengambilan keputusan di tingkat jurusan. <br><br> Melalui Dewan Komunal, Anda akan belajar tentang demokrasi kampus, tata kelola organisasi, dan pengembangan kebijakan yang berpengaruh langsung pada kehidupan akademik Anda."
+                     data-manualbook="#">
+                </div>
+
+                <!-- Segmen -->
+                <div class="locker-door"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
+                     data-title="Segmen"
+                     data-description="Berbagai segmen menarik akan menghiasi rangkaian kegiatan POSITRON 2025. Mulai dari kompetisi antar kelompok, pentas seni, hingga kegiatan pengabdian masyarakat. Setiap segmen dirancang untuk mengasah kreativitas, sportivitas, dan kepedulian sosial Anda. <br><br> Anda akan belajar bekerja dalam tim, memecahkan masalah secara kreatif, dan mengembangkan soft skills yang sangat penting untuk masa depan karir Anda. Setiap segmen juga menjadi kesempatan untuk menunjukkan bakat dan minat Anda di luar ranah akademik."
+                     data-manualbook="#">
+                </div>
+
+                <!-- Guide -->
+                <div class="locker-door"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
+                     data-title="Guide"
+                     data-description="Buku panduan ini berisi semua informasi penting yang Anda butuhkan untuk menjalani POSITRON 2025 dan kehidupan kampus di Departemen Teknik Elektro dan Informatika. Anda akan menemukan jadwal lengkap kegiatan, aturan yang berlaku, kontak penting, serta tips dan trik untuk sukses di kampus. <br><br> Buku panduan ini menjadi teman setia Anda selama mengikuti orientasi dan masa-masa awal perkuliahan. Pastikan untuk membaca dan memahami seluruh isinya agar dapat mengikuti kegiatan dengan optimal."
+                     data-manualbook="{{ asset('manualbook/guide.pdf') }}">
+                </div>
+
+                <!-- Soon -->
+                <div class="locker-door"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
+                     data-title="Soon"
+                     data-description="Segera hadir! Kami sedang mempersiapkan konten khusus untuk Anda. Kami berkomitmen untuk memberikan pengalaman orientasi yang berkesan dan bermakna bagi seluruh mahasiswa baru Departemen Teknik Elektro dan Informatika. <br><br> Jangan lewatkan update terbaru tentang kegiatan POSITRON 2025 melalui media sosial resmi kami. Tetap semangat dan bersiaplah untuk petualangan menarik di dunia perkuliahan!"
+                     data-manualbook="#">
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Calendar Section -->
     <section class="calendar-section">
@@ -266,7 +305,6 @@
         </div>
     </div>
 
-    <!-- Enhanced CSS Styles -->
     <style>
         /* Global Styles */
         * {
@@ -276,16 +314,9 @@
         body {
             overflow-x: hidden;
             line-height: 1.6;
-        }
-
-        .section-title {
-            font-family: 'Atlanta College', sans-serif;
-            font-size: clamp(2rem, 5vw, 4rem);
-            color: white;
-            text-align: center;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            animation: fadeInUp 1s ease-out;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Default font */
+            background-color: #f4f4f4; /* Default background */
+            height: 100vh; /* Ensure body takes full height for split screen */
         }
 
         .container {
@@ -296,8 +327,7 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(rgba(10, 62, 109, 0.3), rgba(10, 62, 109, 0.3)),
-                        url('{{ asset('images/bg-1.png') }}') no-repeat center center;
+            background: url('{{ asset('images/hall-locker.png') }}') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
@@ -356,14 +386,13 @@
 
         .cta-box p {
             font-family: 'Atlanta College', sans-serif;
-            font-size: clamp(2rem, 2vw, 1.0rem);
-            margin-bottom: 1.5rem;
+            font-size: clamp(2rem, 2vw, 1.5rem);
             line-height: 1.5;
             color: white;
         }
 
         .cta-button {
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            background: linear-gradient(45deg, #ffffff, #ffffff);
             color: #0a3e6d;
             font-weight: bold;
             padding: 1rem 2rem;
@@ -372,13 +401,13 @@
             font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 2px 0.5px 2px rgb(6 31 52)
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-            background: linear-gradient(45deg, #ffed4e, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgb(6 32 52);
+            background: linear-gradient(45deg, #ffd35aff, #ffd35aff);
         }
 
         /* About Section */
@@ -407,6 +436,16 @@
             z-index: 2;
             text-align: center;
             padding: 4rem 0;
+        }
+
+        .section-title {
+            font-family: 'Atlanta College', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1s ease-out;
         }
 
         .section-description {
@@ -441,7 +480,7 @@
         /* Sambutan Section */
         .sambutan-section {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('{{ asset('images/long-locker.png') }}') no-repeat center center;
+                        url('{{ asset('images/hall-locker.png') }}') no-repeat center center;
             background-size: cover;
             min-height: 100vh;
             position: relative;
@@ -454,7 +493,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0);
+            background: rgb(23 46 63 / 21%);
         }
 
         .sambutan-content {
@@ -527,6 +566,7 @@
             width: 5%;
         }
 
+        /* Countdown Section */
         .countdown-section {
             background: url('{{ asset('images/countdown-bg.png') }}') no-repeat center center;
             background-size: cover;
@@ -545,7 +585,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(21, 93, 149, 0.65);
+            background: rgb(8 23 34 / 70%);
             z-index: 1;
         }
 
@@ -733,23 +773,16 @@
             font-size: 0.9rem;
         }
 
-
-        .countdown-display {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-        }
-
         /* Program Studi Section */
         .prodi-section {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: url("{{ asset('images/Paper.png') }}") no-repeat center center;
+            background-color: #f8f9fa;
             padding: 5rem 0;
             min-height: 100vh;
             display: flex;
             align-items: center;
         }
+
 
         .prodi-section .section-title {
             color: #0a3e6d;
@@ -920,7 +953,6 @@
             border-radius: 3px;
             font-weight: normal;
         }
-
 
         .day-cell:hover {
             transform: translateY(-3px);
@@ -1149,42 +1181,32 @@
             }
         }
 
-        /* Styles from test2[1].php */
-        :root {
-            --handle-width: 8px;
-            --handle-width-hover: 12px;
-            --handle-width-dragging: 16px;
-            --mobile-handle-height: 8px;
-            --mobile-handle-height-hover: 12px;
-            --mobile-handle-height-dragging: 16px;
-            --min-section-size: 200px;
-            --locker-width: 170px;
-            --locker-height: 210px;
-            --locker-gap: 5px;
-        }
-
-        .positron-locker-section { /* Add a wrapper section for the new content */
-            height: 100vh; /* Make it take full viewport height */
+        /* Locker Section Specific Styles */
+        .positron-locker-section { 
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f4f4f4; /* Or match your site's background */
-            position: relative; /* Important for the resize handle */
-            overflow: hidden; /* To contain the split sections */
-            padding: 0; /* Ensure no padding on the section itself */
+            background-color: #f8f9fa;
+            position: relative;
+            padding: 60px 0;
         }
 
-        .positron-locker-section .container { /* Target the container specifically within this section */
+        .positron-locker-section .container {
             display: flex;
-            height: 100%; /* Make it fill the section height */
-            width: 100%; /* Make it fill the section width */
+            height: 80%;
+            width: 90%;
             position: relative;
-            padding: 0; /* Remove padding from the main container if it's applied globally */
-            max-width: none; /* Remove max-width if it's applied globally */
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: none; /* Override global container max-width */
+            padding: 0; /* Override global container padding */
         }
 
         .section {
-            transition: none;
+            transition: none; /* Important for resize functionality */
             overflow: hidden;
             position: relative;
             flex-grow: 1;
@@ -1192,67 +1214,34 @@
         }
 
         .left-section {
-            display: flex;
-            flex-direction: column;
-            padding: 0;
+            flex: 1;
+            padding: 30px;
             overflow-y: auto;
-            overflow-x: hidden;
-            background-image: url('{{ asset('Background.png') }}');
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            background-color: #f5f7fa;
+            background-image: url('{{ asset('images/Background.png') }}');
             background-size: cover;
             background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
         }
 
         .left-content {
-            padding: 40px;
-            text-align: center;
-            min-height: 100%;
+            max-width: 700px; /* Adjusted for better readability */
+            margin: 0 auto;
+            color: #333;
+            text-align: center; /* Center content within left-content */
+            min-height: 100%; /* Ensure content takes full height */
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            max-width: 100%;
-        }
-
-        .right-section {
-            flex-shrink: 0;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #1b2a3a;
-        }
-
-        .locker-grid {
-            display: grid;
-            grid-template-columns: repeat(3, var(--locker-width));
-            grid-template-rows: repeat(3, var(--locker-height));
-            gap: var(--locker-gap);
-            justify-content: center;
-            align-content: center;
-            width: fit-content;
-            height: fit-content;
-        }
-
-        .locker-door {
-            width: var(--locker-width);
-            height: var(--locker-height);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            cursor: pointer;
-            transition: transform 0.2s ease, filter 0.2s ease;
-            filter: grayscale(20%);
-            border-radius: 5px;
-        }
-
-        .locker-door:hover {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
         .logo {
-            width: 150px;
+            width: 150px; /* Fixed width for logo */
             height: auto;
             max-height: 250px;
             margin: 0 auto 30px;
@@ -1265,21 +1254,63 @@
         }
 
         .description {
-            font-family: 'Poppins', sans-serif;
-            font-size: 17px;
-            color: #34495e;
+            font-size: 17px; /* Original font size from test2.php */
             line-height: 1.8;
-            max-width: 700px;
-            text-align: justify;
+            color: #34495e; /* Original color from test2.php */
+            text-align: justify; /* Original alignment from test2.php */
             margin: 0 auto;
+            font-family: 'Poppins', sans-serif; /* Specific font for description */
         }
 
-        /* --- Resize Handle Styling --- */
+        .description strong {
+            color: #0a3e6d;
+            font-weight: 600;
+        }
+
+        .right-section {
+            flex-shrink: 0; /* Prevent shrinking */
+            width: 40%; /* Initial width for right section */
+            padding: 20px;
+            background-color: #1b2a3a;
+            overflow-y: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .locker-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Use 1fr for flexible sizing */
+            gap: 15px;
+            padding: 10px;
+            width: fit-content; /* Adjust to content */
+            height: fit-content; /* Adjust to content */
+        }
+
+        .locker-door {
+            width: 170px; /* Fixed width from test2.php */
+            height: 210px; /* Fixed height from test2.php */
+            background-size: cover; /* Use cover to fill the area */
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+            filter: grayscale(20%);
+            border-radius: 5px;
+        }
+
+        .locker-door:hover {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Resize Handle Styling */
         .resize-handle {
             position: absolute;
             top: 0;
             bottom: 0;
-            width: var(--handle-width);
+            width: 8px; /* Default width */
             background: rgba(255, 255, 255, 0.1);
             cursor: col-resize;
             z-index: 1000;
@@ -1289,14 +1320,14 @@
 
         .resize-handle:hover {
             background: gray;
-            width: var(--handle-width-hover);
+            width: 12px; /* Hover width */
             border-left: 2px solid rgba(255, 255, 255, 0.4);
             border-right: 2px solid rgba(255, 255, 255, 0.4);
         }
 
         .resize-handle.dragging {
             background: rgba(255, 255, 255, 0.3);
-            width: var(--handle-width-dragging);
+            width: 16px; /* Dragging width */
             border-left: 3px solid rgba(255, 255, 255, 0.6);
             border-right: 3px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
@@ -1318,7 +1349,7 @@
             border-radius: 2px;
         }
 
-        /* --- Custom Scrollbar for left section --- */
+        /* Custom Scrollbar for left section */
         .left-section::-webkit-scrollbar {
             width: 8px;
         }
@@ -1338,41 +1369,70 @@
             background: rgba(0, 0, 0, 0.5);
         }
 
-        /* --- Responsive design for mobile (vertical layout) --- */
+        /* New styles for the manual book button */
+        .download-btn {
+            display: inline-block;
+            background-color: #0a3e6d;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(10, 62, 109, 0.2);
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            background-color: #082d54;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(10, 62, 109, 0.3);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive design for mobile (vertical layout) */
         @media (max-width: 768px) {
-            .positron-locker-section .container { /* Target the container specifically within this section */
+            .positron-locker-section .container {
                 flex-direction: column;
+                height: 90%; /* Adjust height for mobile */
+                width: 95%; /* Adjust width for mobile */
             }
 
             .left-section, .right-section {
                 flex-basis: auto;
                 width: 100%;
-                height: 50vh;
+                height: 50vh; /* Half viewport height for each section */
+                padding: 20px; /* Adjust padding for mobile */
             }
 
             .left-content {
-                padding: 30px 20px;
+                padding: 0; /* Remove padding from left-content on mobile */
             }
 
             .logo {
-                width: 120px;
+                width: 120px; /* Smaller logo on mobile */
                 margin-bottom: 20px;
             }
 
             .description {
-                font-size: 15px;
+                font-size: 15px; /* Smaller font size on mobile */
             }
 
             .locker-grid {
-                grid-template-columns: repeat(3, 80px);
+                grid-template-columns: repeat(3, 80px); /* Smaller lockers on mobile */
                 grid-template-rows: repeat(3, 150px);
-                gap: 15px;
+                gap: 10px; /* Smaller gap on mobile */
             }
 
             .locker-door {
                 width: 80px;
                 height: 150px;
-                background-size: cover;
             }
 
             /* Mobile resize handle styling */
@@ -1381,7 +1441,7 @@
                 right: 0;
                 top: auto;
                 width: 100%;
-                height: var(--mobile-handle-height);
+                height: 8px; /* Mobile handle height */
                 cursor: row-resize;
                 border-left: none;
                 border-right: none;
@@ -1390,13 +1450,13 @@
             }
 
             .resize-handle:hover {
-                height: var(--mobile-handle-height-hover);
+                height: 12px; /* Mobile hover height */
                 border-top: 2px solid rgba(255, 255, 255, 0.4);
                 border-bottom: 2px solid rgba(255, 255, 255, 0.4);
             }
 
             .resize-handle.dragging {
-                height: var(--mobile-handle-height-dragging);
+                height: 16px; /* Mobile dragging height */
                 border-top: 3px solid rgba(255, 255, 255, 0.6);
                 border-bottom: 3px solid rgba(255, 255, 255, 0.6);
             }
@@ -1411,83 +1471,192 @@
                     transparent 8px);
             }
         }
-
-        /* --- POPUP STYLING (New) --- */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            width: 100vw;
-            background: rgba(0, 0, 0, 0.6);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-        }
-
-        .popup {
-            background: #fff;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            padding: 30px;
-            animation: openPopup 0.5s ease forwards;
-            position: relative;
-        }
-
-        @keyframes openPopup {
-            0% {
-                transform: scale(0.7);
-                opacity: 0;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .popup h2 {
-            margin-bottom: 15px;
-            font-size: 22px;
-            color: #1b2a3a;
-        }
-
-        .popup p {
-            font-size: 15px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .popup .download-btn {
-            display: inline-block;
-            background-color: #1b2a3a;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-        }
-
-        .popup .download-btn:hover {
-            background-color: #0e1a28;
-        }
-
-        .popup .close-btn {
-            position: absolute;
-            top: 12px;
-            right: 15px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #888;
-        }
     </style>
 
-    <!-- JavaScript for Calendar and Countdown -->
     <script>
+        function updateContent(title, description, manualbookLink) {
+        document.getElementById('dynamic-description').innerHTML = description;
+
+        const manualbookButton = document.getElementById('manualbook-button');
+        const manualbookLinkElement = document.getElementById('manualbook-link');
+
+        if (manualbookLink && manualbookLink !== '#') {
+            manualbookLinkElement.href = manualbookLink;
+            manualbookLinkElement.innerText = `Download ${title} Manualbook`;
+            manualbookButton.style.display = 'block';
+        } else {
+            manualbookButton.style.display = 'none';
+        }
+
+        document.getElementById('leftSection').scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".locker-door").forEach(locker => {
+            locker.addEventListener("click", function() {
+                updateContent(
+                    this.dataset.title,
+                    this.dataset.description,
+                    this.dataset.manualbook
+                );
+            });
+        });
+
+        // Auto klik locker pertama saat load
+        const firstLocker = document.querySelector(".locker-door");
+        if (firstLocker) {
+            firstLocker.click();
+        }
+    });
+
+        // Optimized Split Screen Controller Class
+        class OptimizedSplitScreenController {
+            constructor() {
+                // Scoped to the new section to avoid conflicts with other .container elements
+                this.container = document.querySelector('.positron-locker-section .container'); 
+                this.leftSection = document.getElementById('leftSection');
+                this.rightSection = document.getElementById('rightSection');
+                this.resizeHandle = document.getElementById('resizeHandle');
+
+                this.isDragging = false;
+                this.startPos = 0;
+                this.startLeftSize = 0;
+                this.containerSize = 0;
+                this.minLeftSizePercentage = 50; // Minimum percentage for left section
+                this.maxLeftSizeOffset = 10; // Max size offset from container edge
+                this.isMobile = false;
+
+                this.init();
+            }
+
+            init() {
+                this.handleResize(); // Set initial sizes and check mobile status
+                this.resizeHandle.addEventListener('mousedown', this.handleStart.bind(this));
+                document.addEventListener('mousemove', this.handleMove.bind(this));
+                document.addEventListener('mouseup', this.handleEnd.bind(this));
+                // Touch event listeners for mobile
+                this.resizeHandle.addEventListener('touchstart', this.handleTouchStart.bind(this), {
+                    passive: false
+                });
+                document.addEventListener('touchmove', this.handleTouchMove.bind(this), {
+                    passive: false
+                });
+                document.addEventListener('touchend', this.handleEnd.bind(this));
+                window.addEventListener('resize', this.handleResize.bind(this)); // Re-evaluate on window resize
+                // Prevent text selection during dragging
+                document.addEventListener('selectstart', (e) => {
+                    if (this.isDragging) e.preventDefault();
+                });
+            }
+
+            handleResize() {
+                this.isMobile = window.innerWidth <= 768; // Define mobile breakpoint
+                this.container.style.flexDirection = this.isMobile ? 'column' : 'row'; // Change flex direction
+                // Reset explicit width/height styles to allow flexbox to re-calculate
+                this.leftSection.style.width = null;
+                this.leftSection.style.height = null;
+                this.rightSection.style.width = null;
+                this.rightSection.style.height = null;
+
+                if (this.isMobile) {
+                    this.containerSize = this.container.offsetHeight;
+                    // Set initial heights for mobile
+                    this.leftSection.style.height = '50%'; 
+                    this.rightSection.style.height = '50%';
+                } else {
+                    this.containerSize = this.container.offsetWidth;
+                    // Set initial widths for desktop
+                    this.leftSection.style.width = '50%'; 
+                    this.rightSection.style.width = '38%'; // Adjusted for better initial balance
+                }
+                this.updateHandlePosition(); // Position the handle correctly
+            }
+
+            handleStart(e) {
+                if (this.isDragging) return; // Prevent multiple drag starts
+                this.isDragging = true;
+                this.resizeHandle.classList.add('dragging');
+                this.startPos = this.isMobile ? e.clientY : e.clientX; // Get start position based on orientation
+                this.startLeftSize = this.isMobile ? this.leftSection.offsetHeight : this.leftSection.offsetWidth; // Get initial size
+                document.body.style.cursor = this.isMobile ? 'row-resize' : 'col-resize'; // Change cursor
+                document.body.style.userSelect = 'none'; // Prevent text selection
+                e.preventDefault(); // Prevent default browser behavior (e.g., image dragging)
+            }
+
+            handleTouchStart(e) {
+                if (this.isDragging) return;
+                this.isDragging = true;
+                this.resizeHandle.classList.add('dragging');
+                const touch = e.touches?.[0]; // Get the first touch point
+                this.startPos = this.isMobile ? touch?.clientY : touch?.clientX;
+                this.startLeftSize = this.isMobile ? this.leftSection.offsetHeight : this.leftSection.offsetWidth;
+                e.preventDefault();
+            }
+
+            handleMove(e) {
+                if (!this.isDragging) return;
+                const currentPos = this.isMobile ? e.clientY : e.clientX;
+                this.updateSizes(currentPos);
+                e.preventDefault();
+            }
+
+            handleTouchMove(e) {
+                if (!this.isDragging) return;
+                const touch = e.touches?.[0];
+                const currentPos = this.isMobile ? touch?.clientY : touch?.clientX;
+                this.updateSizes(currentPos);
+                e.preventDefault();
+            }
+
+            handleEnd() {
+                if (!this.isDragging) return;
+                this.isDragging = false;
+                this.resizeHandle.classList.remove('dragging');
+                document.body.style.cursor = 'default'; // Reset cursor
+                document.body.style.userSelect = 'auto'; // Allow text selection again
+            }
+
+            updateSizes(currentPos) {
+                const delta = currentPos - this.startPos; // Calculate movement delta
+                let newLeftSize = this.startLeftSize + delta; // Calculate new size for left section
+                
+                // Define minimum and maximum sizes to prevent sections from collapsing
+                const minSectionSize = 200; // Minimum size in pixels
+                const minLeftSize = Math.max(minSectionSize, (this.minLeftSizePercentage / 100) * this.containerSize);
+                const maxLeftSize = this.containerSize - minSectionSize;
+
+                newLeftSize = Math.max(minLeftSize, Math.min(maxLeftSize, newLeftSize));
+
+                if (this.isMobile) {
+                    this.leftSection.style.height = `${newLeftSize}px`;
+                    this.rightSection.style.height = `${this.containerSize - newLeftSize}px`;
+                } else {
+                    this.leftSection.style.width = `${newLeftSize}px`;
+                    this.rightSection.style.width = `${this.containerSize - newLeftSize}px`;
+                }
+                this.updateHandlePosition(); // Re-position handle after size change
+            }
+
+            updateHandlePosition() {
+                if (this.isMobile) {
+                    this.resizeHandle.style.top = `${this.leftSection.offsetHeight}px`;
+                    this.resizeHandle.style.left = '0'; // Ensure handle is full width
+                } else {
+                    this.resizeHandle.style.left = `${this.leftSection.offsetWidth}px`;
+                    this.resizeHandle.style.top = '0'; // Ensure handle is full height
+                }
+            }
+        }
+
+        // Initialize when DOM is loaded
         document.addEventListener("DOMContentLoaded", function() {
-            // Event dates
+            // Initialize the split screen controller
+            new OptimizedSplitScreenController();
+
+            // Event dates for Calendar
             const eventDates = {
                 "2025-08-27": {
                     title: "FORUM MABA",
@@ -1518,139 +1687,140 @@
             const prevBtn = document.getElementById("prevMonth");
             const nextBtn = document.getElementById("nextMonth");
 
-            let currentMonth = 6; // Juli
+            let currentMonth = 6; // Juli (0-indexed, so 6 is July)
             let currentYear = 2025;
 
             function renderCalendar(month, year) {
                 grid.innerHTML = "";
-                const daysInMonth = new Date(year, month + 1, 0).getDate();
-                const firstDayIndex = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate(); // Get number of days in month
+                const firstDayIndex = new Date(year, month, 1).getDay(); // Get day of week for 1st day (0=Sunday, 1=Monday...)
                 const monthName = new Date(year, month).toLocaleString('id-ID', {
                     month: 'long'
                 });
                 monthYearDisplay.innerText = `${monthName} ${year}`;
 
-                // Add empty cells for days before the first day
+                // Add empty cells for days before the first day of the month
                 for (let i = 0; i < firstDayIndex; i++) {
                     grid.appendChild(document.createElement("div"));
                 }
 
-                // Add days
+                // Add days of the month
                 for (let d = 1; d <= daysInMonth; d++) {
-                const dateObj = new Date(year, month, d);
-                const dateStr = dateObj.toISOString().split("T")[0];
-                const cell = document.createElement("div");
-                cell.className = "day-cell";
+                    const dateObj = new Date(year, month, d);
+                    const cell = document.createElement("div");
+                    cell.className = "day-cell";
 
-                const today = new Date();
-                if (
-                    dateObj.getFullYear() === today.getFullYear() &&
-                    dateObj.getMonth() === today.getMonth() &&
-                    dateObj.getDate() === today.getDate()
-                ) {
-                    cell.classList.add("today");
-
-                    const todayLabel = document.createElement("div");
-                    todayLabel.className = "day-number today-label";
-                    todayLabel.innerText = "Today";
-                    cell.appendChild(todayLabel);
-                } else {
-                    const dayNumber = document.createElement("div");
-                    dayNumber.className = "day-number";
-                    dayNumber.innerText = d;
-                    cell.appendChild(dayNumber);
-                }
-
-                // Cek event
-                let matchedEventData = null;
-                for (const [startDate, ev] of Object.entries(eventDates)) {
-                    const start = new Date(startDate);
-                    const end = new Date(ev.endDate);
-                    if (dateObj >= start && dateObj <= end) {
-                        matchedEventData = { startDate, ...ev };
-                        break;
+                    const today = new Date();
+                    // Check if current cell date is today's date
+                    if (
+                        dateObj.getFullYear() === today.getFullYear() &&
+                        dateObj.getMonth() === today.getMonth() &&
+                        dateObj.getDate() === today.getDate()
+                    ) {
+                        cell.classList.add("today");
+                        const todayLabel = document.createElement("div");
+                        todayLabel.className = "day-number today-label";
+                        todayLabel.innerText = "Today";
+                        cell.appendChild(todayLabel);
+                    } else {
+                        const dayNumber = document.createElement("div");
+                        dayNumber.className = "day-number";
+                        dayNumber.innerText = d;
+                        cell.appendChild(dayNumber);
                     }
-                }
 
+                    // Check for events on this date
+                    let matchedEventData = null;
+                    for (const [startDate, ev] of Object.entries(eventDates)) {
+                        const start = new Date(startDate);
+                        const end = new Date(ev.endDate);
+                        // Check if the current date cell falls within an event's start and end date
+                        if (dateObj >= start && dateObj <= end) {
+                            matchedEventData = { startDate, ...ev };
+                            break;
+                        }
+                    }
 
-            if (matchedEventData) {
-                cell.classList.add("event");
+                    if (matchedEventData) {
+                        cell.classList.add("event");
+                        const eventLabel = document.createElement("div");
+                        eventLabel.className = "event-title";
+                        eventLabel.innerText = matchedEventData.title;
+                        cell.appendChild(eventLabel);
 
-                const eventLabel = document.createElement("div");
-                eventLabel.className = "event-title";
-                eventLabel.innerText = matchedEventData.title;
-                cell.appendChild(eventLabel);
+                        // Add click listener to show event details in modal
+                        cell.addEventListener("click", function () {
+                            document.getElementById('modalEventTitle').innerText = matchedEventData.title;
 
-                cell.addEventListener("click", function () {
-                    document.getElementById('modalEventTitle').innerText = matchedEventData.title;
+                            const startDate = new Date(matchedEventData.startDate);
+                            const endDate = new Date(matchedEventData.endDate);
+                            const formattedDate = startDate.toLocaleDateString('id-ID', {
+                                day: 'numeric',
+                                month: 'long'
+                            }) +
+                            (startDate.getTime() !== endDate.getTime()
+                                ? '–' + endDate.toLocaleDateString('id-ID', {
+                                    day: 'numeric',
+                                    month: 'long',
+                                    year: 'numeric'
+                                })
+                                : ` ${startDate.getFullYear()}`);
 
-                    const startDate = new Date(matchedEventData.startDate);
-                    const endDate = new Date(matchedEventData.endDate);
-                    const formattedDate = startDate.toLocaleDateString('id-ID', {
-                        day: 'numeric',
-                        month: 'long'
-                    }) +
-                    (startDate.getTime() !== endDate.getTime()
-                        ? '–' + endDate.toLocaleDateString('id-ID', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric'
-                        })
-                        : ` ${startDate.getFullYear()}`);
+                            document.getElementById('modalEventDate').innerText = formattedDate;
+                            document.getElementById('modalEventDesc').innerText = matchedEventData.description;
 
-                    document.getElementById('modalEventDate').innerText = formattedDate;
-                    document.getElementById('modalEventDesc').innerText = matchedEventData.description;
+                            // Add to Calendar button functionality
+                            document.getElementById('addToCalendarBtn').onclick = () => {
+                                const blob = new Blob([generateICS(matchedEventData.title, matchedEventData.description, matchedEventData.startDate, matchedEventData.endDate)], {
+                                    type: 'text/calendar'
+                                });
+                                const link = document.createElement('a');
+                                link.href = URL.createObjectURL(blob);
+                                link.download = `${matchedEventData.title.replace(/\s+/g, "_")}_POSITRON.ics`;
+                                link.click();
+                            };
 
-                    document.getElementById('addToCalendarBtn').onclick = () => {
-                        const blob = new Blob([generateICS(matchedEventData.title, matchedEventData.description, matchedEventData.startDate, matchedEventData.endDate)], {
-                            type: 'text/calendar'
+                            // Show the Bootstrap modal
+                            new bootstrap.Modal(document.getElementById('eventModal')).show();
                         });
-                        const link = document.createElement('a');
-                        link.href = URL.createObjectURL(blob);
-                        link.download = `${matchedEventData.title.replace(/\s+/g, "_")}_POSITRON.ics`;
-                        link.click();
-                    };
-
-                    new bootstrap.Modal(document.getElementById('eventModal')).show();
-                });
+                    }
+                    grid.appendChild(cell);
+                }
             }
-
-
-
-                grid.appendChild(cell);
-            }
-        }
-            // Generate ICS file content
+            
+            // Function to generate ICS file content for calendar events
             function generateICS(title, description, start, end) {
                 const format = date => new Date(date).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
                 return `BEGIN:VCALENDAR
-                        VERSION:2.0
-                        BEGIN:VEVENT
-                        SUMMARY:${title}
-                        DESCRIPTION:${description}
-                        DTSTART:${format(start)}
-                        DTEND:${format(new Date(new Date(end).getTime() + 60 * 60 * 1000))}
-                        END:VEVENT
-                        END:VCALENDAR`;
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:${title}
+DESCRIPTION:${description}
+DTSTART:${format(start)}
+DTEND:${format(new Date(new Date(end).getTime() + 60 * 60 * 1000))}
+END:VEVENT
+END:VCALENDAR`;
             }
 
+            // Event listeners for calendar navigation buttons
             prevBtn.addEventListener("click", () => {
-                if (currentMonth > 6) {
+                if (currentMonth > 6) { // Limit previous months to July 2025
                     currentMonth--;
                     renderCalendar(currentMonth, currentYear);
                 }
             });
 
             nextBtn.addEventListener("click", () => {
-                if (currentMonth < 11) {
+                if (currentMonth < 11) { // Limit next months to December 2025
                     currentMonth++;
                     renderCalendar(currentMonth, currentYear);
                 }
             });
 
+            // Initial render of the calendar
             renderCalendar(currentMonth, currentYear);
 
-            // Countdown functionality
+            // Countdown functionality for Forum Maba
             const countDownDate = new Date("Aug 27, 2025 08:00:00").getTime();
 
             const countdownFunction = setInterval(function() {
@@ -1682,168 +1852,26 @@
                 });
             });
 
-            // Intersection Observer for animations
+            // Intersection Observer for animations (fade-in, bounce-in, pulse)
             const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+                threshold: 0.1, // Trigger when 10% of the element is visible
+                rootMargin: '0px 0px -50px 0px' // Adjust viewport for triggering
             };
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
+                        entry.target.style.animationPlayState = 'running'; // Play animation when visible
+                    } else {
+                        // Optional: Reset animation if element scrolls out of view
+                        // entry.target.style.animationPlayState = 'paused'; 
                     }
                 });
             }, observerOptions);
 
             // Observe animated elements
-            document.querySelectorAll('.section-title, .countdown-item, .flip-card').forEach(el => {
+            document.querySelectorAll('.section-title, .countdown-item, .flip-card, .fade-in, .bounceIn, .slideInUp, .pulse').forEach(el => {
                 observer.observe(el);
-            });
-
-            // JavaScript from test2[1].php
-            class OptimizedSplitScreenController {
-                constructor() {
-                    this.container = document.querySelector('.positron-locker-section .container'); // Target the specific container
-                    this.leftSection = document.getElementById('leftSection');
-                    this.rightSection = document.getElementById('rightSection');
-                    this.resizeHandle = document.getElementById('resizeHandle');
-
-                    this.isDragging = false;
-                    this.startPos = 0;
-                    this.startLeftSize = 0;
-                    this.containerSize = 0;
-                    this.minLeftSizePercentage = 50;
-                    this.maxLeftSizeOffset = 10;
-                    this.isMobile = false;
-
-                    this.init();
-                }
-
-                init() {
-                    this.handleResize();
-                    this.resizeHandle.addEventListener('mousedown', this.handleStart.bind(this));
-                    document.addEventListener('mousemove', this.handleMove.bind(this));
-                    document.addEventListener('mouseup', this.handleEnd.bind(this));
-                    this.resizeHandle.addEventListener('touchstart', this.handleTouchStart.bind(this), {
-                        passive: false
-                    });
-                    document.addEventListener('touchmove', this.handleTouchMove.bind(this), {
-                        passive: false
-                    });
-                    document.addEventListener('touchend', this.handleEnd.bind(this));
-                    window.addEventListener('resize', this.handleResize.bind(this));
-                    document.addEventListener('selectstart', (e) => {
-                        if (this.isDragging) e.preventDefault();
-                    });
-                }
-
-                handleResize() {
-                    this.isMobile = window.innerWidth <= 768;
-                    this.container.style.flexDirection = this.isMobile ? 'column' : 'row';
-                    this.leftSection.style.width = null;
-                    this.leftSection.style.height = null;
-                    this.rightSection.style.width = null;
-                    this.rightSection.style.height = null;
-
-                    if (this.isMobile) {
-                        this.containerSize = this.container.offsetHeight;
-                        this.leftSection.style.height = '50%';
-                        this.rightSection.style.height = '50%';
-                    } else {
-                        this.containerSize = this.container.offsetWidth;
-                        this.leftSection.style.width = '50%';
-                        this.rightSection.style.width = '38%';
-                    }
-                    this.updateHandlePosition();
-                }
-
-                handleStart(e) {
-                    if (this.isDragging) return;
-                    this.isDragging = true;
-                    this.resizeHandle.classList.add('dragging');
-                    this.startPos = this.isMobile ? e.clientY : e.clientX;
-                    this.startLeftSize = this.isMobile ? this.leftSection.offsetHeight : this.leftSection.offsetWidth;
-                    document.body.style.cursor = this.isMobile ? 'row-resize' : 'col-resize';
-                    document.body.style.userSelect = 'none';
-                    e.preventDefault();
-                }
-
-                handleTouchStart(e) {
-                    if (this.isDragging) return;
-                    this.isDragging = true;
-                    this.resizeHandle.classList.add('dragging');
-                    const touch = e.touches?.[0];
-                    this.startPos = this.isMobile ? touch?.clientY : touch?.clientX;
-                    this.startLeftSize = this.isMobile ? this.leftSection.offsetHeight : this.leftSection.offsetWidth;
-                    e.preventDefault();
-                }
-
-                handleMove(e) {
-                    if (!this.isDragging) return;
-                    const currentPos = this.isMobile ? e.clientY : e.clientX;
-                    this.updateSizes(currentPos);
-                    e.preventDefault();
-                }
-
-                handleTouchMove(e) {
-                    if (!this.isDragging) return;
-                    const touch = e.touches?.[0];
-                    const currentPos = this.isMobile ? touch?.clientY : touch?.clientX;
-                    this.updateSizes(currentPos);
-                    e.preventDefault();
-                }
-
-                handleEnd() {
-                    if (!this.isDragging) return;
-                    this.isDragging = false;
-                    this.resizeHandle.classList.remove('dragging');
-                    document.body.style.cursor = 'default';
-                    document.body.style.userSelect = 'auto';
-                }
-
-                updateSizes(currentPos) {
-                    const delta = currentPos - this.startPos;
-                    let newLeftSize = this.startLeftSize + delta;
-                    const minLeftSize = (this.minLeftSizePercentage / 80.5) * this.containerSize;
-                    const maxLeftSize = this.containerSize - this.maxLeftSizeOffset;
-                    newLeftSize = Math.max(minLeftSize, Math.min(maxLeftSize, newLeftSize));
-
-                    if (this.isMobile) {
-                        this.leftSection.style.height = `${newLeftSize}px`;
-                        this.rightSection.style.height = `${this.containerSize - newLeftSize}px`;
-                    } else {
-                        this.leftSection.style.width = `${newLeftSize}px`;
-                        this.rightSection.style.width = `${this.containerSize - newLeftSize}px`;
-                    }
-                    this.updateHandlePosition();
-                }
-
-                updateHandlePosition() {
-                    if (this.isMobile) {
-                        this.resizeHandle.style.top = `${this.leftSection.offsetHeight}px`;
-                        this.resizeHandle.style.left = '0';
-                    } else {
-                        this.resizeHandle.style.left = `${this.leftSection.offsetWidth}px`;
-                        this.resizeHandle.style.top = '0';
-                    }
-                }
-            }
-
-            // New pop-up functions
-            function openLoker(title, description, fileId) {
-                document.getElementById("popup-title").innerText = title;
-                document.getElementById("popup-desc").innerText = description;
-                document.getElementById("popup-download").href = `manualbook/${fileId}.pdf`;
-                document.getElementById("popup").style.display = 'flex';
-            }
-
-            function closePopup() {
-                document.getElementById("popup").style.display = 'none';
-            }
-
-            document.addEventListener('DOMContentLoaded', () => {
-                new OptimizedSplitScreenController();
             });
         });
     </script>
