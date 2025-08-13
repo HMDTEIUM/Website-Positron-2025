@@ -187,7 +187,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 40px 0 60px;
+        margin: 100px 0 60px;
         gap: 20px;
     }
 
