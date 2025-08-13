@@ -185,18 +185,6 @@
       }
     }
 
-    .logo-positron {
-      width: 30px;
-      height: 30px;
-      background-image: url('{{ asset("images/logo-positron.png") }}');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      display: inline-block;
-      vertical-align: middle; /* correct alignment */
-      margin-right: 8px; /* space between logo and text */
-  }
-
     .navbar-brand {
       display: flex;
       align-items: center;

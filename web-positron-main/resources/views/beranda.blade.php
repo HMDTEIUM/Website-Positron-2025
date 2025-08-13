@@ -359,16 +359,19 @@
         .logo-bar img {
             height: clamp(50px, 5vw, 80px);
             z-index: 5;
+            margin-top: -60px;
+            margin-bottom: 30px;
             filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.5));
             animation: bounceIn 1.5s ease-out;
         }
 
         .hero-title {
             font-family: 'Atlanta College', sans-serif;
-            font-size: clamp(2rem, 4vw, 4.5rem);
+            font-size: clamp(2rem, 5vw, 4.5rem);
             text-transform: uppercase;
             color: white;
-            margin: 2rem 0;
+            margin: 4rem 0;
+            margin-bottom: 5rem;
             line-height: 1.3;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
             animation: slideInUp 1s ease-out 0.3s both;
@@ -378,7 +381,7 @@
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
             border-radius: 20px;
-            padding: clamp(1.5rem, 4vw, 2.5rem);
+            padding: clamp(1.5rem, 4vw, 2rem);
             margin-top: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             animation: fadeInUp 1s ease-out 0.6s both;
@@ -386,7 +389,7 @@
 
         .cta-box p {
             font-family: 'Atlanta College', sans-serif;
-            font-size: clamp(2rem, 2vw, 1.5rem);
+            font-size: clamp(2.5rem, 2vw, 1.5rem);
             line-height: 1.5;
             color: white;
         }
@@ -453,13 +456,6 @@
             font-size: clamp(2.5rem, 2.5vw, 1.25rem);
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 3rem;
-        }
-
-        .logo-positron {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
         }
 
         .positron-logo {
@@ -839,7 +835,7 @@
 
         .prodi-icon {
             font-size: 3rem;
-            color: #0d6efd;
+            color: #ffffffff;
             margin-bottom: 1rem;
         }
 
@@ -1194,8 +1190,8 @@
 
         .positron-locker-section .container {
             display: flex;
-            height: 80%;
-            width: 90%;
+            height: 95%;
+            width: 95%;
             position: relative;
             background: white;
             border-radius: 15px;
