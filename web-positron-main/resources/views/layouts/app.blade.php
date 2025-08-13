@@ -33,7 +33,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: rgba(255, 255, 255, 1);
+      background-color: rgba(10, 10, 86, 1);
       color: white;
       overflow-x: hidden;
       position: relative;
@@ -50,14 +50,14 @@
       background-color: #ffffff;
       color: white;
       border: none;
-      font-family: 'ScribbleMarker';
+      font-family: 'sans-serif';
       font-weight: 800;
       font-size: clamp(1.0rem, 1vw, 1.5rem)
     }
 
     #mainNavbar .navbar-nav .nav-link { 
       font-weight: 800;
-      font-family: 'ScribbleMarker', sans-serif;
+      font-family: sans-serif;
       font-size: clamp(1.0rem, 1vw, 1.5rem)
     }
 
@@ -188,7 +188,7 @@
     .navbar-brand {
       display: flex;
       align-items: center;
-      font-family: 'ScribbleMarker', sans-serif; /* ganti ke Poppins */
+      font-family: sans-serif; /* ganti ke Poppins */
   }
   </style>
 </head>

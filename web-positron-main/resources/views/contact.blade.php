@@ -4,7 +4,7 @@
     <section class="contact-section py-5 bg-light min-vh-100">
         <div class="container">
             <h2 class="text-center fw-bold mb-4 animate__animated animate__fadeInDown">Kontak Mentor POSITRON 2025</h2>
-            <p class="fw-semibold text-center text-muted mb-5 animate__animated animate__fadeIn animate__delay-1s">
+            <p class="fw-semibold text-center text-white mb-5 animate__animated animate__fadeIn animate__delay-1s">
                 Silakan hubungi CP Prodi atau Kakak Mentor kelompokmu untuk bergabung ke grup POSITRON.
             </p>
 
@@ -27,51 +27,35 @@
                 </div>
             </div>
 
-            <!-- Kakak Mentor Tabel -->
+            <!-- Feedback Form -->
             <div class="mb-5">
-                <h4 class="fw-semibold mb-3 border-bottom pb-2">👥 Daftar Kakak Mentor per Kelompok</h4>
-
-                <!-- Filter -->
-                <div class="row mb-3">
-                    <div class="col-md-6 mx-auto">
-                        <input type="text" id="searchMentor" class="form-control form-control-lg"
-                            placeholder="Cari berdasarkan nama atau kelompok...">
+                <h4 class="fw-semibold mb-3 border-bottom pb-2">✉️ Kirim Umpan Balik</h4>
+                <form id="feedbackForm">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" id="name" class="form-control" placeholder="Masukkan nama Anda" required>
+                        </div>
                     </div>
-                </div>
-
-                <div class="table-responsive animate__animated animate__fadeIn animate__delay-1s">
-                    <table id="mentorTable"
-                        class="table table-bordered table-hover bg-white shadow-sm rounded-3 text-center">
-                        <thead class="table-dark text-white">
-                            <tr>
-                                <th>Nama</th>
-                                <th>Kelompok</th>
-                                <th>WhatsApp</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($mentors as $mentor)
-                                <tr>
-                                    <td class="fw-semibold">{{ $mentor['nama'] }}</td>
-                                    <td>Kelompok {{ $mentor['kelompok'] }}</td>
-                                    <td>
-                                        <a href="https://wa.me/{{ $mentor['wa'] }}"
-                                            class="text-success fw-semibold text-decoration-none" target="_blank">
-                                            <i class="bi bi-whatsapp me-1"></i>{{ $mentor['wa'] }}
-                                        </a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="message" class="form-label">Pesan</label>
+                            <textarea id="message" class="form-control" rows="4" placeholder="Tulis pesan Anda" required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kirim</button>
+                </form>
             </div>
-        @endsection
+        </div>
+    </section>
+@endsection
+
         <style>
             .contact-section {
             background: linear-gradient(135deg, #0a3e6d, #1e5a8b);
             min-height: 100vh;
             padding: 80px 0;
+            margin-top: 50px; /* Adjust to overlap with navbar */
             overflow-x: hidden;
             }
 
@@ -88,6 +72,12 @@
                 $('#searchMentor').on('keyup', function () {
                     table.search(this.value).draw();
                 });
+            });
+            $('#feedbackForm').on('submit', function (e) {
+                e.preventDefault();
+                // Here you can add your AJAX call to submit the feedback
+                alert('Feedback submitted!'); // Placeholder alert
+                $(this).trigger('reset'); // Reset the form
             });
         </script>
         @endsection

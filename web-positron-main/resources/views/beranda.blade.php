@@ -12,7 +12,7 @@
             <h1 class="hero-title">SELAMAT DATANG MAHASISWA BARU<br>DEPARTEMEN TEKNIK ELEKTRO DAN INFORMATIKA</h1>
             <div class="cta-box">
                 <p>APAKAH KALIAN SIAP MENYAMBUT POSITRON 2025!?</p>
-                <button onclick="location.href='#home'" class="cta-button">SIAP!</button>
+                <button id="ctaSiapButton" class="cta-button">SIAP!</button>
             </div>
         </div>
     </section>
@@ -253,6 +253,8 @@
     </div>
 </section>
 
+    
+
     <!-- Calendar Section -->
     <section class="calendar-section">
         <div class="calendar-overlay"></div>
@@ -317,6 +319,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Default font */
             background-color: #f4f4f4; /* Default background */
             height: 100vh; /* Ensure body takes full height for split screen */
+            overflow-y: hidden; /* Initially disable scrolling */
         }
 
         .container {
@@ -1470,6 +1473,7 @@
     </style>
 
     <script>
+        
         function updateContent(title, description, manualbookLink) {
         document.getElementById('dynamic-description').innerHTML = description;
 
@@ -1491,6 +1495,9 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
+        // Disable scrolling initially
+        document.body.style.overflowY = 'hidden';
+
         document.querySelectorAll(".locker-door").forEach(locker => {
             locker.addEventListener("click", function() {
                 updateContent(
@@ -1506,6 +1513,15 @@
         if (firstLocker) {
             firstLocker.click();
         }
+
+        // Enable scrolling and navigate on CTA button click
+        document.getElementById('ctaSiapButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.style.overflowY = 'auto'; // Enable scrolling
+            document.getElementById('home').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
 
         // Optimized Split Screen Controller Class
@@ -1839,14 +1855,6 @@ END:VCALENDAR`;
                         "<span class='text-warning'>Forum Maba Sedang Berlangsung!</span>";
                 }
             }, 1000);
-
-            // Smooth scrolling for CTA button
-            document.querySelector('.cta-button').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('home').scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
 
             // Intersection Observer for animations (fade-in, bounce-in, pulse)
             const observerOptions = {
