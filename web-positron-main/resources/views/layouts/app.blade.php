@@ -21,7 +21,8 @@
 
     @font-face {
       font-family: 'ScribbleMarker';
-      src: url("{{ asset("fonts/ScribbleMarker.otf") }}") format('opentype') local('ScribbleMarker');
+      src: local('ScribbleMarker'),
+          url("{{ asset('fonts/ScribbleMarker.otf') }}") format('opentype');
       font-weight: normal;
       font-style: normal;
     }
@@ -49,14 +50,14 @@
       background-color: #ffffff;
       color: white;
       border: none;
-      font-family: sans-serif;
+      font-family: 'ScribbleMarker';
       font-weight: 800;
       font-size: clamp(1.0rem, 1vw, 1.5rem)
     }
 
-    #mainNavbar .navbar-nav .nav-link {
-      font-family: sans-serif;  
+    #mainNavbar .navbar-nav .nav-link { 
       font-weight: 800;
+      font-family: 'ScribbleMarker', sans-serif;
       font-size: clamp(1.0rem, 1vw, 1.5rem)
     }
 
@@ -183,6 +184,24 @@
         background-color: #fff !important;
       }
     }
+
+    .logo-positron {
+      width: 30px;
+      height: 30px;
+      background-image: url('{{ asset("images/logo-positron.png") }}');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-block;
+      vertical-align: middle; /* correct alignment */
+      margin-right: 8px; /* space between logo and text */
+  }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-family: 'ScribbleMarker', sans-serif; /* ganti ke Poppins */
+  }
   </style>
 </head>
 
@@ -190,7 +209,7 @@
   <nav id="mainNavbar" class="navbar">
     <div class="container">
       <a class="navbar-brand text-black fs-4" href="/">
-        <i class="bi bi-lightning-fill me-1 text-warning"></i> POSITRON 2025
+        <i class="logo-positron"></i> POSITRON 2025
       </a>
       <button class="navbar-toggler border-0 collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#nav">

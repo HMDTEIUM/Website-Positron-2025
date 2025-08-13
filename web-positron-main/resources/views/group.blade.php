@@ -2,10 +2,10 @@
 
 @section('content')
 <!-- Section Pencarian -->
-<section class="search-section min-vh-100 py-5 pt-md-5 pt-4">
+<section class="search-section min-vh-100 py-5 mt-5">
     <div class="container animate__animated animate__fadeIn">
         <!-- Judul -->
-        <h2 class="text-center fw-bold mb-4 display-5">
+        <h2 class="text-center fw-bold mb-4 display-5 margin-top: 0;">
             Cari Data Mahasiswa POSITRON 2025
         </h2>
 
@@ -51,9 +51,10 @@
 
 <!-- CSS -->
 <style>
+
 .search-section {
     position: relative;
-    background: url('/images/background-positron.jpg') no-repeat center center;
+    background: url('/images/Paper.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }
