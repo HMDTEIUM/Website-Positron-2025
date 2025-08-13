@@ -12,7 +12,7 @@
             <h1 class="hero-title">SELAMAT DATANG MAHASISWA BARU<br>DEPARTEMEN TEKNIK ELEKTRO DAN INFORMATIKA</h1>
             <div class="cta-box">
                 <p>APAKAH KALIAN SIAP MENYAMBUT POSITRON 2025!?</p>
-                <button onclick="location.href='#home'" class="cta-button">SIAP!</button>
+                <button id="ctaSiapButton" class="cta-button">SIAP!</button>
             </div>
         </div>
     </section>
@@ -178,7 +178,7 @@
 
                 <!-- POSITRON 2025 -->
                 <div class="locker-door"
-                     style="background-image: url('{{ asset('images/positron.png') }}');"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
                      data-title="POSITRON 2025"
                      data-description="POSITRON 2025 hadir sebagai wadah orientasi mahasiswa baru Departemen Teknik Elektro dan Informatika Universitas Negeri Malang. Tahun ini, POSITRON mengusung tema <strong>&quot;Empowering Brighter Futures&quot;</strong> berarti menyalakan obor harapan di dalam diri setiap mahasiswa agar mampu melangkah menuju masa depan yang mereka bentuk sendiri—bukan sekadar mengikuti jalur yang ditentukan orang lain. <br><br> Kampus menjadi ruang untuk menempa integritas, memperluas wawasan, dan menyusun arah hidup dengan kesadaran. Sedangkan <strong>&quot;Beyond the Bell&quot;</strong> mengingatkan bahwa pembelajaran sejati tak berhenti di dalam kelas. Pendidikan tidak berakhir saat tugas dikumpulkan atau ujian selesai. Justru setelah itu, kita akan diuji dalam bentuk lain—ujian karakter, kejujuran, keberanian, dan nilai-nilai kemanusiaan. <br><br> Bergabunglah dengan kami dalam perjalanan menuju transformasi diri dan pencapaian prestasi yang membanggakan."
                      data-manualbook="{{ asset('manualbook/positron.pdf') }}">
@@ -186,7 +186,7 @@
 
                 <!-- Forum Maba -->
                 <div class="locker-door"
-                     style="background-image: url('{{ asset('images/forma.png') }}');"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
                      data-title="Forum Maba"
                      data-description="Forum komunikasi dan orientasi untuk mahasiswa baru. Acara ini dirancang untuk memperkenalkan Anda pada lingkungan kampus, sistem perkuliahan, dan kehidupan berorganisasi di Departemen Teknik Elektro dan Informatika. <br><br> Anda akan bertemu dengan dosen, senior, dan teman-teman seangkatan yang akan bersama-sama menjalani perjalanan akademik selama beberapa tahun ke depan. Forum ini juga memberikan informasi penting tentang kurikulum, aturan akademik, dan berbagai aktivitas menarik yang bisa Anda ikuti."
                      data-manualbook="{{ asset('manualbook/forum_maba.pdf') }}">
@@ -194,7 +194,7 @@
 
                 <!-- LDK -->
                 <div class="locker-door"
-                     style="background-image: url('{{ asset('images/ldk.png') }}');"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
                      data-title="LDK"
                      data-description="Latihan Dasar Kepemimpinan (LDK) merupakan program yang dirancang untuk membentuk karakter kepemimpinan dan kedisiplinan mahasiswa baru. Melalui serangkaian kegiatan outdoor dan indoor, Anda akan belajar tentang teamwork, problem solving, dan manajemen diri. <br><br> LDK mengajarkan nilai-nilai seperti tanggung jawab, integritas, dan kerja sama tim. Kegiatan ini menjadi fondasi penting bagi aktivitas Anda di kampus, termasuk dalam berorganisasi dan mengikuti berbagai kegiatan kemahasiswaan."
                      data-manualbook="{{ asset('manualbook/ldk.pdf') }}">
@@ -202,7 +202,7 @@
 
                 <!-- IOH -->
                 <div class="locker-door"
-                     style="background-image: url('{{ asset('images/ioh.png') }}');"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
                      data-title="IOH"
                      data-description="Ice Breaking &amp; Orientasi Himpunan (IOH) adalah kegiatan yang dirancang untuk memperkenalkan mahasiswa baru pada himpunan program studi masing-masing. Anda akan belajar tentang struktur organisasi, program kerja, dan kegiatan yang diselenggarakan oleh himpunan. <br><br> IOH juga menjadi ajang untuk menjalin pertemanan dengan senior dan teman seangkatan dalam lingkungan program studi yang lebih khusus. Kegiatan ini membantu Anda beradaptasi dengan lingkungan akademik yang lebih spesifik sesuai minat dan bidang studi yang dipilih."
                      data-manualbook="{{ asset('manualbook/ioh.pdf') }}">
@@ -210,7 +210,7 @@
 
                 <!-- NAKO 9.0 -->
                 <div class="locker-door"
-                     style="background-image: url('{{ asset('images/nako.png') }}');"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
                      data-title="NAKO 9.0"
                      data-description="Narasumber Kolaboratif (NAKO) versi 9.0 menghadirkan berbagai pembicara inspiratif dari alumni dan praktisi di bidang teknik elektro dan informatika. Anda akan mendapatkan wawasan tentang perkembangan industri, peluang karir, dan tips sukses dari mereka yang telah berpengalaman. <br><br> Kegiatan ini memberikan gambaran nyata tentang penerapan ilmu yang dipelajari di dunia kerja. NAKO juga menjadi wadah untuk membangun jaringan dengan alumni dan profesional di bidang Anda."
                      data-manualbook="{{ asset('manualbook/nako.pdf') }}">
@@ -218,7 +218,7 @@
 
                 <!-- Dewan Komunal -->
                 <div class="locker-door"
-                     style="background-image: url('{{ asset('images/dewan.png') }}');"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
                      data-title="Dewan Komunal"
                      data-description="Dewan Komunal adalah forum diskusi terbuka yang membahas berbagai isu terkait kehidupan kampus dan pengembangan diri mahasiswa. Kegiatan ini memberikan kesempatan untuk menyampaikan aspirasi dan berpartisipasi dalam pengambilan keputusan di tingkat jurusan. <br><br> Melalui Dewan Komunal, Anda akan belajar tentang demokrasi kampus, tata kelola organisasi, dan pengembangan kebijakan yang berpengaruh langsung pada kehidupan akademik Anda."
                      data-manualbook="#">
@@ -226,7 +226,7 @@
 
                 <!-- Segmen -->
                 <div class="locker-door"
-                     style="background-image: url('{{ asset('images/seven.png') }}');"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
                      data-title="Segmen"
                      data-description="Berbagai segmen menarik akan menghiasi rangkaian kegiatan POSITRON 2025. Mulai dari kompetisi antar kelompok, pentas seni, hingga kegiatan pengabdian masyarakat. Setiap segmen dirancang untuk mengasah kreativitas, sportivitas, dan kepedulian sosial Anda. <br><br> Anda akan belajar bekerja dalam tim, memecahkan masalah secara kreatif, dan mengembangkan soft skills yang sangat penting untuk masa depan karir Anda. Setiap segmen juga menjadi kesempatan untuk menunjukkan bakat dan minat Anda di luar ranah akademik."
                      data-manualbook="#">
@@ -234,7 +234,7 @@
 
                 <!-- Guide -->
                 <div class="locker-door"
-                     style="background-image: url('{{ asset('images/guide.png') }}');"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
                      data-title="Guide"
                      data-description="Buku panduan ini berisi semua informasi penting yang Anda butuhkan untuk menjalani POSITRON 2025 dan kehidupan kampus di Departemen Teknik Elektro dan Informatika. Anda akan menemukan jadwal lengkap kegiatan, aturan yang berlaku, kontak penting, serta tips dan trik untuk sukses di kampus. <br><br> Buku panduan ini menjadi teman setia Anda selama mengikuti orientasi dan masa-masa awal perkuliahan. Pastikan untuk membaca dan memahami seluruh isinya agar dapat mengikuti kegiatan dengan optimal."
                      data-manualbook="{{ asset('manualbook/guide.pdf') }}">
@@ -242,7 +242,7 @@
 
                 <!-- Soon -->
                 <div class="locker-door"
-                     style="background-image: url('{{ asset('images/soon.png') }}');"
+                     style="background-image: url('{{ asset('images/Loker 2.png') }}');"
                      data-title="Soon"
                      data-description="Segera hadir! Kami sedang mempersiapkan konten khusus untuk Anda. Kami berkomitmen untuk memberikan pengalaman orientasi yang berkesan dan bermakna bagi seluruh mahasiswa baru Departemen Teknik Elektro dan Informatika. <br><br> Jangan lewatkan update terbaru tentang kegiatan POSITRON 2025 melalui media sosial resmi kami. Tetap semangat dan bersiaplah untuk petualangan menarik di dunia perkuliahan!"
                      data-manualbook="#">
@@ -252,6 +252,8 @@
         </div>
     </div>
 </section>
+
+    
 
     <!-- Calendar Section -->
     <section class="calendar-section">
@@ -316,7 +318,8 @@
             line-height: 1.6;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Default font */
             background-color: #f4f4f4; /* Default background */
-            height: 100vh; 
+            height: 100vh; /* Ensure body takes full height for split screen */
+            overflow-y: hidden; /* Initially disable scrolling */
         }
 
         .container {
@@ -1185,7 +1188,7 @@
             justify-content: center;
             background-color: #f8f9fa;
             position: relative;
-            padding: 25px 0;
+            padding: 60px 0;
         }
 
         .positron-locker-section .container {
@@ -1266,29 +1269,26 @@
         .right-section {
             flex-shrink: 0; /* Prevent shrinking */
             width: 40%; /* Initial width for right section */
+            padding: 20px;
             background-color: #1b2a3a;
-            background-image: url('{{ asset('images/Background_Loker.png') }}');
-            background-size: 98%;
-            background-size: cover;       /* penuhi kotak tanpa mengulang */
-            background-repeat: no-repeat; /* tidak diulang */  /* posisikan di tengah */
             overflow-y: auto;
             display: flex;
-            align-items: left;
-            justify-content: left;
+            align-items: center;
+            justify-content: center;
         }
 
         .locker-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* Use 1fr for flexible sizing */
-            gap: 10px;
+            gap: 15px;
             padding: 10px;
             width: fit-content; /* Adjust to content */
             height: fit-content; /* Adjust to content */
         }
 
         .locker-door {
-            width: 130px; /* Fixed width from test2.php */
-            height: 170px; /* Fixed height from test2.php */
+            width: 170px; /* Fixed width from test2.php */
+            height: 210px; /* Fixed height from test2.php */
             background-size: cover; /* Use cover to fill the area */
             background-repeat: no-repeat;
             background-position: center;
@@ -1473,6 +1473,7 @@
     </style>
 
     <script>
+        
         function updateContent(title, description, manualbookLink) {
         document.getElementById('dynamic-description').innerHTML = description;
 
@@ -1494,6 +1495,9 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
+        // Disable scrolling initially
+        document.body.style.overflowY = 'hidden';
+
         document.querySelectorAll(".locker-door").forEach(locker => {
             locker.addEventListener("click", function() {
                 updateContent(
@@ -1509,6 +1513,15 @@
         if (firstLocker) {
             firstLocker.click();
         }
+
+        // Enable scrolling and navigate on CTA button click
+        document.getElementById('ctaSiapButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.style.overflowY = 'auto'; // Enable scrolling
+            document.getElementById('home').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
     });
 
         // Optimized Split Screen Controller Class
@@ -1563,12 +1576,12 @@
                 if (this.isMobile) {
                     this.containerSize = this.container.offsetHeight;
                     // Set initial heights for mobile
-                    this.leftSection.style.height = '62%'; 
-                    this.rightSection.style.height = '38%';
+                    this.leftSection.style.height = '50%'; 
+                    this.rightSection.style.height = '50%';
                 } else {
                     this.containerSize = this.container.offsetWidth;
                     // Set initial widths for desktop
-                    this.leftSection.style.width = '62%'; 
+                    this.leftSection.style.width = '50%'; 
                     this.rightSection.style.width = '38%'; // Adjusted for better initial balance
                 }
                 this.updateHandlePosition(); // Position the handle correctly
@@ -1624,7 +1637,7 @@
                 
                 // Define minimum and maximum sizes to prevent sections from collapsing
                 const minSectionSize = 200; // Minimum size in pixels
-                const minLeftSize = Math.max(minSectionSize, (this.minLeftSizePercentage / 81) * this.containerSize);
+                const minLeftSize = Math.max(minSectionSize, (this.minLeftSizePercentage / 100) * this.containerSize);
                 const maxLeftSize = this.containerSize - minSectionSize;
 
                 newLeftSize = Math.max(minLeftSize, Math.min(maxLeftSize, newLeftSize));
@@ -1842,14 +1855,6 @@ END:VCALENDAR`;
                         "<span class='text-warning'>Forum Maba Sedang Berlangsung!</span>";
                 }
             }, 1000);
-
-            // Smooth scrolling for CTA button
-            document.querySelector('.cta-button').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('home').scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
 
             // Intersection Observer for animations (fade-in, bounce-in, pulse)
             const observerOptions = {
