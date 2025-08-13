@@ -42,7 +42,7 @@
     .filosofi-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 30px;
+        padding: 0 20px;
         position: relative;
         z-index: 2;
     }
@@ -50,7 +50,7 @@
     /* Header section */
     .section-header {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
         position: relative;
         padding-bottom: 20px;
     }
@@ -118,19 +118,20 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 35px;
+        padding: 20px; /* Reduced padding */
         box-shadow: 0 15px 40px rgba(0,0,0,0.5);
         opacity: 1;
-        backface-visibility: visible;
+        backface-visibility: hidden; /* Changed to hidden */
+        overflow: hidden; /* Prevent text overflow */
     }
 
     .cube-image-container {
-        width: 160px;
-        height: 160px;
+        width: 120px; /* Adjusted size */
+        height: 120px; /* Adjusted size */
         border-radius: 50%;
         background: rgba(255,255,255,0.1);
-        padding: 20px;
-        margin-bottom: 25px;
+        padding: 10px; /* Adjusted padding */
+        margin-bottom: 15px; /* Adjusted margin */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -150,9 +151,9 @@
 
     .cube-title {
         color: var(--gold);
-        font-size: 1.6rem;
+        font-size: 1.4rem; /* Adjusted size */
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 10px; /* Adjusted margin */
         text-align: center;
         position: relative;
         text-shadow: 0 2px 5px rgba(0,0,0,0.3);
@@ -171,9 +172,10 @@
 
     .cube-desc {
         color: rgba(255,255,255,0.95);
-        font-size: 1.05rem;
-        line-height: 1.7;
+        font-size: 0.9rem; /* Adjusted size */
+        line-height: 1.5; /* Adjusted line height */
         text-align: center;
+        padding: 0 5px; /* Added padding to prevent overflow */
     }
 
     /* Cube face positions */
@@ -187,7 +189,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 100px 0 60px;
+        margin: 40px 0 60px; /* Adjusted margin */
         gap: 20px;
     }
 
