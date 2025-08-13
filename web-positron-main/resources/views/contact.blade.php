@@ -75,9 +75,20 @@
             });
             $('#feedbackForm').on('submit', function (e) {
                 e.preventDefault();
-                // Here you can add your AJAX call to submit the feedback
-                alert('Feedback submitted!'); // Placeholder alert
-                $(this).trigger('reset'); // Reset the form
+
+                $.ajax({
+                    url: '/feedback',
+                    method: 'POST',
+                    data: {
+                        name: $('#name').val(),
+                        message: $('#message').val(),
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function () {
+                        alert('Feedback submitted!');
+                        $('#feedbackForm').trigger('reset');
+                    }
+                });
             });
         </script>
         @endsection

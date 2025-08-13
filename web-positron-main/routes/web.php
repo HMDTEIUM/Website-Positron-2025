@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\View\View;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FeedbackController;
 // use App\Http\Controllers\TimelineController; // Tidak diperlukan jika tidak pakai controller
 
 // Beranda
@@ -30,3 +31,4 @@ Route::get('/timeline', function (): View {
 Route::get('/group', [GroupController::class, 'index'])->name('group'); // halaman form pencarian
 Route::get('/group/search', [GroupController::class, 'search'])->name('group.search'); // halaman hasil pencarian
 Route::get('/kontak', [ContactController::class, 'index'])->name('contact');
+Route::post('/feedback', [FeedbackController::class, 'store']);
