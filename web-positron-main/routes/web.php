@@ -5,7 +5,8 @@ use Illuminate\Contracts\View\View;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FeedbackController;
-// use App\Http\Controllers\TimelineController; // Tidak diperlukan jika tidak pakai controller
+use App\Exports\FeedbackExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 // Beranda
 Route::get('/', function () {
@@ -17,18 +18,22 @@ Route::get('/Filosofi', function () {
     return view('Filosofi');
 })->name('Filosofi');
 
-// Kontak (tanpa controller)
-Route::get('/kontak', function () {
-    return view('kontak');
-})->name('kontak');
+// Kontak
+Route::get('/kontak', [ContactController::class, 'index'])->name('contact');
 
-// Timeline — Menampilkan Blade langsung
+// Timeline
 Route::get('/timeline', function (): View {
     return view('timeline');
 })->name('timeline');
 
+// Export Excel
+Route::get('/feedback-export', function () {
+    return Excel::download(new FeedbackExport, 'feedback.xlsx');
+})->name('feedback.export');
+
 // Group
-Route::get('/group', [GroupController::class, 'index'])->name('group'); // halaman form pencarian
-Route::get('/group/search', [GroupController::class, 'search'])->name('group.search'); // halaman hasil pencarian
-Route::get('/kontak', [ContactController::class, 'index'])->name('contact');
-Route::post('/feedback', [FeedbackController::class, 'store']);
+Route::get('/group', [GroupController::class, 'index'])->name('group');
+Route::get('/group/search', [GroupController::class, 'search'])->name('group.search');
+    
+// Feedback POST
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');

@@ -9,13 +9,15 @@ class FeedbackController extends Controller
 {
     public function store(Request $request)
     {
-        Feedback::create([
-            'name'       => $request->name,
-            'message'    => $request->message,
-            'ip_address' => $request->ip(),
-            'user_agent' => $request->header('User-Agent')
+        // Validate input
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'message' => 'required|string',
         ]);
 
-        return response()->json(['success' => true]);
+        // Save to database
+        Feedback::create($validated);
+
+        return response()->json(['success' => true, 'message' => 'Feedback submitted successfully!']);
     }
 }

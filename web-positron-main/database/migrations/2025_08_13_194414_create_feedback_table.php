@@ -15,13 +15,9 @@ return new class extends Migration
         $table->id();
         $table->string('name');
         $table->text('message');
-        $table->string('ip_address')->nullable();
-        $table->string('user_agent')->nullable();
         $table->timestamps();
     });
 }
-
-
     /**
      * Reverse the migrations.
      */
