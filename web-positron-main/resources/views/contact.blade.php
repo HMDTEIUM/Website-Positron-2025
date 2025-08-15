@@ -212,16 +212,6 @@
         margin-bottom: 20px;
     }
 
-<<<<<<< HEAD
-=======
-    .form-label {
-        color: rgba(255, 255, 255, 0.9);
-        font-weight: 600;
-        margin-bottom: 8px;
-        display: block;
-    }
-
->>>>>>> 5ad7fce (Commit)
     .form-control {
         background: rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -229,24 +219,11 @@
         color: white;
         padding: 15px;
         transition: all 0.3s ease;
-<<<<<<< HEAD
-=======
-        width: 100%;
->>>>>>> 5ad7fce (Commit)
     }
 
     .form-control:focus {
         background: rgba(255, 255, 255, 0.15);
         border-color: rgba(255, 255, 255, 0.3);
-<<<<<<< HEAD
-=======
-        outline: none;
-        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
-    }
-
-    .form-control::placeholder {
-        color: rgba(255, 255, 255, 0.6);
->>>>>>> 5ad7fce (Commit)
     }
 
     .btn-primary {
@@ -256,84 +233,13 @@
         border-radius: 30px;
         font-weight: 600;
         transition: all 0.4s ease;
-<<<<<<< HEAD
-=======
         color: white;
         text-decoration: none;
         display: inline-block;
->>>>>>> 5ad7fce (Commit)
     }
 
     .btn-primary:hover {
         transform: translateY(-3px);
-<<<<<<< HEAD
-=======
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
-        color: white;
-    }
-
-    .btn-primary:disabled {
-        opacity: 0.7;
-        transform: none;
-        cursor: not-allowed;
-    }
-
-    .btn-outline-light {
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        color: white;
-        transition: all 0.3s ease;
-    }
-
-    .btn-outline-light:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: white;
-        color: white;
-    }
-
-    .invalid-feedback {
-        color: #ff6b6b;
-        font-size: 0.875rem;
-        margin-top: 5px;
-    }
-
-    .was-validated .form-control:invalid {
-        border-color: #ff6b6b;
-    }
-
-    .was-validated .form-control:valid {
-        border-color: #51cf66;
-    }
-
-    .letter-spacing-2 {
-        letter-spacing: 2px;
-    }
-
-    .text-sm {
-        font-size: 0.875rem;
-    }
-
-    .opacity-80 {
-        opacity: 0.8;
-    }
-
-    .alert {
-        padding: 15px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        border: none;
-    }
-
-    .alert-success {
-        background: rgba(81, 207, 102, 0.2);
-        color: #51cf66;
-        border: 1px solid rgba(81, 207, 102, 0.3);
-    }
-
-    .alert-danger {
-        background: rgba(255, 107, 107, 0.2);
-        color: #ff6b6b;
-        border: 1px solid rgba(255, 107, 107, 0.3);
->>>>>>> 5ad7fce (Commit)
     }
 </style>
 
@@ -349,21 +255,12 @@
             <h4 class="fw-semibold mb-4 text-white text-center text-uppercase letter-spacing-2">Contact Person Program Studi</h4>
             <div class="row g-4">
                 @foreach ($cpProdi as $index => $cp)
-<<<<<<< HEAD
                     <div class="col-sm-6 col-md-4 col-lg-3" style="animation-delay: {{ $index * 0.1 }}s">
                         <div class="locker-card closed text-center h-100" onclick="toggleLocker(this)">
                             <div class="locker-door"></div>
                             <div class="locker-content">
                                 <h5 class="mb-2">{{ $cp['nama'] }}</h5>
                                 <p class="mb-2 text-sm opacity-80">{{ $cp['prodi'] }}</p>
-=======
-                    <div class="col-sm-6 col-md-4 col-lg-3" style="animation: floatIn 1s ease {{ $index * 0.1 }}s both;">
-                        <div class="locker-card closed text-center" onclick="toggleLocker(this)">
-                            <div class="locker-door"></div>
-                            <div class="locker-content">
-                                <h5 class="mb-2">{{ $cp['nama'] }}</h5>
-                                <p class="mb-3 text-sm opacity-80">{{ $cp['prodi'] }}</p>
->>>>>>> 5ad7fce (Commit)
                                 <a href="https://wa.me/{{ $cp['wa'] }}" target="_blank" class="btn btn-sm btn-outline-light rounded-pill">
                                     <i class="bi bi-whatsapp me-1"></i>WhatsApp
                                 </a>
