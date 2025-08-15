@@ -14,17 +14,6 @@
         }
     }
 
-    @keyframes slideInFromRight {
-        0% {
-            opacity: 0;
-            transform: translateX(100px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
     @keyframes lockerOpen {
         0% {
             transform: rotateY(0deg);
@@ -45,8 +34,6 @@
 
     .contact-section {
         background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460);
-        background-size: 400% 400%;
-        animation: morphGradient 15s ease infinite;
         padding: 80px 0;
         min-height: 100vh;
         position: relative;
@@ -186,7 +173,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" required>
                         </div>
                         <div class="form-group">
                             <label for="message" class="form-label">Pesan Anda</label>

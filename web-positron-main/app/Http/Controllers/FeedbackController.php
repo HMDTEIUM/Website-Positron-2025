@@ -13,11 +13,16 @@ class FeedbackController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'message' => 'required|string',
+            'email'=> 'required|string|max:255',
         ]);
 
-        // Save to database
         Feedback::create($validated);
-
-        return response()->json(['success' => true, 'message' => 'Feedback submitted successfully!']);
+    try {
+      // Save to database
+      Feedback::create($validated);
+      return response()->json(['success' => true, 'message' => 'Feedback submitted successfully!'], 201);
+  } catch (\Exception $e) {
+      return response()->json(['success' => false, 'message' => 'Failed to submit feedback.'], 500);
+  }
     }
-}
+}   
