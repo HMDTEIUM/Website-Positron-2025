@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@include('partials.calendar') {{-- Assuming this partial includes necessary calendar scripts/styles --}}
 
 @section('content')
     <!-- Top Hero Section -->
@@ -38,7 +37,8 @@
         <div class="container">
             <div class="sambutan-content">
                 <h2 class="sambutan-title">SAMBUTAN</h2>
-                <img src="{{ asset('images/logo-positron-rodokburem.png') }}" alt="Locker Sambutan" class="sambutan-bg-logo">
+                <img src="{{ asset('images/logo-positron-rodokburem.png') }}" alt="Locker Sambutan"
+                    class="sambutan-bg-logo">
 
                 <!-- Coming Soon Section -->
                 <div class="coming-soon-content">
@@ -46,20 +46,12 @@
 
                     <div id="videoCarousel" class="carousel slide video-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            @foreach ([
-                                'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                                'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                                'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                                'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                            ] as $i => $link)
+                            @foreach (['https://www.youtube.com/embed/dQw4w9WgXcQ', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'https://www.youtube.com/embed/dQw4w9WgXcQ'] as $i => $link)
                                 <div class="carousel-item {{ $i === 0 ? 'active' : '' }}">
                                     <div class="video-container">
                                         <div class="video-wrapper">
-                                            <iframe
-                                                src="{{ $link }}"
-                                                title="Video {{ $i + 1 }}"
-                                                frameborder="0"
-                                                allowfullscreen
+                                            <iframe src="{{ $link }}" title="Video {{ $i + 1 }}"
+                                                frameborder="0" allowfullscreen
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
                                             </iframe>
                                         </div>
@@ -67,10 +59,12 @@
                                 </div>
                             @endforeach
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         </button>
                     </div>
@@ -130,11 +124,11 @@
             <h3 class="section-title">Program Studi di Departemen Teknik Elektro dan Informatika</h3>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                 @foreach ([
-                            'S1 Pendidikan Teknik Informatika' => 'bi-journal-code',
-                            'S1 Teknik Informatika' => 'bi-laptop',
-                            'S1 Teknik Elektro' => 'bi-lightning-charge',
-                            'S1 Pendidikan Teknik Elektro' => 'bi-plug',
-                        ] as $nama => $icon)
+            'S1 Pendidikan Teknik Informatika' => 'bi-journal-code',
+            'S1 Teknik Informatika' => 'bi-laptop',
+            'S1 Teknik Elektro' => 'bi-lightning-charge',
+            'S1 Pendidikan Teknik Elektro' => 'bi-plug',
+        ] as $nama => $icon)
                     <div class="col">
                         <div class="flip-card">
                             <div class="flip-card-inner">
@@ -144,7 +138,8 @@
                                 </div>
                                 <div class="flip-card-back">
                                     <h5 class="prodi-title-back">{{ $nama }}</h5>
-                                    <p class="prodi-description">Program studi unggulan di DTEI yang membentuk generasi profesional dan berdaya saing global.</p>
+                                    <p class="prodi-description">Program studi unggulan di DTEI yang membentuk generasi
+                                        profesional dan berdaya saing global.</p>
                                 </div>
                             </div>
                         </div>
@@ -156,104 +151,96 @@
 
     <!-- Locker Section -->
     <section class="locker-section positron-locker-section">
-    <div class="container">
-        <div class="section left-section" id="leftSection">
-            <div class="left-content">
-                <div class="logo fade-in">
-                    <img src="{{ asset('images/Logo Positron.png') }}" alt="Logo">
+        <div class="container">
+            <div class="section left-section" id="leftSection">
+                <div class="left-content">
+                    <div class="logo fade-in">
+                        <img src="{{ asset('images/Logo Positron.png') }}" alt="Logo">
+                    </div>
+                    <p class="description fade-in" id="dynamic-description">
+                        Silakan pilih salah satu menu di kanan untuk melihat detail informasi.
+                    </p>
+                    <div id="manualbook-button" style="display: none; margin-top: 20px; text-align: center;">
+                        <a href="#" id="manualbook-link" class="download-btn" target="_blank">Download
+                            Manualbook</a>
+                    </div>
                 </div>
-                <p class="description fade-in" id="dynamic-description">
-                    Silakan pilih salah satu menu di kanan untuk melihat detail informasi.
-                </p>
-                <div id="manualbook-button" style="display: none; margin-top: 20px; text-align: center;">
-                    <a href="#" id="manualbook-link" class="download-btn" target="_blank">Download Manualbook</a>
+            </div>
+
+            <div class="resize-handle" id="resizeHandle"></div>
+
+            <div class="right-section" id="rightSection">
+                <div class="locker-grid">
+
+                    <!-- POSITRON 2025 -->
+                    <div class="locker-door" style="background-image: url('{{ asset('images/positron.png') }}');"
+                        data-title="POSITRON 2025"
+                        data-description="POSITRON 2025 hadir sebagai wadah orientasi mahasiswa baru Departemen Teknik Elektro dan Informatika Universitas Negeri Malang. Tahun ini, POSITRON mengusung tema <strong>&quot;Empowering Brighter Futures&quot;</strong> berarti menyalakan obor harapan di dalam diri setiap mahasiswa agar mampu melangkah menuju masa depan yang mereka bentuk sendiri—bukan sekadar mengikuti jalur yang ditentukan orang lain. <br><br> Kampus menjadi ruang untuk menempa integritas, memperluas wawasan, dan menyusun arah hidup dengan kesadaran. Sedangkan <strong>&quot;Beyond the Bell&quot;</strong> mengingatkan bahwa pembelajaran sejati tak berhenti di dalam kelas. Pendidikan tidak berakhir saat tugas dikumpulkan atau ujian selesai. Justru setelah itu, kita akan diuji dalam bentuk lain—ujian karakter, kejujuran, keberanian, dan nilai-nilai kemanusiaan. <br><br> Bergabunglah dengan kami dalam perjalanan menuju transformasi diri dan pencapaian prestasi yang membanggakan."
+                        data-manualbook="{{ asset('manualbook/positron.pdf') }}">
+                    </div>
+
+                    <!-- Forum Maba -->
+                    <div class="locker-door" style="background-image: url('{{ asset('images/forma.png') }}');"
+                        data-title="Forum Maba"
+                        data-description="Forum komunikasi dan orientasi untuk mahasiswa baru. Acara ini dirancang untuk memperkenalkan Anda pada lingkungan kampus, sistem perkuliahan, dan kehidupan berorganisasi di Departemen Teknik Elektro dan Informatika. <br><br> Anda akan bertemu dengan dosen, senior, dan teman-teman seangkatan yang akan bersama-sama menjalani perjalanan akademik selama beberapa tahun ke depan. Forum ini juga memberikan informasi penting tentang kurikulum, aturan akademik, dan berbagai aktivitas menarik yang bisa Anda ikuti."
+                        data-manualbook="{{ asset('manualbook/forum_maba.pdf') }}">
+                    </div>
+
+                    <!-- LDK -->
+                    <div class="locker-door" style="background-image: url('{{ asset('images/ldk.png') }}');"
+                        data-title="LDK"
+                        data-description="Latihan Dasar Kepemimpinan (LDK) merupakan program yang dirancang untuk membentuk karakter kepemimpinan dan kedisiplinan mahasiswa baru. Melalui serangkaian kegiatan outdoor dan indoor, Anda akan belajar tentang teamwork, problem solving, dan manajemen diri. <br><br> LDK mengajarkan nilai-nilai seperti tanggung jawab, integritas, dan kerja sama tim. Kegiatan ini menjadi fondasi penting bagi aktivitas Anda di kampus, termasuk dalam berorganisasi dan mengikuti berbagai kegiatan kemahasiswaan."
+                        data-manualbook="{{ asset('manualbook/ldk.pdf') }}">
+                    </div>
+
+                    <!-- IOH -->
+                    <div class="locker-door" style="background-image: url('{{ asset('images/ioh.png') }}');"
+                        data-title="IOH"
+                        data-description="Ice Breaking &amp; Orientasi Himpunan (IOH) adalah kegiatan yang dirancang untuk memperkenalkan mahasiswa baru pada himpunan program studi masing-masing. Anda akan belajar tentang struktur organisasi, program kerja, dan kegiatan yang diselenggarakan oleh himpunan. <br><br> IOH juga menjadi ajang untuk menjalin pertemanan dengan senior dan teman seangkatan dalam lingkungan program studi yang lebih khusus. Kegiatan ini membantu Anda beradaptasi dengan lingkungan akademik yang lebih spesifik sesuai minat dan bidang studi yang dipilih."
+                        data-manualbook="{{ asset('manualbook/ioh.pdf') }}">
+                    </div>
+
+                    <!-- NAKO 9.0 -->
+                    <div class="locker-door" style="background-image: url('{{ asset('images/nako.png') }}');"
+                        data-title="NAKO 9.0"
+                        data-description="Narasumber Kolaboratif (NAKO) versi 9.0 menghadirkan berbagai pembicara inspiratif dari alumni dan praktisi di bidang teknik elektro dan informatika. Anda akan mendapatkan wawasan tentang perkembangan industri, peluang karir, dan tips sukses dari mereka yang telah berpengalaman. <br><br> Kegiatan ini memberikan gambaran nyata tentang penerapan ilmu yang dipelajari di dunia kerja. NAKO juga menjadi wadah untuk membangun jaringan dengan alumni dan profesional di bidang Anda."
+                        data-manualbook="{{ asset('manualbook/nako.pdf') }}">
+                    </div>
+
+                    <!-- Dewan Komunal -->
+                    <div class="locker-door" style="background-image: url('{{ asset('images/dewan.png') }}');"
+                        data-title="Dewan Komunal"
+                        data-description="Dewan Komunal adalah forum diskusi terbuka yang membahas berbagai isu terkait kehidupan kampus dan pengembangan diri mahasiswa. Kegiatan ini memberikan kesempatan untuk menyampaikan aspirasi dan berpartisipasi dalam pengambilan keputusan di tingkat jurusan. <br><br> Melalui Dewan Komunal, Anda akan belajar tentang demokrasi kampus, tata kelola organisasi, dan pengembangan kebijakan yang berpengaruh langsung pada kehidupan akademik Anda."
+                        data-manualbook="#">
+                    </div>
+
+                    <!-- Segmen -->
+                    <div class="locker-door" style="background-image: url('{{ asset('images/seven.png') }}');"
+                        data-title="Segmen"
+                        data-description="Berbagai segmen menarik akan menghiasi rangkaian kegiatan POSITRON 2025. Mulai dari kompetisi antar kelompok, pentas seni, hingga kegiatan pengabdian masyarakat. Setiap segmen dirancang untuk mengasah kreativitas, sportivitas, dan kepedulian sosial Anda. <br><br> Anda akan belajar bekerja dalam tim, memecahkan masalah secara kreatif, dan mengembangkan soft skills yang sangat penting untuk masa depan karir Anda. Setiap segmen juga menjadi kesempatan untuk menunjukkan bakat dan minat Anda di luar ranah akademik."
+                        data-manualbook="#">
+                    </div>
+
+                    <!-- Guide -->
+                    <div class="locker-door" style="background-image: url('{{ asset('images/guide.png') }}');"
+                        data-title="Guide"
+                        data-description="Buku panduan ini berisi semua informasi penting yang Anda butuhkan untuk menjalani POSITRON 2025 dan kehidupan kampus di Departemen Teknik Elektro dan Informatika. Anda akan menemukan jadwal lengkap kegiatan, aturan yang berlaku, kontak penting, serta tips dan trik untuk sukses di kampus. <br><br> Buku panduan ini menjadi teman setia Anda selama mengikuti orientasi dan masa-masa awal perkuliahan. Pastikan untuk membaca dan memahami seluruh isinya agar dapat mengikuti kegiatan dengan optimal."
+                        data-manualbook="{{ asset('manualbook/guide.pdf') }}">
+                    </div>
+
+                    <!-- Soon -->
+                    <div class="locker-door" style="background-image: url('{{ asset('images/soon.png') }}');"
+                        data-title="Soon"
+                        data-description="Segera hadir! Kami sedang mempersiapkan konten khusus untuk Anda. Kami berkomitmen untuk memberikan pengalaman orientasi yang berkesan dan bermakna bagi seluruh mahasiswa baru Departemen Teknik Elektro dan Informatika. <br><br> Jangan lewatkan update terbaru tentang kegiatan POSITRON 2025 melalui media sosial resmi kami. Tetap semangat dan bersiaplah untuk petualangan menarik di dunia perkuliahan!"
+                        data-manualbook="#">
+                    </div>
+
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="resize-handle" id="resizeHandle"></div>
 
-        <div class="right-section" id="rightSection">
-            <div class="locker-grid">
-
-                <!-- POSITRON 2025 -->
-                <div class="locker-door"
-                     style="background-image: url('{{ asset('images/positron.png') }}');"
-                     data-title="POSITRON 2025"
-                     data-description="POSITRON 2025 hadir sebagai wadah orientasi mahasiswa baru Departemen Teknik Elektro dan Informatika Universitas Negeri Malang. Tahun ini, POSITRON mengusung tema <strong>&quot;Empowering Brighter Futures&quot;</strong> berarti menyalakan obor harapan di dalam diri setiap mahasiswa agar mampu melangkah menuju masa depan yang mereka bentuk sendiri—bukan sekadar mengikuti jalur yang ditentukan orang lain. <br><br> Kampus menjadi ruang untuk menempa integritas, memperluas wawasan, dan menyusun arah hidup dengan kesadaran. Sedangkan <strong>&quot;Beyond the Bell&quot;</strong> mengingatkan bahwa pembelajaran sejati tak berhenti di dalam kelas. Pendidikan tidak berakhir saat tugas dikumpulkan atau ujian selesai. Justru setelah itu, kita akan diuji dalam bentuk lain—ujian karakter, kejujuran, keberanian, dan nilai-nilai kemanusiaan. <br><br> Bergabunglah dengan kami dalam perjalanan menuju transformasi diri dan pencapaian prestasi yang membanggakan."
-                     data-manualbook="{{ asset('manualbook/positron.pdf') }}">
-                </div>
-
-                <!-- Forum Maba -->
-                <div class="locker-door"
-                     style="background-image: url('{{ asset('images/forma.png') }}');"
-                     data-title="Forum Maba"
-                     data-description="Forum komunikasi dan orientasi untuk mahasiswa baru. Acara ini dirancang untuk memperkenalkan Anda pada lingkungan kampus, sistem perkuliahan, dan kehidupan berorganisasi di Departemen Teknik Elektro dan Informatika. <br><br> Anda akan bertemu dengan dosen, senior, dan teman-teman seangkatan yang akan bersama-sama menjalani perjalanan akademik selama beberapa tahun ke depan. Forum ini juga memberikan informasi penting tentang kurikulum, aturan akademik, dan berbagai aktivitas menarik yang bisa Anda ikuti."
-                     data-manualbook="{{ asset('manualbook/forum_maba.pdf') }}">
-                </div>
-
-                <!-- LDK -->
-                <div class="locker-door"
-                     style="background-image: url('{{ asset('images/ldk.png') }}');"
-                     data-title="LDK"
-                     data-description="Latihan Dasar Kepemimpinan (LDK) merupakan program yang dirancang untuk membentuk karakter kepemimpinan dan kedisiplinan mahasiswa baru. Melalui serangkaian kegiatan outdoor dan indoor, Anda akan belajar tentang teamwork, problem solving, dan manajemen diri. <br><br> LDK mengajarkan nilai-nilai seperti tanggung jawab, integritas, dan kerja sama tim. Kegiatan ini menjadi fondasi penting bagi aktivitas Anda di kampus, termasuk dalam berorganisasi dan mengikuti berbagai kegiatan kemahasiswaan."
-                     data-manualbook="{{ asset('manualbook/ldk.pdf') }}">
-                </div>
-
-                <!-- IOH -->
-                <div class="locker-door"
-                     style="background-image: url('{{ asset('images/ioh.png') }}');"
-                     data-title="IOH"
-                     data-description="Ice Breaking &amp; Orientasi Himpunan (IOH) adalah kegiatan yang dirancang untuk memperkenalkan mahasiswa baru pada himpunan program studi masing-masing. Anda akan belajar tentang struktur organisasi, program kerja, dan kegiatan yang diselenggarakan oleh himpunan. <br><br> IOH juga menjadi ajang untuk menjalin pertemanan dengan senior dan teman seangkatan dalam lingkungan program studi yang lebih khusus. Kegiatan ini membantu Anda beradaptasi dengan lingkungan akademik yang lebih spesifik sesuai minat dan bidang studi yang dipilih."
-                     data-manualbook="{{ asset('manualbook/ioh.pdf') }}">
-                </div>
-
-                <!-- NAKO 9.0 -->
-                <div class="locker-door"
-                     style="background-image: url('{{ asset('images/nako.png') }}');"
-                     data-title="NAKO 9.0"
-                     data-description="Narasumber Kolaboratif (NAKO) versi 9.0 menghadirkan berbagai pembicara inspiratif dari alumni dan praktisi di bidang teknik elektro dan informatika. Anda akan mendapatkan wawasan tentang perkembangan industri, peluang karir, dan tips sukses dari mereka yang telah berpengalaman. <br><br> Kegiatan ini memberikan gambaran nyata tentang penerapan ilmu yang dipelajari di dunia kerja. NAKO juga menjadi wadah untuk membangun jaringan dengan alumni dan profesional di bidang Anda."
-                     data-manualbook="{{ asset('manualbook/nako.pdf') }}">
-                </div>
-
-                <!-- Dewan Komunal -->
-                <div class="locker-door"
-                     style="background-image: url('{{ asset('images/dewan.png') }}');"
-                     data-title="Dewan Komunal"
-                     data-description="Dewan Komunal adalah forum diskusi terbuka yang membahas berbagai isu terkait kehidupan kampus dan pengembangan diri mahasiswa. Kegiatan ini memberikan kesempatan untuk menyampaikan aspirasi dan berpartisipasi dalam pengambilan keputusan di tingkat jurusan. <br><br> Melalui Dewan Komunal, Anda akan belajar tentang demokrasi kampus, tata kelola organisasi, dan pengembangan kebijakan yang berpengaruh langsung pada kehidupan akademik Anda."
-                     data-manualbook="#">
-                </div>
-
-                <!-- Segmen -->
-                <div class="locker-door"
-                     style="background-image: url('{{ asset('images/seven.png') }}');"
-                     data-title="Segmen"
-                     data-description="Berbagai segmen menarik akan menghiasi rangkaian kegiatan POSITRON 2025. Mulai dari kompetisi antar kelompok, pentas seni, hingga kegiatan pengabdian masyarakat. Setiap segmen dirancang untuk mengasah kreativitas, sportivitas, dan kepedulian sosial Anda. <br><br> Anda akan belajar bekerja dalam tim, memecahkan masalah secara kreatif, dan mengembangkan soft skills yang sangat penting untuk masa depan karir Anda. Setiap segmen juga menjadi kesempatan untuk menunjukkan bakat dan minat Anda di luar ranah akademik."
-                     data-manualbook="#">
-                </div>
-
-                <!-- Guide -->
-                <div class="locker-door"
-                     style="background-image: url('{{ asset('images/guide.png') }}');"
-                     data-title="Guide"
-                     data-description="Buku panduan ini berisi semua informasi penting yang Anda butuhkan untuk menjalani POSITRON 2025 dan kehidupan kampus di Departemen Teknik Elektro dan Informatika. Anda akan menemukan jadwal lengkap kegiatan, aturan yang berlaku, kontak penting, serta tips dan trik untuk sukses di kampus. <br><br> Buku panduan ini menjadi teman setia Anda selama mengikuti orientasi dan masa-masa awal perkuliahan. Pastikan untuk membaca dan memahami seluruh isinya agar dapat mengikuti kegiatan dengan optimal."
-                     data-manualbook="{{ asset('manualbook/guide.pdf') }}">
-                </div>
-
-                <!-- Soon -->
-                <div class="locker-door"
-                     style="background-image: url('{{ asset('images/soon.png') }}');"
-                     data-title="Soon"
-                     data-description="Segera hadir! Kami sedang mempersiapkan konten khusus untuk Anda. Kami berkomitmen untuk memberikan pengalaman orientasi yang berkesan dan bermakna bagi seluruh mahasiswa baru Departemen Teknik Elektro dan Informatika. <br><br> Jangan lewatkan update terbaru tentang kegiatan POSITRON 2025 melalui media sosial resmi kami. Tetap semangat dan bersiaplah untuk petualangan menarik di dunia perkuliahan!"
-                     data-manualbook="#">
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-    
 
     <!-- Calendar Section -->
     <section class="calendar-section">
@@ -316,10 +303,12 @@
         body {
             overflow-x: hidden;
             line-height: 1.6;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Default font */
-            background-color: #f4f4f4; /* Default background */
-            height: 100vh; /* Ensure body takes full height for split screen */
-            overflow-y: hidden; /* Initially disable scrolling */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Default font */
+            height: 100vh;
+            /* Ensure body takes full height for split screen */
+            overflow-y: hidden;
+            /* Initially disable scrolling */
         }
 
         .container {
@@ -380,6 +369,8 @@
             animation: slideInUp 1s ease-out 0.3s both;
         }
 
+       
+
         .cta-box {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
@@ -419,7 +410,7 @@
         /* About Section */
         .about-section {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                        url('{{ asset('images/bg-2.png') }}') no-repeat center center;
+                url('{{ asset('images/bg-2.png') }}') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
@@ -479,7 +470,7 @@
         /* Sambutan Section */
         .sambutan-section {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('{{ asset('images/hall-locker.png') }}') no-repeat center center;
+                url('{{ asset('images/hall-locker.png') }}') no-repeat center center;
             background-size: cover;
             min-height: 100vh;
             position: relative;
@@ -860,7 +851,7 @@
         /* Calendar Section */
         .calendar-section {
             background: linear-gradient(rgba(10, 62, 109, 0.9), rgba(10, 62, 109, 0.9)),
-                        url('{{ asset('images/bg-1.png') }}') no-repeat center center;
+                url('{{ asset('images/bg-1.png') }}') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             padding: 5rem 0;
@@ -1014,6 +1005,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1025,6 +1017,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1036,13 +1029,16 @@
                 opacity: 0;
                 transform: scale(0.3);
             }
+
             50% {
                 opacity: 1;
                 transform: scale(1.05);
             }
+
             70% {
                 transform: scale(0.9);
             }
+
             100% {
                 opacity: 1;
                 transform: scale(1);
@@ -1050,14 +1046,19 @@
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.05);
             }
         }
 
+        '
+        '
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .hero-section {
@@ -1065,8 +1066,14 @@
                 padding: 2rem 0;
             }
 
+            .logo-icon {
+                width: 111px;
+                height: 151px;
+                margin-top: 20px;
+            }
+
             .about-section,
-            .calendar-section{
+            .calendar-section {
                 background-attachment: scroll;
             }
 
@@ -1169,8 +1176,9 @@
 
         /* Print styles */
         @media print {
+
             .hero-section,
-            .sambutan-section{
+            .sambutan-section {
                 background: white !important;
                 color: black !important;
             }
@@ -1181,7 +1189,7 @@
         }
 
         /* Locker Section Specific Styles */
-        .positron-locker-section { 
+        .positron-locker-section {
             height: 100vh;
             display: flex;
             align-items: center;
@@ -1198,14 +1206,17 @@
             position: relative;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            max-width: none; /* Override global container max-width */
-            padding: 0; /* Override global container padding */
+            max-width: none;
+            /* Override global container max-width */
+            padding: 0;
+            /* Override global container padding */
         }
 
         .section {
-            transition: none; /* Important for resize functionality */
+            transition: none;
+            /* Important for resize functionality */
             overflow: hidden;
             position: relative;
             flex-grow: 1;
@@ -1216,7 +1227,8 @@
             flex: 1;
             padding: 30px;
             overflow-y: auto;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
             background-color: #f5f7fa;
             background-image: url('{{ asset('images/Background.png') }}');
             background-size: cover;
@@ -1228,11 +1240,14 @@
         }
 
         .left-content {
-            max-width: 700px; /* Adjusted for better readability */
+            max-width: 700px;
+            /* Adjusted for better readability */
             margin: 0 auto;
             color: #333;
-            text-align: center; /* Center content within left-content */
-            min-height: 100%; /* Ensure content takes full height */
+            text-align: center;
+            /* Center content within left-content */
+            min-height: 100%;
+            /* Ensure content takes full height */
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -1240,10 +1255,10 @@
         }
 
         .logo {
-            width: 150px; /* Fixed width for logo */
+            width: 150px;
+            /* Fixed width for logo */
             height: auto;
             max-height: 250px;
-            margin: 0 auto 30px;
         }
 
         .logo img {
@@ -1253,12 +1268,16 @@
         }
 
         .description {
-            font-size: 17px; /* Original font size from test2.php */
+            font-size: 17px;
+            /* Original font size from test2.php */
             line-height: 1.8;
-            color: #34495e; /* Original color from test2.php */
-            text-align: justify; /* Original alignment from test2.php */
+            color: #34495e;
+            /* Original color from test2.php */
+            text-align: justify;
+            /* Original alignment from test2.php */
             margin: 0 auto;
-            font-family: 'Poppins', sans-serif; /* Specific font for description */
+            font-family: 'Poppins', sans-serif;
+            /* Specific font for description */
         }
 
         .description strong {
@@ -1267,13 +1286,18 @@
         }
 
         .right-section {
-            flex-shrink: 0; /* Prevent shrinking */
-            width: 40%; /* Initial width for right section */
+            flex-shrink: 0;
+            /* Prevent shrinking */
+            width: 40%;
+            /* Initial width for right section */
             background-color: #1b2a3a;
             background-image: url('{{ asset('images/Background_Loker.png') }}');
             background-size: 98%;
-            background-size: cover;       /* penuhi kotak tanpa mengulang */
-            background-repeat: no-repeat; /* tidak diulang */  /* posisikan di tengah */
+            background-size: cover;
+            /* penuhi kotak tanpa mengulang */
+            background-repeat: no-repeat;
+            /* tidak diulang */
+            /* posisikan di tengah */
             overflow-y: auto;
             display: flex;
             align-items: left;
@@ -1282,17 +1306,23 @@
 
         .locker-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Use 1fr for flexible sizing */
+            grid-template-columns: repeat(3, 1fr);
+            /* Use 1fr for flexible sizing */
             gap: 10px;
             padding: 10px;
-            width: fit-content; /* Adjust to content */
-            height: fit-content; /* Adjust to content */
+            width: fit-content;
+            /* Adjust to content */
+            height: fit-content;
+            /* Adjust to content */
         }
 
         .locker-door {
-            width: 130px; /* Fixed width from test2.php */
-            height: 170px; /* Fixed height from test2.php */
-            background-size: cover; /* Use cover to fill the area */
+            width: 130px;
+            /* Fixed width from test2.php */
+            height: 170px;
+            /* Fixed height from test2.php */
+            background-size: cover;
+            /* Use cover to fill the area */
             background-repeat: no-repeat;
             background-position: center;
             cursor: pointer;
@@ -1312,7 +1342,8 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 8px; /* Default width */
+            width: 8px;
+            /* Default width */
             background: rgba(255, 255, 255, 0.1);
             cursor: col-resize;
             z-index: 1000;
@@ -1322,14 +1353,16 @@
 
         .resize-handle:hover {
             background: gray;
-            width: 12px; /* Hover width */
+            width: 12px;
+            /* Hover width */
             border-left: 2px solid rgba(255, 255, 255, 0.4);
             border-right: 2px solid rgba(255, 255, 255, 0.4);
         }
 
         .resize-handle.dragging {
             background: rgba(255, 255, 255, 0.3);
-            width: 16px; /* Dragging width */
+            width: 16px;
+            /* Dragging width */
             border-left: 3px solid rgba(255, 255, 255, 0.6);
             border-right: 3px solid rgba(255, 255, 255, 0.6);
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
@@ -1344,10 +1377,10 @@
             width: 4px;
             height: 40px;
             background: repeating-linear-gradient(to bottom,
-                rgba(255, 255, 255, 0.6) 0px,
-                rgba(255, 255, 255, 0.6) 4px,
-                transparent 4px,
-                transparent 8px);
+                    rgba(255, 255, 255, 0.6) 0px,
+                    rgba(255, 255, 255, 0.6) 4px,
+                    transparent 4px,
+                    transparent 8px);
             border-radius: 2px;
         }
 
@@ -1402,34 +1435,44 @@
         @media (max-width: 768px) {
             .positron-locker-section .container {
                 flex-direction: column;
-                height: 90%; /* Adjust height for mobile */
-                width: 95%; /* Adjust width for mobile */
+                height: 90%;
+                /* Adjust height for mobile */
+                width: 95%;
+                /* Adjust width for mobile */
             }
 
-            .left-section, .right-section {
+            .left-section,
+            .right-section {
                 flex-basis: auto;
                 width: 100%;
-                height: 50vh; /* Half viewport height for each section */
-                padding: 20px; /* Adjust padding for mobile */
+                height: 50vh;
+                /* Half viewport height for each section */
+                padding: 20px;
+                /* Adjust padding for mobile */
             }
 
             .left-content {
-                padding: 0; /* Remove padding from left-content on mobile */
+                padding: 0;
+                /* Remove padding from left-content on mobile */
             }
 
             .logo {
-                width: 120px; /* Smaller logo on mobile */
+                width: 120px;
+                /* Smaller logo on mobile */
                 margin-bottom: 20px;
             }
 
             .description {
-                font-size: 15px; /* Smaller font size on mobile */
+                font-size: 15px;
+                /* Smaller font size on mobile */
             }
 
             .locker-grid {
-                grid-template-columns: repeat(3, 80px); /* Smaller lockers on mobile */
+                grid-template-columns: repeat(3, 80px);
+                /* Smaller lockers on mobile */
                 grid-template-rows: repeat(3, 150px);
-                gap: 10px; /* Smaller gap on mobile */
+                gap: 10px;
+                /* Smaller gap on mobile */
             }
 
             .locker-door {
@@ -1443,7 +1486,8 @@
                 right: 0;
                 top: auto;
                 width: 100%;
-                height: 8px; /* Mobile handle height */
+                height: 8px;
+                /* Mobile handle height */
                 cursor: row-resize;
                 border-left: none;
                 border-right: none;
@@ -1452,13 +1496,15 @@
             }
 
             .resize-handle:hover {
-                height: 12px; /* Mobile hover height */
+                height: 12px;
+                /* Mobile hover height */
                 border-top: 2px solid rgba(255, 255, 255, 0.4);
                 border-bottom: 2px solid rgba(255, 255, 255, 0.4);
             }
 
             .resize-handle.dragging {
-                height: 16px; /* Mobile dragging height */
+                height: 16px;
+                /* Mobile dragging height */
                 border-top: 3px solid rgba(255, 255, 255, 0.6);
                 border-bottom: 3px solid rgba(255, 255, 255, 0.6);
             }
@@ -1467,71 +1513,70 @@
                 width: 40px;
                 height: 4px;
                 background: repeating-linear-gradient(to right,
-                    rgba(255, 255, 255, 0.6) 0px,
-                    rgba(255, 255, 255, 0.6) 4px,
-                    transparent 4px,
-                    transparent 8px);
+                        rgba(255, 255, 255, 0.6) 0px,
+                        rgba(255, 255, 255, 0.6) 4px,
+                        transparent 4px,
+                        transparent 8px);
             }
         }
     </style>
 
     <script>
-        
         function updateContent(title, description, manualbookLink) {
-        document.getElementById('dynamic-description').innerHTML = description;
+            document.getElementById('dynamic-description').innerHTML = description;
 
-        const manualbookButton = document.getElementById('manualbook-button');
-        const manualbookLinkElement = document.getElementById('manualbook-link');
+            const manualbookButton = document.getElementById('manualbook-button');
+            const manualbookLinkElement = document.getElementById('manualbook-link');
 
-        if (manualbookLink && manualbookLink !== '#') {
-            manualbookLinkElement.href = manualbookLink;
-            manualbookLinkElement.innerText = `Download ${title} Manualbook`;
-            manualbookButton.style.display = 'block';
-        } else {
-            manualbookButton.style.display = 'none';
-        }
+            if (manualbookLink && manualbookLink !== '#') {
+                manualbookLinkElement.href = manualbookLink;
+                manualbookLinkElement.innerText = `Download ${title} Manualbook`;
+                manualbookButton.style.display = 'block';
+            } else {
+                manualbookButton.style.display = 'none';
+            }
 
-        document.getElementById('leftSection').scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        // Disable scrolling initially
-        document.body.style.overflowY = 'hidden';
-
-        document.querySelectorAll(".locker-door").forEach(locker => {
-            locker.addEventListener("click", function() {
-                updateContent(
-                    this.dataset.title,
-                    this.dataset.description,
-                    this.dataset.manualbook
-                );
-            });
-        });
-
-        // Auto klik locker pertama saat load
-        const firstLocker = document.querySelector(".locker-door");
-        if (firstLocker) {
-            firstLocker.click();
-        }
-
-        // Enable scrolling and navigate on CTA button click
-        document.getElementById('ctaSiapButton').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.body.style.overflowY = 'auto'; // Enable scrolling
-            document.getElementById('home').scrollIntoView({
+            document.getElementById('leftSection').scrollTo({
+                top: 0,
                 behavior: 'smooth'
             });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Disable scrolling initially
+            document.body.style.overflowY = 'hidden';
+
+            document.querySelectorAll(".locker-door").forEach(locker => {
+                locker.addEventListener("click", function() {
+                    updateContent(
+                        this.dataset.title,
+                        this.dataset.description,
+                        this.dataset.manualbook
+                    );
+                });
+            });
+
+            // Auto klik locker pertama saat load
+            const firstLocker = document.querySelector(".locker-door");
+            if (firstLocker) {
+                firstLocker.click();
+            }
+
+            // Enable scrolling and navigate on CTA button click
+            document.getElementById('ctaSiapButton').addEventListener('click', function(e) {
+                e.preventDefault();
+                document.body.style.overflowY = 'auto'; // Enable scrolling
+                document.getElementById('home').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-    });
 
         // Optimized Split Screen Controller Class
         class OptimizedSplitScreenController {
             constructor() {
                 // Scoped to the new section to avoid conflicts with other .container elements
-                this.container = document.querySelector('.positron-locker-section .container'); 
+                this.container = document.querySelector('.positron-locker-section .container');
                 this.leftSection = document.getElementById('leftSection');
                 this.rightSection = document.getElementById('rightSection');
                 this.resizeHandle = document.getElementById('resizeHandle');
@@ -1579,12 +1624,12 @@
                 if (this.isMobile) {
                     this.containerSize = this.container.offsetHeight;
                     // Set initial heights for mobile
-                    this.leftSection.style.height = '62%'; 
+                    this.leftSection.style.height = '62%';
                     this.rightSection.style.height = '38%';
                 } else {
                     this.containerSize = this.container.offsetWidth;
                     // Set initial widths for desktop
-                    this.leftSection.style.width = '62%'; 
+                    this.leftSection.style.width = '62%';
                     this.rightSection.style.width = '38%'; // Adjusted for better initial balance
                 }
                 this.updateHandlePosition(); // Position the handle correctly
@@ -1595,7 +1640,8 @@
                 this.isDragging = true;
                 this.resizeHandle.classList.add('dragging');
                 this.startPos = this.isMobile ? e.clientY : e.clientX; // Get start position based on orientation
-                this.startLeftSize = this.isMobile ? this.leftSection.offsetHeight : this.leftSection.offsetWidth; // Get initial size
+                this.startLeftSize = this.isMobile ? this.leftSection.offsetHeight : this.leftSection
+                .offsetWidth; // Get initial size
                 document.body.style.cursor = this.isMobile ? 'row-resize' : 'col-resize'; // Change cursor
                 document.body.style.userSelect = 'none'; // Prevent text selection
                 e.preventDefault(); // Prevent default browser behavior (e.g., image dragging)
@@ -1637,7 +1683,7 @@
             updateSizes(currentPos) {
                 const delta = currentPos - this.startPos; // Calculate movement delta
                 let newLeftSize = this.startLeftSize + delta; // Calculate new size for left section
-                
+
                 // Define minimum and maximum sizes to prevent sections from collapsing
                 const minSectionSize = 200; // Minimum size in pixels
                 const minLeftSize = Math.max(minSectionSize, (this.minLeftSizePercentage / 81) * this.containerSize);
@@ -1708,7 +1754,8 @@
             function renderCalendar(month, year) {
                 grid.innerHTML = "";
                 const daysInMonth = new Date(year, month + 1, 0).getDate(); // Get number of days in month
-                const firstDayIndex = new Date(year, month, 1).getDay(); // Get day of week for 1st day (0=Sunday, 1=Monday...)
+                const firstDayIndex = new Date(year, month, 1)
+            .getDay(); // Get day of week for 1st day (0=Sunday, 1=Monday...)
                 const monthName = new Date(year, month).toLocaleString('id-ID', {
                     month: 'long'
                 });
@@ -1751,7 +1798,10 @@
                         const end = new Date(ev.endDate);
                         // Check if the current date cell falls within an event's start and end date
                         if (dateObj >= start && dateObj <= end) {
-                            matchedEventData = { startDate, ...ev };
+                            matchedEventData = {
+                                startDate,
+                                ...ev
+                            };
                             break;
                         }
                     }
@@ -1764,34 +1814,38 @@
                         cell.appendChild(eventLabel);
 
                         // Add click listener to show event details in modal
-                        cell.addEventListener("click", function () {
+                        cell.addEventListener("click", function() {
                             document.getElementById('modalEventTitle').innerText = matchedEventData.title;
 
                             const startDate = new Date(matchedEventData.startDate);
                             const endDate = new Date(matchedEventData.endDate);
                             const formattedDate = startDate.toLocaleDateString('id-ID', {
-                                day: 'numeric',
-                                month: 'long'
-                            }) +
-                            (startDate.getTime() !== endDate.getTime()
-                                ? '–' + endDate.toLocaleDateString('id-ID', {
                                     day: 'numeric',
-                                    month: 'long',
-                                    year: 'numeric'
-                                })
-                                : ` ${startDate.getFullYear()}`);
+                                    month: 'long'
+                                }) +
+                                (startDate.getTime() !== endDate.getTime() ?
+                                    '–' + endDate.toLocaleDateString('id-ID', {
+                                        day: 'numeric',
+                                        month: 'long',
+                                        year: 'numeric'
+                                    }) :
+                                    ` ${startDate.getFullYear()}`);
 
                             document.getElementById('modalEventDate').innerText = formattedDate;
-                            document.getElementById('modalEventDesc').innerText = matchedEventData.description;
+                            document.getElementById('modalEventDesc').innerText = matchedEventData
+                                .description;
 
                             // Add to Calendar button functionality
                             document.getElementById('addToCalendarBtn').onclick = () => {
-                                const blob = new Blob([generateICS(matchedEventData.title, matchedEventData.description, matchedEventData.startDate, matchedEventData.endDate)], {
+                                const blob = new Blob([generateICS(matchedEventData.title,
+                                    matchedEventData.description, matchedEventData
+                                    .startDate, matchedEventData.endDate)], {
                                     type: 'text/calendar'
                                 });
                                 const link = document.createElement('a');
                                 link.href = URL.createObjectURL(blob);
-                                link.download = `${matchedEventData.title.replace(/\s+/g, "_")}_POSITRON.ics`;
+                                link.download =
+                                    `${matchedEventData.title.replace(/\s+/g, "_")}_POSITRON.ics`;
                                 link.click();
                             };
 
@@ -1802,7 +1856,7 @@
                     grid.appendChild(cell);
                 }
             }
-            
+
             // Function to generate ICS file content for calendar events
             function generateICS(title, description, start, end) {
                 const format = date => new Date(date).toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
@@ -1868,7 +1922,8 @@ END:VCALENDAR`;
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running'; // Play animation when visible
+                        entry.target.style.animationPlayState =
+                        'running'; // Play animation when visible
                     } else {
                         // Optional: Reset animation if element scrolls out of view
                         // entry.target.style.animationPlayState = 'paused'; 
@@ -1877,9 +1932,11 @@ END:VCALENDAR`;
             }, observerOptions);
 
             // Observe animated elements
-            document.querySelectorAll('.section-title, .countdown-item, .flip-card, .fade-in, .bounceIn, .slideInUp, .pulse').forEach(el => {
-                observer.observe(el);
-            });
+            document.querySelectorAll(
+                '.section-title, .countdown-item, .flip-card, .fade-in, .bounceIn, .slideInUp, .pulse').forEach(
+                el => {
+                    observer.observe(el);
+                });
         });
     </script>
 @endsection
