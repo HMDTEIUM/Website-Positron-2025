@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mahasiswa extends Model
 {
-    protected $fillable = ['nama', 'prodi', 'kelompok', 'mentor'];
+    protected $table = 'data_mahasiswa'; // ganti sesuai nama tabel asli di database
+    protected $fillable = [
+        'nama_mahasiswa',
+        'program_studi',
+        'nim',
+        'mentor',
+        'kelompok',
+    ];
 }

@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "abd467081706361d8302a84d498964a2",
+=======
+    "content-hash": "e8e79757d985730f6a5bdeede7bb5e38",
+>>>>>>> 5ad7fce (Commit)
     "packages": [
         {
             "name": "brick/math",
@@ -138,6 +142,7 @@
         {
             "name": "composer/pcre",
             "version": "3.3.2",
+<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/pcre.git",
@@ -146,6 +151,11 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/composer/pcre/zipball/b2bed4734f0cc156ee1fe9c0da2550420d99a21e",
+=======
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/composer/pcre/3.3.2/composer-pcre-3.3.2.zip",
+>>>>>>> 5ad7fce (Commit)
                 "reference": "b2bed4734f0cc156ee1fe9c0da2550420d99a21e",
                 "shasum": ""
             },
@@ -176,7 +186,10 @@
                     "Composer\\Pcre\\": "src"
                 }
             },
+<<<<<<< HEAD
             "notification-url": "https://packagist.org/downloads/",
+=======
+>>>>>>> 5ad7fce (Commit)
             "license": [
                 "MIT"
             ],
@@ -198,6 +211,7 @@
                 "issues": "https://github.com/composer/pcre/issues",
                 "source": "https://github.com/composer/pcre/tree/3.3.2"
             },
+<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -212,11 +226,14 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 5ad7fce (Commit)
             "time": "2024-11-12T16:29:46+00:00"
         },
         {
             "name": "composer/semver",
             "version": "3.4.3",
+<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
@@ -225,6 +242,11 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/composer/semver/zipball/4313d26ada5e0c4edfbd1dc481a92ff7bff91f12",
+=======
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/composer/semver/3.4.3/composer-semver-3.4.3.zip",
+>>>>>>> 5ad7fce (Commit)
                 "reference": "4313d26ada5e0c4edfbd1dc481a92ff7bff91f12",
                 "shasum": ""
             },
@@ -246,7 +268,10 @@
                     "Composer\\Semver\\": "src"
                 }
             },
+<<<<<<< HEAD
             "notification-url": "https://packagist.org/downloads/",
+=======
+>>>>>>> 5ad7fce (Commit)
             "license": [
                 "MIT"
             ],
@@ -279,6 +304,7 @@
                 "issues": "https://github.com/composer/semver/issues",
                 "source": "https://github.com/composer/semver/tree/3.4.3"
             },
+<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -293,6 +319,8 @@
                     "type": "tidelift"
                 }
             ],
+=======
+>>>>>>> 5ad7fce (Commit)
             "time": "2024-09-19T14:15:21+00:00"
         },
         {
@@ -672,6 +700,7 @@
         {
             "name": "ezyang/htmlpurifier",
             "version": "v4.18.0",
+<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
@@ -680,6 +709,11 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/cb56001e54359df7ae76dc522d08845dc741621b",
+=======
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/ezyang/htmlpurifier/v4.18.0/ezyang-htmlpurifier-v4.18.0.zip",
+>>>>>>> 5ad7fce (Commit)
                 "reference": "cb56001e54359df7ae76dc522d08845dc741621b",
                 "shasum": ""
             },
@@ -708,7 +742,10 @@
                     "/library/HTMLPurifier/Language/"
                 ]
             },
+<<<<<<< HEAD
             "notification-url": "https://packagist.org/downloads/",
+=======
+>>>>>>> 5ad7fce (Commit)
             "license": [
                 "LGPL-2.1-or-later"
             ],
@@ -2231,6 +2268,7 @@
         {
             "name": "maatwebsite/excel",
             "version": "3.1.66",
+<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "https://github.com/SpartnerNL/Laravel-Excel.git",
@@ -2239,6 +2277,11 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/SpartnerNL/Laravel-Excel/zipball/3b29c2426a46674f444890c45f742452a396aae8",
+=======
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/maatwebsite/excel/3.1.66/maatwebsite-excel-3.1.66.zip",
+>>>>>>> 5ad7fce (Commit)
                 "reference": "3b29c2426a46674f444890c45f742452a396aae8",
                 "shasum": ""
             },
@@ -2271,7 +2314,10 @@
                     "Maatwebsite\\Excel\\": "src/"
                 }
             },
+<<<<<<< HEAD
             "notification-url": "https://packagist.org/downloads/",
+=======
+>>>>>>> 5ad7fce (Commit)
             "license": [
                 "MIT"
             ],
@@ -2297,6 +2343,7 @@
                 "issues": "https://github.com/SpartnerNL/Laravel-Excel/issues",
                 "source": "https://github.com/SpartnerNL/Laravel-Excel/tree/3.1.66"
             },
+<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://laravel-excel.com/commercial-support",
@@ -2307,11 +2354,14 @@
                     "type": "github"
                 }
             ],
+=======
+>>>>>>> 5ad7fce (Commit)
             "time": "2025-08-07T08:31:22+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
             "version": "3.1.2",
+<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "https://github.com/maennchen/ZipStream-PHP.git",
@@ -2320,6 +2370,11 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/aeadcf5c412332eb426c0f9b4485f6accba2a99f",
+=======
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/maennchen/zipstream-php/3.1.2/maennchen-zipstream-php-3.1.2.zip",
+>>>>>>> 5ad7fce (Commit)
                 "reference": "aeadcf5c412332eb426c0f9b4485f6accba2a99f",
                 "shasum": ""
             },
@@ -2348,7 +2403,10 @@
                     "ZipStream\\": "src/"
                 }
             },
+<<<<<<< HEAD
             "notification-url": "https://packagist.org/downloads/",
+=======
+>>>>>>> 5ad7fce (Commit)
             "license": [
                 "MIT"
             ],
@@ -2379,17 +2437,21 @@
                 "issues": "https://github.com/maennchen/ZipStream-PHP/issues",
                 "source": "https://github.com/maennchen/ZipStream-PHP/tree/3.1.2"
             },
+<<<<<<< HEAD
             "funding": [
                 {
                     "url": "https://github.com/maennchen",
                     "type": "github"
                 }
             ],
+=======
+>>>>>>> 5ad7fce (Commit)
             "time": "2025-01-27T12:07:53+00:00"
         },
         {
             "name": "markbaker/complex",
             "version": "3.0.2",
+<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "https://github.com/MarkBaker/PHPComplex.git",
@@ -2398,6 +2460,11 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/MarkBaker/PHPComplex/zipball/95c56caa1cf5c766ad6d65b6344b807c1e8405b9",
+=======
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/markbaker/complex/3.0.2/markbaker-complex-3.0.2.zip",
+>>>>>>> 5ad7fce (Commit)
                 "reference": "95c56caa1cf5c766ad6d65b6344b807c1e8405b9",
                 "shasum": ""
             },
@@ -2416,7 +2483,10 @@
                     "Complex\\": "classes/src/"
                 }
             },
+<<<<<<< HEAD
             "notification-url": "https://packagist.org/downloads/",
+=======
+>>>>>>> 5ad7fce (Commit)
             "license": [
                 "MIT"
             ],
@@ -2441,6 +2511,7 @@
         {
             "name": "markbaker/matrix",
             "version": "3.0.1",
+<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "https://github.com/MarkBaker/PHPMatrix.git",
@@ -2449,6 +2520,11 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/728434227fe21be27ff6d86621a1b13107a2562c",
+=======
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/markbaker/matrix/3.0.1/markbaker-matrix-3.0.1.zip",
+>>>>>>> 5ad7fce (Commit)
                 "reference": "728434227fe21be27ff6d86621a1b13107a2562c",
                 "shasum": ""
             },
@@ -2471,7 +2547,10 @@
                     "Matrix\\": "classes/src/"
                 }
             },
+<<<<<<< HEAD
             "notification-url": "https://packagist.org/downloads/",
+=======
+>>>>>>> 5ad7fce (Commit)
             "license": [
                 "MIT"
             ],
@@ -3001,6 +3080,7 @@
         {
             "name": "phpoffice/phpspreadsheet",
             "version": "1.30.0",
+<<<<<<< HEAD
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
@@ -3009,6 +3089,11 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/2f39286e0136673778b7a142b3f0d141e43d1714",
+=======
+            "dist": {
+                "type": "zip",
+                "url": "https://mirrors.cloud.tencent.com/repository/composer/phpoffice/phpspreadsheet/1.30.0/phpoffice-phpspreadsheet-1.30.0.zip",
+>>>>>>> 5ad7fce (Commit)
                 "reference": "2f39286e0136673778b7a142b3f0d141e43d1714",
                 "shasum": ""
             },
@@ -3062,7 +3147,10 @@
                     "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
                 }
             },
+<<<<<<< HEAD
             "notification-url": "https://packagist.org/downloads/",
+=======
+>>>>>>> 5ad7fce (Commit)
             "license": [
                 "MIT"
             ],

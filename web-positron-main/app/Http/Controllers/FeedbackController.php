@@ -12,6 +12,7 @@ class FeedbackController extends Controller
         // Validate input
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+<<<<<<< HEAD
             'message' => 'required|string',
             'email'=> 'required|string|max:255',
         ]);
@@ -26,3 +27,15 @@ class FeedbackController extends Controller
   }
     }
 }   
+=======
+            'email' => 'required|email|max:255',
+            'message' => 'required|string',
+        ]);
+
+        // Save to database
+        Feedback::create($validated);
+
+        return response()->json(['success' => true, 'message' => 'Feedback submitted successfully!']);
+    }
+}
+>>>>>>> 5ad7fce (Commit)
