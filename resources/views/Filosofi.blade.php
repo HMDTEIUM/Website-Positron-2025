@@ -243,7 +243,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('{{ asset('images/logo-positron-rodokburem.png') }}') center/contain no-repeat;
+        background: url('{{ asset('logo-positron-rodokburem.png') }}') center/contain no-repeat;
         opacity: 0.05;
         z-index: -1;
     }
@@ -444,7 +444,7 @@
             <div class="cube" id="cube">
                 <div class="cube-face front">
                     <div class="cube-image-container">
-                        <img src="{{ asset('images/Perisai.png') }}" alt="Perisai Logo POSITRON" class="cube-image">
+                        <img src="{{ asset('Perisai.png') }}" alt="Perisai Logo POSITRON" class="cube-image">
                     </div>
                     <h4 class="cube-title">Perisai (Shield)</h4>
                     <p class="cube-desc">
@@ -456,7 +456,7 @@
                 
                 <div class="cube-face right">
                     <div class="cube-image-container">
-                        <img src="{{ asset('images/Petir.png') }}" alt="Petir Logo POSITRON" class="cube-image">
+                        <img src="{{ asset('Petir.png') }}" alt="Petir Logo POSITRON" class="cube-image">
                     </div>
                     <h4 class="cube-title">Petir di Tengah</h4>
                     <p class="cube-desc">
@@ -468,7 +468,7 @@
                 
                 <div class="cube-face back">
                     <div class="cube-image-container">
-                        <img src="{{ asset('images/Empat_Lingkaran.png') }}" alt="Lingkaran Logo POSITRON" class="cube-image">
+                        <img src="{{ asset('Empat_Lingkaran.png') }}" alt="Lingkaran Logo POSITRON" class="cube-image">
                     </div>
                     <h4 class="cube-title">Empat Lingkaran Terhubung</h4>
                     <p class="cube-desc">
@@ -480,7 +480,7 @@
                 
                 <div class="cube-face left">
                     <div class="cube-image-container">
-                        <img src="{{ asset('images/Text-logo.png') }}" alt="Tipografi POSITRON" class="cube-image">
+                        <img src="{{ asset('Text-logo.png') }}" alt="Tipografi POSITRON" class="cube-image">
                     </div>
                     <h4 class="cube-title">Tipografi "POSITRON"</h4>
                     <p class="cube-desc">
