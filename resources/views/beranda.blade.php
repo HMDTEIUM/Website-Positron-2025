@@ -6,7 +6,7 @@
         <div class="hero-overlay"></div>
         <div class="center-wrapper">
             <div class="logo-bar">
-                <img src="{{ asset('images/um.png') }}" alt="UM Logo">
+                <img src="{{ asset('um.png') }}" alt="UM Logo">
             </div>
             <h1 class="hero-title">SELAMAT DATANG MAHASISWA BARU<br>DEPARTEMEN TEKNIK ELEKTRO DAN INFORMATIKA</h1>
             <div class="cta-box">
@@ -24,7 +24,7 @@
                 <h2 class="section-title">TENTANG POSITRON</h2>
                 <p class="section-description">Program Orientasi Siswa Baru Teknik Elektro dan Informatika</p>
                 <div class="logo-positron">
-                    <img src="{{ asset('images/logo-positron.png') }}" alt="Logo POSITRON" class="positron-logo">
+                    <img src="{{ asset('logo-positron.png') }}" alt="Logo POSITRON" class="positron-logo">
                     <h2 class="positron-title">POSITRON 2025</h2>
                 </div>
             </div>
@@ -37,7 +37,7 @@
         <div class="container">
             <div class="sambutan-content">
                 <h2 class="sambutan-title">SAMBUTAN</h2>
-                <img src="{{ asset('images/logo-positron-rodokburem.png') }}" alt="Locker Sambutan"
+                <img src="{{ asset('logo-positron-rodokburem.png') }}" alt="Locker Sambutan"
                     class="sambutan-bg-logo">
 
                 <!-- Coming Soon Section -->
@@ -79,7 +79,7 @@
         <div class="container">
             <div class="countdown-content">
                 <div class="countdown-intro">
-                    <img src="{{ asset('images/logo-positron.png') }}" alt="Logo POSITRON" class="countdown-logo">
+                    <img src="{{ asset('logo-positron.png') }}" alt="Logo POSITRON" class="countdown-logo">
                     <h3 class="countdown-title">Countdown FORUM MABA</h3>
                     <p class="countdown-description">
                         Forum Maba adalah acara orientasi pertama yang akan memperkenalkan kalian dengan lingkungan
@@ -155,7 +155,7 @@
             <div class="section left-section" id="leftSection">
                 <div class="left-content">
                     <div class="logo fade-in">
-                        <img src="{{ asset('images/Logo Positron.png') }}" alt="Logo">
+                        <img src="{{ asset('Logo Positron.png') }}" alt="Logo">
                     </div>
                     <p class="description fade-in" id="dynamic-description">
                         Silakan pilih salah satu menu di kanan untuk melihat detail informasi.
@@ -173,63 +173,63 @@
                 <div class="locker-grid">
 
                     <!-- POSITRON 2025 -->
-                    <div class="locker-door" style="background-image: url('{{ asset('images/positron.png') }}');"
+                    <div class="locker-door" style="background-image: url('{{ asset('positron.png') }}');"
                         data-title="POSITRON 2025"
                         data-description="POSITRON 2025 hadir sebagai wadah orientasi mahasiswa baru Departemen Teknik Elektro dan Informatika Universitas Negeri Malang. Tahun ini, POSITRON mengusung tema <strong>&quot;Empowering Brighter Futures&quot;</strong> berarti menyalakan obor harapan di dalam diri setiap mahasiswa agar mampu melangkah menuju masa depan yang mereka bentuk sendiri—bukan sekadar mengikuti jalur yang ditentukan orang lain. <br><br> Kampus menjadi ruang untuk menempa integritas, memperluas wawasan, dan menyusun arah hidup dengan kesadaran. Sedangkan <strong>&quot;Beyond the Bell&quot;</strong> mengingatkan bahwa pembelajaran sejati tak berhenti di dalam kelas. Pendidikan tidak berakhir saat tugas dikumpulkan atau ujian selesai. Justru setelah itu, kita akan diuji dalam bentuk lain—ujian karakter, kejujuran, keberanian, dan nilai-nilai kemanusiaan. <br><br> Bergabunglah dengan kami dalam perjalanan menuju transformasi diri dan pencapaian prestasi yang membanggakan."
                         data-manualbook="{{ asset('manualbook/positron.pdf') }}">
                     </div>
 
                     <!-- Forum Maba -->
-                    <div class="locker-door" style="background-image: url('{{ asset('images/forma.png') }}');"
+                    <div class="locker-door" style="background-image: url('{{ asset('forma.png') }}');"
                         data-title="Forum Maba"
                         data-description="Forum komunikasi dan orientasi untuk mahasiswa baru. Acara ini dirancang untuk memperkenalkan Anda pada lingkungan kampus, sistem perkuliahan, dan kehidupan berorganisasi di Departemen Teknik Elektro dan Informatika. <br><br> Anda akan bertemu dengan dosen, senior, dan teman-teman seangkatan yang akan bersama-sama menjalani perjalanan akademik selama beberapa tahun ke depan. Forum ini juga memberikan informasi penting tentang kurikulum, aturan akademik, dan berbagai aktivitas menarik yang bisa Anda ikuti."
                         data-manualbook="{{ asset('manualbook/forum_maba.pdf') }}">
                     </div>
 
                     <!-- LDK -->
-                    <div class="locker-door" style="background-image: url('{{ asset('images/ldk.png') }}');"
+                    <div class="locker-door" style="background-image: url('{{ asset('ldk.png') }}');"
                         data-title="LDK"
                         data-description="Latihan Dasar Kepemimpinan (LDK) merupakan program yang dirancang untuk membentuk karakter kepemimpinan dan kedisiplinan mahasiswa baru. Melalui serangkaian kegiatan outdoor dan indoor, Anda akan belajar tentang teamwork, problem solving, dan manajemen diri. <br><br> LDK mengajarkan nilai-nilai seperti tanggung jawab, integritas, dan kerja sama tim. Kegiatan ini menjadi fondasi penting bagi aktivitas Anda di kampus, termasuk dalam berorganisasi dan mengikuti berbagai kegiatan kemahasiswaan."
                         data-manualbook="{{ asset('manualbook/ldk.pdf') }}">
                     </div>
 
                     <!-- IOH -->
-                    <div class="locker-door" style="background-image: url('{{ asset('images/ioh.png') }}');"
+                    <div class="locker-door" style="background-image: url('{{ asset('ioh.png') }}');"
                         data-title="IOH"
                         data-description="Ice Breaking &amp; Orientasi Himpunan (IOH) adalah kegiatan yang dirancang untuk memperkenalkan mahasiswa baru pada himpunan program studi masing-masing. Anda akan belajar tentang struktur organisasi, program kerja, dan kegiatan yang diselenggarakan oleh himpunan. <br><br> IOH juga menjadi ajang untuk menjalin pertemanan dengan senior dan teman seangkatan dalam lingkungan program studi yang lebih khusus. Kegiatan ini membantu Anda beradaptasi dengan lingkungan akademik yang lebih spesifik sesuai minat dan bidang studi yang dipilih."
                         data-manualbook="{{ asset('manualbook/ioh.pdf') }}">
                     </div>
 
                     <!-- NAKO 9.0 -->
-                    <div class="locker-door" style="background-image: url('{{ asset('images/nako.png') }}');"
+                    <div class="locker-door" style="background-image: url('{{ asset('nako.png') }}');"
                         data-title="NAKO 9.0"
                         data-description="Narasumber Kolaboratif (NAKO) versi 9.0 menghadirkan berbagai pembicara inspiratif dari alumni dan praktisi di bidang teknik elektro dan informatika. Anda akan mendapatkan wawasan tentang perkembangan industri, peluang karir, dan tips sukses dari mereka yang telah berpengalaman. <br><br> Kegiatan ini memberikan gambaran nyata tentang penerapan ilmu yang dipelajari di dunia kerja. NAKO juga menjadi wadah untuk membangun jaringan dengan alumni dan profesional di bidang Anda."
                         data-manualbook="{{ asset('manualbook/nako.pdf') }}">
                     </div>
 
                     <!-- Dewan Komunal -->
-                    <div class="locker-door" style="background-image: url('{{ asset('images/dewan.png') }}');"
+                    <div class="locker-door" style="background-image: url('{{ asset('dewan.png') }}');"
                         data-title="Dewan Komunal"
                         data-description="Dewan Komunal adalah forum diskusi terbuka yang membahas berbagai isu terkait kehidupan kampus dan pengembangan diri mahasiswa. Kegiatan ini memberikan kesempatan untuk menyampaikan aspirasi dan berpartisipasi dalam pengambilan keputusan di tingkat jurusan. <br><br> Melalui Dewan Komunal, Anda akan belajar tentang demokrasi kampus, tata kelola organisasi, dan pengembangan kebijakan yang berpengaruh langsung pada kehidupan akademik Anda."
                         data-manualbook="#">
                     </div>
 
                     <!-- Segmen -->
-                    <div class="locker-door" style="background-image: url('{{ asset('images/seven.png') }}');"
+                    <div class="locker-door" style="background-image: url('{{ asset('seven.png') }}');"
                         data-title="Segmen"
                         data-description="Berbagai segmen menarik akan menghiasi rangkaian kegiatan POSITRON 2025. Mulai dari kompetisi antar kelompok, pentas seni, hingga kegiatan pengabdian masyarakat. Setiap segmen dirancang untuk mengasah kreativitas, sportivitas, dan kepedulian sosial Anda. <br><br> Anda akan belajar bekerja dalam tim, memecahkan masalah secara kreatif, dan mengembangkan soft skills yang sangat penting untuk masa depan karir Anda. Setiap segmen juga menjadi kesempatan untuk menunjukkan bakat dan minat Anda di luar ranah akademik."
                         data-manualbook="#">
                     </div>
 
                     <!-- Guide -->
-                    <div class="locker-door" style="background-image: url('{{ asset('images/guide.png') }}');"
+                    <div class="locker-door" style="background-image: url('{{ asset('guide.png') }}');"
                         data-title="Guide"
                         data-description="Buku panduan ini berisi semua informasi penting yang Anda butuhkan untuk menjalani POSITRON 2025 dan kehidupan kampus di Departemen Teknik Elektro dan Informatika. Anda akan menemukan jadwal lengkap kegiatan, aturan yang berlaku, kontak penting, serta tips dan trik untuk sukses di kampus. <br><br> Buku panduan ini menjadi teman setia Anda selama mengikuti orientasi dan masa-masa awal perkuliahan. Pastikan untuk membaca dan memahami seluruh isinya agar dapat mengikuti kegiatan dengan optimal."
                         data-manualbook="{{ asset('manualbook/guide.pdf') }}">
                     </div>
 
                     <!-- Soon -->
-                    <div class="locker-door" style="background-image: url('{{ asset('images/soon.png') }}');"
+                    <div class="locker-door" style="background-image: url('{{ asset('soon.png') }}');"
                         data-title="Soon"
                         data-description="Segera hadir! Kami sedang mempersiapkan konten khusus untuk Anda. Kami berkomitmen untuk memberikan pengalaman orientasi yang berkesan dan bermakna bagi seluruh mahasiswa baru Departemen Teknik Elektro dan Informatika. <br><br> Jangan lewatkan update terbaru tentang kegiatan POSITRON 2025 melalui media sosial resmi kami. Tetap semangat dan bersiaplah untuk petualangan menarik di dunia perkuliahan!"
                         data-manualbook="#">
@@ -247,7 +247,7 @@
         <div class="calendar-overlay"></div>
         <div class="container">
             <div class="calendar-header">
-                <img src="{{ asset('images/logo-positron-rodokburem.png') }}" alt="Logo POSITRON" class="calendar-logo">
+                <img src="{{ asset('logo-positron-rodokburem.png') }}" alt="Logo POSITRON" class="calendar-logo">
                 <h3 class="section-title">Calendar POSITRON 2025</h3>
                 <p class="calendar-description">
                     Jadwal lengkap kegiatan Program Orientasi Siswa Baru Teknik Elektro dan Informatika.
@@ -319,7 +319,7 @@
 
         /* Hero Section */
         .hero-section {
-            background: url('{{ asset('images/hall-locker.png') }}') no-repeat center center;
+            background: url('{{ asset('hall-locker.png') }}') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
@@ -410,7 +410,7 @@
         /* About Section */
         .about-section {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('{{ asset('images/bg-2.png') }}') no-repeat center center;
+                url('{{ asset('bg-2.png') }}') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
@@ -470,7 +470,7 @@
         /* Sambutan Section */
         .sambutan-section {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('{{ asset('images/hall-locker.png') }}') no-repeat center center;
+                url('{{ asset('hall-locker.png') }}') no-repeat center center;
             background-size: cover;
             min-height: 100vh;
             position: relative;
@@ -558,7 +558,7 @@
 
         /* Countdown Section */
         .countdown-section {
-            background: url('{{ asset('images/countdown-bg.png') }}') no-repeat center center;
+            background: url('{{ asset('countdown-bg.png') }}') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
@@ -765,7 +765,7 @@
 
         /* Program Studi Section */
         .prodi-section {
-            background: url("{{ asset('images/Paper.png') }}") no-repeat center center;
+            background: url("{{ asset('Paper.png') }}") no-repeat center center;
             background-color: #f8f9fa;
             padding: 5rem 0;
             min-height: 100vh;
@@ -851,7 +851,7 @@
         /* Calendar Section */
         .calendar-section {
             background: linear-gradient(rgba(10, 62, 109, 0.9), rgba(10, 62, 109, 0.9)),
-                url('{{ asset('images/bg-1.png') }}') no-repeat center center;
+                url('{{ asset('bg-1.png') }}') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             padding: 5rem 0;
@@ -1230,7 +1230,7 @@
             overflow-x: hidden;
             /* Prevent horizontal scroll */
             background-color: #f5f7fa;
-            background-image: url('{{ asset('images/Background.png') }}');
+            background-image: url('{{ asset('Background.png') }}');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -1291,7 +1291,7 @@
             width: 40%;
             /* Initial width for right section */
             background-color: #1b2a3a;
-            background-image: url('{{ asset('images/Background_Loker.png') }}');
+            background-image: url('{{ asset('Background_Loker.png') }}');
             background-size: 98%;
             background-size: cover;
             /* penuhi kotak tanpa mengulang */
