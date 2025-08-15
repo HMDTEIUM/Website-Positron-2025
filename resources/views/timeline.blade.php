@@ -6,7 +6,7 @@
         <div class="calendar-overlay"></div>
         <div class="container">
             <div class="calendar-header">
-                <img src="{{ asset('images/logo-positron-rodokburem.png') }}" alt="Logo POSITRON" class="calendar-logo">
+                <img src="{{ asset('logo-positron-rodokburem.png') }}" alt="Logo POSITRON" class="calendar-logo">
                 <h3 class="section-title">Calendar POSITRON 2025</h3>
                 <p class="calendar-description">
                     Jadwal lengkap kegiatan Program Orientasi Siswa Baru Teknik Elektro dan Informatika. 
@@ -88,7 +88,7 @@
         /* Calendar Section */
         .calendar-section {
             background: linear-gradient(rgba(10, 62, 109, 0.9), rgba(10, 62, 109, 0.9)), 
-                        url("{{ asset('images/bg-1.png') }}") no-repeat center center;
+                        url("{{ asset('bg-1.png') }}") no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
             padding: 5rem 0;
