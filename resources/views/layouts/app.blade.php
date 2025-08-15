@@ -33,6 +33,18 @@
             min-height: 100vh;
         }
 
+
+        header {
+            width: 100%;
+            height: 106px;
+            background: url("../images/Header.png");
+            background-size: auto;
+            background-size: 100% 100%;
+            position: relative;
+            overflow: visible;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
         footer {
             background-color: #061f3e;
             bottom: 0;
@@ -101,6 +113,18 @@
             background: linear-gradient(90deg, #ffd700, #ffa500);
             transition: width 0.3s ease;
             border-radius: 2px;
+        }
+
+        .logo-icon {
+            width: 123px;
+            height: 86px;
+            background-image: url("logo-positron.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .nav-link:hover::before {
@@ -312,9 +336,8 @@
                     <li class="nav-item"><a class="nav-link text-dark px-3" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link text-dark px-3" href="/Filosofi">Filosofi</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link text-dark px-3" href="/group">Timeline</a>
+                    <li class="nav-item"><a class="nav-link text-dark px-3" href="/timeline">Timeline</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link text-dark px-3" href="/kontak">Guide</a></li>
                     <li class="nav-item"><a class="nav-link text-dark px-3" href="/group">Group</a></li>
                     <li class="nav-item"><a class="nav-link text-dark px-3" href="/kontak">Contact</a></li>
                 </ul>
@@ -334,7 +357,6 @@
                 <li class="nav-item"><a class="nav-link text-dark px-3" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link text-dark px-3" href="/Filosofi">Filosofi</a></li>
                 <li class="nav-item"><a class="nav-link text-dark px-3" href="/timeline">Timeline</a></li>
-                <li class="nav-item"><a class="nav-link text-dark px-3" href="/kontak">Guide</a></li>
                 <li class="nav-item"><a class="nav-link text-dark px-3" href="/group">Group</a></li>
                 <li class="nav-item"><a class="nav-link text-dark px-3" href="/kontak">Contact</a></li>
             </ul>
