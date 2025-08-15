@@ -208,8 +208,7 @@
             form.classList.add('was-validated');
             return;
         }
-
-        // Simulate form submission
+        
         alert('Pesan Anda berhasil dikirim!');
         form.reset();
         form.classList.remove('was-validated');
